@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--**************************************************** from template.liquid **************************************************-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="">
+  <title>GVINICO_PAGE-TEMPLATE</title>
+  <link href="https://cdn.shopify.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.shopifycdn.com" rel="preconnect" crossorigin>
+  <link href="_assets/component-price.css" rel="stylesheet" media="print">
+  <script src="_assets/product-form.js" defer="defer"></script>
+  <script src="_assets/global.js" defer="defer"></script>
+  <script src="_assets/owl.carousel.min.js" defer="defer"></script>
+  <script src="_assets/wishlist.js" defer="defer"></script>
+  <script src="_assets/compare.js" defer="defer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css">
+  <link href="_assets/quickview.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <style>
+    /*** from settings_data.json ***/
+    :root {
+      --font-body-family: "Arimo"; /*{{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};*/
+      --font-body-style: normal; /*{{ settings.type_body_font.style }};*/
+      --font-body-weight: 400; /*{{ settings.type_body_font.weight }};*/
+      --font-heading-family: "Arimo"; /*{{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};*/
+      --font-heading-style: normal; /*{{ settings.type_header_font.style }};*/
+      --font-heading-weight: 400; /*{{ settings.type_header_font.weight }};*/
+      --color-base-text: "#000000"; /*{{ settings.colors_text }};*/
+      --color-base-text-rgb: rgb(0, 0, 0); /*{{ settings.colors_text | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-background-1: "#ffffff"; /*{{ settings.colors_background_1 }};*/
+      --color-base-background-1-rgb: rgb(255, 255, 255); /*{{ settings.colors_background_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-1: "#ae194a"; /*{{ settings.colors_accent_1 }};*/
+      --color-base-accent-1-rgb: rgb(174, 25, 74); /*{{ settings.colors_accent_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-2: "#777777"; /*{{ settings.colors_accent_2 }};*/
+      --color-base-accent-2-rgb: rgb(119, 119, 119); /*{{ settings.colors_accent_2 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-border: "#dddddd"; /*{{ settings.colors_border }};*/
+      --color-base-button-text: "#ffffff"; /*{{ settings.button_text }};*/
+      --color-base-button-text-hover: "#000000"; /*{{ settings.button_text_hover }};*/
+      --color-base-button-background: "#ae194a"; /*{{ settings.button_background }};*/
+      --color-base-button-background-hover: "#ffcc1d"; /*{{ settings.button_background_hover }};*/
+      --color-base-text-opacity-10-percent: rgba(0, 0, 0, 0.1); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-text-opacity-20-percent: rgba(0, 0, 0, 0.2);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 20 }};*/
+      --color-base-text-opacity-55-percent: rgba(0, 0, 0, 0.55);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 55 }};*/
+      --color-base-text-opacity-85-percent: rgba(0, 0, 0, 0.85); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 85 }};*/
+      --color-base-accent-1-opacity-10-percent: rgba(174, 25, 74, 0.1); /*{{ settings.colors_accent_1 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-accent-2-opacity-10-percent: rgba(119, 119, 119, 0.1); /*{{ settings.colors_accent_2 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-rating-empty: "#dddddd"; /*{{ settings.rating_empty }};*/
+      --color-rating-filled: "#000000"; /*{{ settings.rating_filled }};*/
+      --color-secondary-hover: "#ffcc1d"; /*{{ settings.secondary_hover_color }};*/
+    }
+    :root {
+      --color-base-background-2: #f0f0f0;
+      --color-base-background-2-rgb: rgb(240, 240, 240);
+      --color-base-solid-button-labels: #000000;
+      --color-base-solid-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-outline-button-labels: #000000;
+      --color-base-outline-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-color-base-accent-1: var(--color-base-accent-1); ;
+    }
+    /*** end from settings_data.json ***/
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+    html {
+      box-sizing: border-box;
+      font-size: 62.5%;
+      height: 100%;
+    }
+    body {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      line-height: 24px;
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
+      color: var(--color-base-accent-2);
+    }
+  </style>
+  <link href="_assets/base.css" rel="stylesheet">
+  <link href="_assets/component-predictive-search.css" rel="stylesheet">
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+  <style>
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 600;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-600.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-600.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-600.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 700;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-700.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-700.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-700.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    .slideshow__subheading, .slideshow__subtitle,
+    .title, .title-wrapper-with-link,
+    .cms-banner-title-three,
+    .parallex-title,
+    .two-banner .cms-banner-subtitle-three,
+    .newsletter.center .h1,
+    .breadcrumb_title{
+      font-family: 'Cormorant Garamond', serif !important;
+    }
+  </style>
+  <!--*** from page.liquid ***-->
+  <link href="_assets/component-rte.css" rel="stylesheet">
+  <link href="_assets/section-main-page.css" rel="stylesheet">
+  <!--*** end from page.liquid ***-->
+  <!--*** style of inserted content in template.liquid ***-->
+  <link href="assets/alt-pages.css" rel="stylesheet">
+  <!--*** end style of inserted content in template.liquid ***-->
+</head>
+<body class="template-page">
+<main class="main-content" id="MainContent" role="main" tabindex="-1">
+<!--**************************************************** end from template.liquid **************************************************-->
+<div class="page-width contents">
+<div class="main-container">
+<section class="shopify-section spaced-section">
+<div class="page-width page-width--narrow">
+<div class="rte" style="padding-top: 100px; padding-bottom: 100px">
+
+
+
+
+
+
+
+
+
+
+  <!-- INSERTED CONTENT -->
+
+  <section class="alt-pages">
+
+    <p class="alt-text18 alt-text-width66"><strong>Wine and the culture of its production is the reason for the national pride of the Georgian people.</strong><br>
+      About 500 varieties of grapes grow in Georgia, which grow only in this country and are not found anywhere else in the world, each of these varieties is described and listed in the Georgian Red Book. The wine-growing regions of Georgia consist of 5 regions, which in turn are divided into 19 microzones. Each of these zones has strict state standards for the production and certification of wine.</p>
+
+    <div class="hdr-img">
+      <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/13.jpg" alt="Wine regions of Georgia">
+    </div>
+
+    <div class="block-wineregion">
+      <div class="block-wineregion__pic">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/p-kakheti.jpg" alt="Kakheti">
+      </div>
+      <div class="block-wineregion__text">
+        <h3 class="h3-gr h-color-accent-1">
+          Kakheti
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/t-kakheti.svg" alt="Kakheti">
+        </h3>
+        <p><strong>Kakheti is a Georgian region located between the Alazani and Iori rivers.</strong><br>
+          More than 2/3 of all grapes grown in Georgia come from here. For example, the variety "Saperavi" from which the wine of the same name is produced, which is one of the hallmarks of this region. One of the most famous places in Kakheti is the Alazani Valley, geographically the location is just perfect for cultivation. In addition to "Saperavi", the cultivation of "Rkatsiteli" grapes is widespread in this region; it is this grape that is used to produce Georgian wines of the highest quality. The Georgian law "on vine and wine" regulates the division of the Kakheti region into 14 microzones based on the characteristics of cultivation and production of wine, these microzones produce wine under controlled names, such as Akhasheni, Kakheti, Kvareli, and others.</p>
+        <p>4 of these 14 Kakheti microzones are located in the Alazani valley. One of the most famous microzones is Tsinandali. Due to the peculiarities of its geographical position, varieties ideally suited for the preparation of dry and semi-dry wines ripen here.</p>
+      </div>
+    </div>
+
+    <div class="block-wineregion block-wineregion--reverse">
+      <div class="block-wineregion__pic">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/p-kartli.jpg" alt="Kartli">
+      </div>
+      <div class="block-wineregion__text">
+        <h3 class="h3-gr h-color-accent-1">
+          Kartli
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/t-kartli.svg" alt="Kartli">
+        </h3>
+        <p><strong>Kartli is a historical region located in the east of Georgia,</strong><br>
+          in those places the climate is temperate with dry and hot summers, and local grape varieties are used to make classic table wines that taste reminiscent of classic European products.</p>
+      </div>
+    </div>
+
+    <div class="block-wineregion">
+      <div class="block-wineregion__pic">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/p-imereti.jpg" alt="Imereti">
+      </div>
+      <div class="block-wineregion__text">
+        <h3 class="h3-gr h-color-accent-1">
+          Imereti
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/t-imereti.svg" alt="Imereti">
+        </h3>
+        <p><strong>Imereti is the western region of the country with the center in the city of Kutaisi.</strong><br>
+          A distinctive feature of the region is the production of wine according to European technology. Traditional light table wine is produced from the Tsitska grape variety grown here, as well as all-natural sparkling wines typical of this region are produced from this grape variety. The Svir microzone stands out separately - wonderful red wine is produced here from Sapere and Otskhanuri grapes.</p>
+      </div>
+    </div>
+
+    <div class="block-wineregion block-wineregion--reverse">
+      <div class="block-wineregion__pic">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/p-racha-lechkhumi.jpg" alt="Racha-Lechkhumi">
+      </div>
+      <div class="block-wineregion__text">
+        <h3 class="h3-gr h-color-accent-1">
+          Racha-Lechkhumi
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/t-racha-lechkhumi.svg" alt="Racha-Lechkhumi">
+        </h3>
+        <p><strong>Racha-Lechkhumi is a region located north of Imereti in an oasis surrounded by mountain cliffs</strong>,<br>
+          due to the humidity of the climate, varieties grow here with a sugar content of up to 30%. Wines from this region are considered among the most valuable and rare Georgian wines. For example, the wine "Usakhelouri" is quite rare and therefore very expensive.</p>
+      </div>
+    </div>
+
+    <div class="block-wineregion">
+      <div class="block-wineregion__pic">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/p-sea.jpg" alt="Coastal zone of the Black Sea">
+      </div>
+      <div class="block-wineregion__text">
+        <h3 class="h3-gr h-color-accent-1">
+          Coastal zone of the Black Sea
+        </h3>
+        <p><strong>This region is divided into 5 small microzones:</strong><br>
+          Samegrelo which is famous for its Ojaleshi wine, Guria with its Chkhaveri, Adjaria with its center in Keda municipality is famous for its Kedis Tsolikauri, and Chkhaveri wines. They are worth mentioning separately. Tsolikauri is a special variety of white grapes with a low sugar content, from which wine is made using both Georgian and European technologies. Chkhaveri, in turn, is a pink grape, a feature of the wine produced from this variety is a delicate pink shade in light wine.</p>
+      </div>
+    </div>
+
+    <div class="hdr-img">
+      <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/14.jpg" alt="The grade of winemaking">
+    </div>
+
+    <div class="two-column">
+      <div>
+        <h3 class="h3-gr">Features of Georgian winemaking</h3>
+        <p>Georgia is considered the cradle of winemaking for a reason; the Georgian winemaking system has been awarded the status of a UNESCO World Intangible Cultural Heritage. This high status of Georgian wine is endowed not only due to the ancient technology of wine production - Qvevri - but also due to archaeological finds that confirm that winemaking was practiced in this territory thousands of years ago. At the beginning of the century, during an archaeological expedition, vessels were found, the predecessors of the traditional qvevri, whose age belonged to the Neolithic period!</p>
+      </div>
+      <div>
+        <h3 class="h3-gr">Qvevri</h3>
+        <p>Traditionally in Georgia, wine is produced in qvevri, these are special clay vessels with a volume of two tons of must. The production technology itself is also interesting for its unusualness and difference from the traditional European production recipe. Grapes, as a rule, together with seeds and a vine, are placed in a vessel, pressed, and later the qvevri is buried in the ground up to the neck. The process of fermentation with this method of production is called active, live. After filling the container by 80%, qvevri is left to age for six months, and only after its onset is the wine bottled. The resulting product is unique and has no analogues in the world.</p>
+        <p>Of course, this is a lightweight description of the technology. In each of the Georgian wine-growing regions, the production technology has its differences - qvevri unites them - grape must undergo fermentation and maturation inside one vessel.</p>
+      </div>
+    </div>
+
+    <h3 class="h3-gr">As an afterword</h3>
+    <p>The territorial location and geographical features of this country are very suitable for the cultivation of grapes and the production of table and sparkling wines from it. The variety of grape varieties creates an equally wide variety of wonderful drinks. Georgian winemakers have been developing their art and improving the local technology of making qvevri wine for thousands of years. You can find an echo of their work and skill in every branded bottle of Georgian wine.</p>
+
+  </section>
+
+  <!-- END INSERTED CONTENT -->
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body>
+</html>
