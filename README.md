@@ -1,0 +1,2 @@
+# Gvinico
+Shopify Templates Project

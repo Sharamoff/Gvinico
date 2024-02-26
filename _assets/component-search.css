@@ -1,0 +1,116 @@
+.search__input.field__input {
+  padding-right: 5rem;
+}
+
+.icon-header-search {
+	width: 1em;
+	height: 1em;
+	fill: var(--color-secondary-hover);
+	font-size: 20px;
+	margin: 3px 3px 0;
+}
+
+.search__button .icon {
+  height: 1.8rem;
+}
+
+.search-header.search {
+  float: none;
+  width: auto;
+  position: relative;
+}
+.search-header__input {
+  border: 1px solid #fff;
+  height: 39px;
+  margin: 0;
+  padding: 0 15px 0 12px;
+  width: 608px;
+  float: left;
+  font-size: 13px;
+  text-transform: capitalize;
+  font-family: var(--font-body-family);
+  letter-spacing: .4px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+.search-header__submit {
+  border: medium none;
+  height: 39px;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 104px;
+  border-radius: 4px;
+  background: var(--color-secondary-hover);
+  color: #000;
+}
+.search-header__submit.button .header-search.icon.icon-search {
+  width: 16px;
+  height: 16px;
+  display:none;
+}
+.template-search__results .grid__item:hover .product-hover-info.sca-qv-image {
+  opacity: 1;
+}
+
+
+.template-search__results .grid__item .products {
+  border-top: 1px solid #ededed;
+  border-right: 1px solid #ededed;
+}
+.template-search__results .grid__item:nth-child(-n+4) .products {
+  border-top: 0;
+}
+.template-search__results .grid__item:nth-child(4n+4) .products {
+  border-right: 0;
+}
+
+/* Remove extra spacing for search inputs in Safari */
+input::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+@media (max-width: 1429px) {
+   .search-header__input {
+        width: 535px;
+   }
+}
+@media (max-width: 1269px) {
+  .search-header__input {
+    width: 296px;
+  }
+}
+@media (max-width: 989px) {
+
+  .search-header.search {
+    width: 100%;
+  }
+  .search-header__input {
+    width: calc(100% - 60px);
+  }
+  .search-header__submit.button .header-search.icon.icon-search {
+    display: block;
+  }
+  .search-header__submit {
+    width: 50px;
+  }
+}
+
+@media (max-width: 749px) {
+  .search-header__submit .header-search {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+  }
+  .search-header__submit {
+    width: 50px;
+  }
+}
+@media (max-width: 479px) {
+  .template-search .grid__item {
+    width: 100%;
+  }
+}
