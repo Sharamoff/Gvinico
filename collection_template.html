@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--**************************************************** from template.liquid **************************************************-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="">
+  <title>GVINICO_PAGE-TEMPLATE</title>
+  <link href="https://cdn.shopify.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.shopifycdn.com" rel="preconnect" crossorigin>
+  <link href="_assets/component-price.css" rel="stylesheet" media="print">
+  <script src="_assets/product-form.js" defer="defer"></script>
+  <script src="_assets/global.js" defer="defer"></script>
+  <script src="_assets/owl.carousel.min.js" defer="defer"></script>
+  <script src="_assets/wishlist.js" defer="defer"></script>
+  <script src="_assets/compare.js" defer="defer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css">
+  <link href="_assets/quickview.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <style>
+    /*** from settings_data.json ***/
+    :root {
+      --font-body-family: "Inter"; /*{{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};*/
+      --font-body-style: normal; /*{{ settings.type_body_font.style }};*/
+      --font-body-weight: 400; /*{{ settings.type_body_font.weight }};*/
+      --font-heading-family: "Arimo"; /*{{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};*/
+      --font-heading-style: normal; /*{{ settings.type_header_font.style }};*/
+      --font-heading-weight: 400; /*{{ settings.type_header_font.weight }};*/
+      --color-base-text: #000000; /*{{ settings.colors_text }};*/
+      --color-base-text-rgb: rgb(0, 0, 0); /*{{ settings.colors_text | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-background-1: #ffffff; /*{{ settings.colors_background_1 }};*/
+      --color-base-background-1-rgb: rgb(255, 255, 255); /*{{ settings.colors_background_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-1: #ae194a; /*{{ settings.colors_accent_1 }};*/
+      --color-base-accent-1-rgb: rgb(174, 25, 74); /*{{ settings.colors_accent_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-2: #777777; /*{{ settings.colors_accent_2 }};*/
+      --color-base-accent-2-rgb: rgb(119, 119, 119); /*{{ settings.colors_accent_2 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-border: #dddddd; /*{{ settings.colors_border }};*/
+      --color-base-button-text: #ffffff; /*{{ settings.button_text }};*/
+      --color-base-button-text-hover: #000000; /*{{ settings.button_text_hover }};*/
+      --color-base-button-background: #ae194a; /*{{ settings.button_background }};*/
+      --color-base-button-background-hover: #ffcc1d; /*{{ settings.button_background_hover }};*/
+      --color-base-text-opacity-10-percent: rgba(0, 0, 0, 0.1); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-text-opacity-20-percent: rgba(0, 0, 0, 0.2);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 20 }};*/
+      --color-base-text-opacity-55-percent: rgba(0, 0, 0, 0.55);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 55 }};*/
+      --color-base-text-opacity-85-percent: rgba(0, 0, 0, 0.85); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 85 }};*/
+      --color-base-accent-1-opacity-10-percent: rgba(174, 25, 74, 0.1); /*{{ settings.colors_accent_1 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-accent-2-opacity-10-percent: rgba(119, 119, 119, 0.1); /*{{ settings.colors_accent_2 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-rating-empty: #dddddd; /*{{ settings.rating_empty }};*/
+      --color-rating-filled: #000000; /*{{ settings.rating_filled }};*/
+      --color-secondary-hover: #ffcc1d; /*{{ settings.secondary_hover_color }};*/
+    }
+    :root {
+      --color-base-background-2: #f0f0f0;
+      --color-base-background-2-rgb: rgb(240, 240, 240);
+      --color-base-solid-button-labels: #000000;
+      --color-base-solid-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-outline-button-labels: #000000;
+      --color-base-outline-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-color-base-accent-1: var(--color-base-accent-1); ;
+    }
+    /*** end from settings_data.json ***/
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+    html {
+      box-sizing: border-box;
+      font-size: 62.5%;
+      height: 100%;
+    }
+    body {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: normal !important;
+      line-height: 1.4;
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
+      color: var(--color-base-accent-2);
+    }
+  </style>
+  <link href="_assets/base.css" rel="stylesheet">
+  <link href="_assets/component-predictive-search.css" rel="stylesheet">
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+  <style>
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 600;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-600.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-600.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-600.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 700;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-700.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-700.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-700.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    .slideshow__subheading, .slideshow__subtitle,
+    .title, .title-wrapper-with-link,
+    .cms-banner-title-three,
+    .parallex-title,
+    .two-banner .cms-banner-subtitle-three,
+    .newsletter.center .h1,
+    .breadcrumb_title{
+      font-family: 'Cormorant Garamond', serif !important;
+    }
+  </style>
+  <!--*** from page.liquid ***-->
+  <link href="_assets/component-rte.css" rel="stylesheet">
+  <link href="_assets/section-main-page.css" rel="stylesheet">
+  <!--*** end from page.liquid ***-->
+  <!--*** style of inserted content in template.liquid ***-->
+  <link href="assets/alt-collection.css" rel="stylesheet">
+  <!--*** end style of inserted content in template.liquid ***-->
+</head>
+<body class="template-page">
+<main class="main-content" id="MainContent" role="main" tabindex="-1">
+<!--**************************************************** end from template.liquid **************************************************-->
+<div class="page-width contents">
+<div class="main-container">
+<section class="shopify-section spaced-section">
+<div class="page-width page-width--narrow">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="alt-collection-description">
+<!-- INSERTED CONTENT -->
+
+
+
+  <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+
+
+<!-- Lagvinari -->
+<div class="alt-collection-description__collage">
+<img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/cl-lagvinari.jpg" alt="Lagvinari">
+</div>
+<div class="alt-collection-description__c-descript">
+<a href="https://www.lagvinari.com/" class="c-descript__logo" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/logo-lagvinari.png" alt="Lagvinari"></a>
+<div class="c-descript__txt">
+<p><strong>Lagvinari</strong> is a celebrated Georgian wine brand recognized both in Georgia and throughout the world, with exports reaching over 20 countries. But it is more than just a wine brand. Now Lagvinari is the embodiment of Georgian tradition, the passion of creator, Doctor Eko Glonti, the soul of the Caucasus wine region and a true expression of the land.</p>
+<p>Founder Eko's lifelong love of wine led him to winemaking. His inaugural release in 2011 marked the start of a journey where each vintage blends bold experimentation – in fermentation, aging, and diverse grape selections – with profound respect for Georgian tradition. Crafted in georgian qvevri with minimal intervention and low sulfites, Lagvinari wines consistently deliver exceptional quality.</p>
+<p>The only thing that always remains unchanged is the highest quality of his wines and the delight they evoke in fans. We would say that Doctor Glonti's wines are ‘Georgian Burgundy’, reflecting their complexity, depth, and esteemed character.</p>
+<p>Taste the difference of Lagvinari.</p>
+<p>Location: <strong>Bakurtsikhe, Georgia</strong></p>
+<p>Annual production: <strong>15 000 bottles</strong></p>
+<p><a href="https://www.lagvinari.com/" class="c-descript__txt__link" target="_blank">www.lagvinari.com</a></p>
+</div>
+<div class="c-descript__map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5958.725482709258!2d45.85356107701657!3d41.69110434681373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x404688f96d48b221%3A0xb4a3a17349f28fc1!2sLagvinari!5e0!3m2!1sen!2spl!4v1709980770568!5m2!1sen!2spl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</div>
+
+
+
+  <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+
+
+<!-- 39 Qvevri -->
+<div class="alt-collection-description__collage">
+<img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/cl-39qvevri.jpg" alt="39 Qvevri">
+</div>
+<div class="alt-collection-description__c-descript">
+<a href="https://www.39qvevri.ge/" class="c-descript__logo" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/logo-39qvevri.png" alt="39 Qvevri"></a>
+<div class="c-descript__txt">
+<p>The main value of the cellar <strong>"39&nbsp;Qvevri"</strong> is a traditional Georgian wine created from local grape varieties and aged in the old way in Kvevri. The winery is located in the village of Bitsmendi, in one of the most significant historical places of Kartli, the center of viticulture and winemaking. There is also a winery's own vineyard, where four Georgian grape varieties are grown (Shavkapito, Goruli Mtsvane, Kisi and Hihvi).</p>
+<p>Bitsmendi has a special historical significance and is associated with the names of famous traditional Georgian winemakers, such as Guramishvili, with his famous vineyards and cellars, or Ilya Tsinamdzgvrishvili, one of the most prominent figures of the XIX century, the founder and teacher of the Tsinamdzgvriantkar Agricultural School.</p>
+<p>Location: <strong>Mtskheta Municipality, Kartli region, Georgia</strong></p>
+<p>Annual production: <strong>60 000 bottles</strong></p>
+<p><a href="https://www.39qvevri.ge/" class="c-descript__txt__link" target="_blank">www.39qvevri.ge</a></p>
+</div>
+<div class="c-descript__map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d23747.963536646672!2d44.80033837557069!3d41.9252041302286!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40445d1fe017fd97%3A0x7056e4166e917273!2s39%20Qvevri!5e0!3m2!1sru!2sge!4v1710144118072!5m2!1sru!2sge" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</div>
+
+
+  <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+
+
+<!-- Levani's Marani Akhmeta -->
+<div class="alt-collection-description__collage">
+<img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/cl-levanismarani.jpg" alt="Levani's Marani Akhmeta">
+</div>
+<div class="alt-collection-description__c-descript">
+<a href="https://www.levanismarani.ge/" class="c-descript__logo" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/logo-levanismarani.png" alt="Levani's Marani Akhmeta"></a>
+<div class="c-descript__txt">
+<p>The wine cellar was established in 2017, on the site of an old wine cellar, there was an 80-year-old vineyard, which was renovated, in the same space, there is a yard and a residential house. The Cellar and I both have the name of my Grandfather &nbsp;&mdash;&nbsp; Levan. We mainly buy bio-certified grapes in the Kakheti region, from which we make natural wines. The first Qvevri wine was made in 2018 and bottled in 2019. The cellar has 18-ton Qvevris. While operating at full capacity, it is possible to produce 10,000 bottles of Qvevri wine annually.</p>
+<p>We produce wine using the traditional Kakhetian method of winemaking: macerating with skins and stalks for 6 months in Qvevri and then aging 5 months without skins and stalks. This way, prolonged maceration, and natural filtration happen. Wines are a live and natural, without any yeasts and additives. Wines are aged in Qvevri, at the natural temperature of 14° and after bottling, in the wine cellar 16°. We produce 4 types of wine. Red dry&nbsp;&mdash;&nbsp;Saperavi, Amber (white) dry&nbsp;&mdash;&nbsp;Rkatsiteli, Kakhetian Green, and Kisi. The name of the wine and cellar is
+<strong>"Levani's&nbsp;Marani&nbsp;Akhmeta"</strong>.</p>
+<p>Location: <strong>77 Chavchavadze str, Akhmeta, Kakheti Region, Georgia</strong></p>
+<p>Annual production: <strong>8 000 bottles</strong></p>
+<p><a href="https://www.levanismarani.ge/" class="c-descript__txt__link" target="_blank">www.levanismarani.ge</a></p>
+</div>
+<div class="c-descript__map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9968.125722742094!2d45.2047073997905!3d42.031567211909156!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40444dd7a2534721%3A0xc6f27b9a18c89513!2sLevani&#39;s%20Marani!5e0!3m2!1sru!2sge!4v1710144691529!5m2!1sru!2sge" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</div>
+
+
+  <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+
+
+
+<!-- Pongino Wine -->
+<div class="alt-collection-description__collage">
+<img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/cl-ponginowine.jpg" alt="Pongino Wine">
+</div>
+<div class="alt-collection-description__c-descript">
+<a href="https://www.facebook.com/PonginoWineGeorgia/" class="c-descript__logo" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/logo-ponginowine.png" alt="Pongino Wine"></a>
+<div class="c-descript__txt">
+<p>Since 2017, Family Winery <strong>"Pongino Wine"</strong>, based in the village of Khashmi micro-zone, Sagarejo region, Georgia, has been producing “Saperavi Khashmi”. The wine with a rich dark lily color, is characterized by strongly expressed varieties and forest berry tones that define the uniqueness of the bouquet. "Saperavi Khashmi" by "Pongino Wine" is sustainable and healthy with tannins.</p>
+<p>Since 2019 Family Winery has been producing Kisi.</p>
+<p>Location: <strong>Bakurtsikhe, Georgia</strong></p>
+<p>Annual production: <strong>15 000 bottles</strong></p>
+<p><a href="https://www.facebook.com/PonginoWineGeorgia/" class="c-descript__txt__link" target="_blank">www.facebook.com/PonginoWineGeorgia</a></p>
+</div>
+<div class="c-descript__map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8416.8852884118!2d45.18035672579251!3d41.767574487844726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40443d534450a46d%3A0x1ec55d10500b74ef!2sPONGINO%20WINE!5e0!3m2!1sru!2sge!4v1710144993104!5m2!1sru!2sge" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</div>
+
+
+  <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+
+
+
+<!-- Anbani Wine -->
+<div class="alt-collection-description__collage">
+<img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/cl-anbani.jpg" alt="Anbani Wine">
+</div>
+<div class="alt-collection-description__c-descript">
+<a href="https://www.facebook.com/anbani/" class="c-descript__logo" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/logo-anbani.png" alt="Anbani Wine"></a>
+<div class="c-descript__txt">
+<p>The history of <strong>"Anbani Wine"</strong> began with the friendship of four guys Mamuka, Amiran, George and Giorgi. The guys, like true Georgians, decided to follow the path of their ancestors and engage in wine production using the ancient Georgian traditional approach, especially since they had a common hobby&nbsp;&mdash;&nbsp;natural winemaking. It was in 2015. For almost a year, the founders of the winery were looking for a Vineyard, on the land of which they felt the connection with the vine, which gave hope for prosperity.</p>
+<p>Anbani now owns a vineyard that was planted in 1970. Soon after, the Marani of Kvevri was built, and the founders realized their dream - their natural wine is now produced in the same way as their ancestors did for a long time.</p>
+<p>Location: <strong>Ozhio, Akhmeta, Kakheti, Georgia</strong></p>
+<p>Annual production: <strong>20 000 bottles</strong></p>
+<p><a href="https://www.facebook.com/anbani/" class="c-descript__txt__link" target="_blank">www.facebook.com/anbani</a></p>
+</div>
+<div class="c-descript__map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d47456.3105833068!2d45.3237537!3d41.978393!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xffb7877afa5cea54!2zNDHCsDU4JzQyLjIiTiA0NcKwMjEnMzEuNiJF!5e0!3m2!1sru!2sge!4v1661177326539!5m2!1sru!2sge" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</div>
+
+
+  <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+
+
+
+<!-- Chateau Velisi -->
+<div class="alt-collection-description__collage">
+<img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/cl-velisi.jpg" alt="Chateau Velisi">
+</div>
+<div class="alt-collection-description__c-descript">
+<a href="https://www.facebook.com/chateauvelisi/" class="c-descript__logo" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/logo-velisi.png" alt="Chateau Velisi"></a>
+<div class="c-descript__txt">
+<p>The <strong>Chateau Velisi</strong> winery is located in the easternmost region of Georgia, Kakheti, which is famous for its history of winemaking and a fertile climate for growing local grape varieties. The winery is located in the valley of the Alazani River, with the impressive Caucasus Mountains in the north and the country's capital Tbilisi in the southeast.</p>
+<p>Location: <strong>Village Shilda, Kvareli Municipality, Kakheti Region, Georgia</strong></p>
+<p>Annual production: <strong>1 500 bottles</strong></p>
+<p><a href="https://www.facebook.com/chateauvelisi/" class="c-descript__txt__link" target="_blank">www.facebook.com/chateauvelisi</a></p>
+</div>
+<div class="c-descript__map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14104.501758179102!2d45.70900659790456!3d41.997995410228675!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4045dab3ac46a9f9%3A0x7d8b95312f666c4c!2z0KjQuNC70LTQsA!5e0!3m2!1sru!2sge!4v1710146064319!5m2!1sru!2sge" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</div>
+
+
+  <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+
+
+
+<!-- Winery Shatiri -->
+<div class="alt-collection-description__collage">
+<img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/cl-shatiri.jpg" alt="Winery Shatiri">
+</div>
+<div class="alt-collection-description__c-descript">
+<a href="https://www.facebook.com/wineryshatiri/" class="c-descript__logo" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/logo-shatiri.png" alt="Winery Shatiri"></a>
+<div class="c-descript__txt">
+<p>Without love, it is impossible to do the work that your ancestors have been faithful to for 8000 years. Even in the most difficult times, in a small village basement, you will definitely find a sealed qvevri, preserved by a Georgian to celebrate the upcoming victory. The unique method of qvevri winemaking gives our country much more importance on the wine map of the world. The Shatiri winery, as a tradition of the Shatirishvili family, synthesizes ancient and modern technologies and produces wine that tells Georgian history.</p>
+<p><strong>Winery Shatiri</strong> has its own vineyard near the river Ninoskhevi, in the municipality of Lagodekhi, village Ninigori. Kakheti is the main region of Georgian winemaking. The best quality wines are made from the vineyards located in the Alazani plain. The winery has its own vineyards which include the following varieties: Saperavi, Rkatsiteli, Kisi, Akhmetis Tsiteli, Grdzelmtevana, Kakhuri Mtsivani, and Shavi Rkatsiteli.</p>
+<p>Location: <strong>N.Baratashvili str. 1, Village Shroma, Lagodekhi, Georgia, 2710</strong></p>
+<p>Annual production: <strong>60 000 bottles</strong></p>
+<p><a href="https://www.facebook.com/wineryshatiri/" class="c-descript__txt__link" target="_blank">www.facebook.com/wineryshatiri</a></p>
+</div>
+<div class="c-descript__map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d380530.81604619045!2d46.208016!3d41.830516!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40466bc2d8d49c63%3A0x2b35ff56f596454f!2sWinery%20Shatiri!5e0!3m2!1sru!2sge!4v1710146295170!5m2!1sru!2sge" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</div>
+
+
+  <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+
+
+
+<!-- David Leladze's Family Winery -->
+<div class="alt-collection-description__collage">
+<img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/cl-leladze.jpg" alt="David Leladze's Family Winery">
+</div>
+<div class="alt-collection-description__c-descript">
+<a href="https://www.facebook.com/David-Leladzes-Family-Wineryდავით-ლელაძის-საოჯახო-მარანი-100981918805675/" class="c-descript__logo" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/logo-leladze.png" alt="David Leladze's Family Winery"></a>
+<div class="c-descript__txt">
+<p>The <strong>David Leladze's Family Winery</strong>, one of the oldest in the Imeteri region, has been cultivating and processing grapes for more than a hundred years.</p>
+<p>Already 4 generations of this family, since 1900, have kept the traditions of winemaking, continuing the work of their ancestors. David and his family take care of the vineyards on their own and carefully bring the grapes to the state of wine, as ancient traditions dictate. The terroirs of the Imereti wine region, in which this winery is located, are famous for their fertile soil and favorable climate for organic and healthy grape growth. David is particularly proud of the fact that he makes sure that his vines are grown organically - he uses only biological products and avoids any harmful chemical fertilizers. When working in the cellar, the winemaker uses pitchers and a press made of hazelnut wood from 1900, just like his great-grandfather.</p>
+<p>The family winery of David Leladze is a small, but conscientious enterprise, whose team puts quality above quantity. They produce only 7,000 bottles of wine a year. It is noteworthy that their Dry Pink wine Aladasturi received a silver medal at the International Rose Championship in 2021.</p>
+<p>Location: <strong>Baghdati District Village Rokhi, 2nd Street, House N19, Imereti Region, Georgia</strong></p>
+<p>Annual production: <strong>7 000 bottles</strong></p>
+<p><a href="https://www.facebook.com/David-Leladzes-Family-Wineryდავით-ლელაძის-საოჯახო-მარანი-100981918805675/" class="c-descript__txt__link" target="_blank">www.facebook.com/David-Leladzes-Family-Winery</a></p>
+</div>
+<div class="c-descript__map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11840.689117471951!2d42.714256!3d42.103781!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x405ce92b55c600d3%3A0xfa91c210cc817c7c!2zRGF2aWQgTGVsYWR6ZSBGYW1pbHkgQ2VsbGFyL-GDk-GDkOGDleGDmOGDlyDhg5rhg5Thg5rhg5Dhg6vhg5jhg6Eg4YOh4YOQ4YOd4YOv4YOQ4YOu4YOdIOGDm-GDkOGDoOGDkOGDnOGDmA!5e0!3m2!1sru!2sge!4v1710146516046!5m2!1sru!2sge" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</div>
+
+
+  <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+
+
+
+<!-- Ortomeli -->
+<div class="alt-collection-description__collage">
+<img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/cl-ortomeli.jpg" alt="Ortomeli">
+</div>
+<div class="alt-collection-description__c-descript">
+<a href="www.facebook.com/OrtomeliGeo/" class="c-descript__logo" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/logo-ortomeli.png" alt="Ortomeli"></a>
+<div class="c-descript__txt">
+<p>Georgian Winery <strong>Ortomeli</strong> from Kakheti. The appellation is situated in Kakheti, more precisely in the Sagarejo region around the Gombori Mountains. The wines have a distinctive straw color and a light green hue. The aroma is floral and fruity, reminiscent of white and yellow fruit and wildflowers. They have bright acidity and a subtle, mineral character.</p>
+<p>Alcohol levels are moderate, acidity naturally fresh, and the flavour profile including citrus, nutty, floral, herbal and delicate exotic fruit. If you enjoy the fragrant white wines of, for example, Austria, Alsace and Italy, you will certainly get our whites.</p>
+<p>Location: <strong>Sagarejo, Kakheti, Georgia</strong></p>
+<p>Annual production: <strong>20 000 bottles</strong></p>
+<p><a href="https://www.facebook.com/OrtomeliGeo/" class="c-descript__txt__link" target="_blank">www.facebook.com/OrtomeliGeo</a></p>
+</div>
+<div class="c-descript__map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23820.54261171521!2d45.31826012804834!3d41.7298436881202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x404421577669ead9%3A0xf596aecf52041f93!2z0KHQsNCz0LDRgNC10LTQttC-!5e0!3m2!1sru!2sge!4v1710147316644!5m2!1sru!2sge" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</div>
+
+
+
+<!-- END INSERTED CONTENT -->
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</section>
+</div>
+</div>
+</main>
+</body>
+</html>

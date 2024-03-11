@@ -5,6 +5,7 @@ justify-content: left;
 justify-content: left;
 }
 .price {
+    font-family: var(--font-body-family);
   	font-weight: 700;
     font-size: 16px;
     letter-spacing: .3px;

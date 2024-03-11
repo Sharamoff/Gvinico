@@ -1,5 +1,5 @@
 .search__input.field__input {
-  padding-right: 5rem;
+  padding-right: 1rem;
 }
 
 .icon-header-search {
@@ -41,7 +41,7 @@
   right: 0;
   text-align: center;
   top: 0;
-  width: 104px;
+  width: 100px;
   border-radius: 4px;
   background: var(--color-secondary-hover);
   color: #000;

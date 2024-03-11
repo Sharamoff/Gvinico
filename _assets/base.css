@@ -271,14 +271,22 @@ a {
 /*      margin-top: 30px; */
     padding: 0;
 }
+
+b {
+  font-weight: 600;
+}
+
+strong {
+  font-weight: 700;
+}
+
 a {
     text-decoration: none;
     color: var(--color-base-text);
 }
 .caption-large, .customer .field input, .customer select, .field__input, .form__label, .select__select {
-    font-size: 14px;
-    line-height: 24px;
-    letter-spacing: .05rem;
+    //font-size: 14px;
+    //line-height: 24px;
 }
 .main-container.medium-up--three-quarters {
     width: 80%;
@@ -312,17 +320,18 @@ a {
     position : relative;
 }
 .top_button {
-	top: auto!important;
-    bottom: 40px!important;
-    display: none;
-    height: 40px;
-    width: 40px;
-    position: fixed;
-    right: 50px;
-    text-align: center;
-    z-index: 9999;
-    border-radius: 25px;
-    background: var(--color-secondary-hover);
+  top: auto!important;
+  bottom: 40px!important;
+  display: none;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  right: 50px;
+  text-align: center;
+  z-index: 9999;
+  border-radius: 25px;
+  background: var(--color-secondary-hover);
+  border: solid 2px #ffffff;
 }
   .popup-confirm-transfer-data__close .icon.icon-close {
    width: 17px;
@@ -453,7 +462,6 @@ ul {
 .price {
     font-weight: 500;
     font-size: 16px;
-    letter-spacing: -.1px;
 }
 .compare table {
     width: auto;
@@ -534,7 +542,6 @@ h1, h2, h3, h4, h5, .h0, .h1, .h2, .h3, .h4, .h5 {
     font-family: var(--font-heading-family);
     font-style: var(--font-heading-style);
     font-weight: 500;
-    letter-spacing: 0.06rem;
     color: var(--color-foreground);
     line-height: 1.3;
 }
@@ -595,7 +602,6 @@ blockquote {
 }
 .caption {
     font-size: 1rem;
-    letter-spacing: 0.07rem;
     line-height: 2.7;
 }
 @media screen and (min-width: 750px) {
@@ -609,7 +615,7 @@ blockquote {
 table:not([class]) {
    table-layout: fixed;
    border-collapse: collapse;
-   font-size: 1.4rem;
+   font-size: 16px;
    border-style: hidden;
    box-shadow: none;
    border: 1px solid var(--color-base-border);
@@ -711,7 +717,6 @@ a:empty, ul:empty, dl:empty, div:empty, section:empty, article:empty, p:empty, h
     display: inline-flex;
     font-size: 1.4rem;
     font-weight: 600;
-    letter-spacing: 0.1rem;
     text-decoration: none;
     margin-bottom: 4.5rem;
     white-space: nowrap;
@@ -864,7 +869,6 @@ summary::-webkit-details-marker {
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
-    letter-spacing: 0;
     position: relative;
     padding-bottom: 26px;
 }
@@ -890,7 +894,6 @@ summary::-webkit-details-marker {
 	color: var(--color-base-button-background);
 	font-weight: 500;
 	font-size: 13px;
-	letter-spacing: .5px;
 	text-transform: uppercase;
 }
 .title--primary {
@@ -1169,7 +1172,6 @@ deferred-media {
 }
 .button, .button-label, .customer button, .shopify-challenge__button {
    font-size: 13px;
-   letter-spacing: .5px;
    line-height: 18px;
    font-weight: 500;
    text-transform: uppercase;
@@ -1300,13 +1302,11 @@ deferred-media {
     position: absolute;
     transition: top var(--duration-short) ease, font-size var(--duration-short) ease;
     color: var(--color-foreground-75);
-    letter-spacing: 0.1rem;
     line-height: 1.5;
 }
 .field__input:focus ~ .field__label, .field__input:not(:placeholder-shown) ~ .field__label, .field__input:-webkit-autofill ~ .field__label, .customer .field input:focus ~ label, .customer .field input:not(:placeholder-shown) ~ label, .customer .field input:-webkit-autofill ~ label {
     font-size: 1rem;
     top: 0.3em;
-    letter-spacing: 0.04rem;
 }
 .field__input:focus, .field__input:not(:placeholder-shown), .field__input:-webkit-autofill, .customer .field input:focus, .customer .field input:not(:placeholder-shown), .customer .field input:-webkit-autofill {
     padding: 2.2rem 1.5rem 0.8rem;
@@ -1408,24 +1408,28 @@ img {
 .quantity {
     border: 1px solid var(--color-base-border);
     position: relative;
-    width: 11rem;
     display: inline-flex;
-    border-radius: 4px;   
+    border-radius: 4px;  
+    flex: 1 0 auto;
+    margin-left: 20px;
+    margin-bottom: 5px !important;
 }
+
 .quantity__input {
-    color: currentColor;
-    font-size: 1.4rem;
-    font-weight: 500;
-    opacity: 0.85;
     text-align: center;
     background-color: transparent;
     border: 0;
     padding: 0 0.5rem;
     height: 4rem;
     width: 100%;
+    min-width: 5rem;
     flex-grow: 1;
     -webkit-appearance: none;
     appearance: none;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--color-base-text);
+    margin-bottom: 0 !important;
 }
 .quantity__button {
     width: 4.5rem;
@@ -1453,6 +1457,7 @@ img {
 }
 .quantity__input[type='number'] {
     -moz-appearance: textfield;
+  
 }
 /* component-modal */
 .modal__toggle {
@@ -1586,7 +1591,6 @@ img {
 }
   .announcement-bar .menu-bar .menubar_linklist-item a {
 	font-size: 14px;
-    letter-spacing: .5px;
     font-weight: 400;
     line-height: 20px;
     text-transform: capitalize;
@@ -1662,7 +1666,6 @@ img {
   .announcement-bar .account-label {
    font-size: 13px;
    line-height: 18px;
-   letter-spacing: .5px;
    text-transform: capitalize;
    font-weight: 400;
    cursor: pointer;
@@ -1718,7 +1721,6 @@ img {
 }
 .announcement-bar__message {
 	margin: 0;
-	letter-spacing: .5px;
 	/* display: block; */
 	font-size: 14px;
 	line-height: 18px;
@@ -1751,7 +1753,6 @@ img {
   .account-label {
 	font-size: 14px;
 	line-height: 18px;
-	letter-spacing: .6px;
 	text-transform: capitalize;
 	font-weight: 500;
 	cursor: pointer;
@@ -2104,7 +2105,6 @@ details:not([open]) > .header__icon--menu .icon-close, details[open] > .header__
     padding: 17px 23px;
     position: relative;
     text-transform: capitalize;
-    letter-spacing: .6px;
     color: #222222;
     font-weight: 500;
 }
@@ -2163,7 +2163,6 @@ details:not([open]) > .header__icon--menu .icon-close, details[open] > .header__
    font-weight: 600;
    text-transform: capitalize;
    line-height: 18px;
-   letter-spacing: .8px;
 }
 .header__submenu .header__submenu .header__menu-item {
    font-weight: 400;
@@ -2246,7 +2245,7 @@ details-disclosure > details {
       max-width: 750px;
     }
     .cm-grid__item {
-      width: 44%;
+      width: 40%;
     }
     .announcement-bar .footer__content-bottom {
       float: none;
@@ -2599,21 +2598,31 @@ details-disclosure > details {
 /*svg for header-logo start*/
 .header__heading-link:before{
   content: ' ';
-  background: url('https://cdn.shopify.com/s/files/1/0654/1056/4327/t/4/assets/red-logo.svg');
-  background-repeat:no-repeat;
+  background: url('https://cdn.shopify.com/s/files/1/0654/1056/4327/files/gvinico-logo.svg') 0 50% no-repeat;
+  background-size: contain;
   position:absolute;
-  width:200px;
-  height:51px;
+  width:190px;
+  height:54px;
   top:8px
 }
 header .header__heading-link .h2{font-size:0}
 
  @media (max-width: 1000px) {
-   .header__heading-link:before{height:45px;}
+   .header__heading-link:before{
+     width:158px;
+     height:45px;
+     margin-left:-35px;
+   }
  }
 
  @media (max-width: 480px) {
-   .header__heading-link:before{height: 36px;top: 5px; left: 15px;}
+   .header__heading-link:before{
+     width:123px;
+     height:35px;
+     top:5px;
+     left:15px;
+     margin-left:0;
+   }
    /*for gallery points*/
    .flex-control-paging li a{width:5px!important; height:5px!important}
    .flex-control-nav {bottom: -10%!important;}/*for gallery points end*/
@@ -2622,19 +2631,37 @@ header .header__heading-link .h2{font-size:0}
 
 
 .product__text{color:black; font-weight:500}
-fieldset.product-form__input .form__label{color: #af1a4a;font-size: 14px; margin-bottom: 0;}
-.tab-container {border:none!important; padding:0!important}
-.tab-container #tab-1{padding-top:10px; width:85%}
-.product-form__input input[type=radio]:checked+label {background-color: #ffcd1f!important; border-color:#ffcd1f!important}
 
-.product__type .availability{margin-bottom:10px}
-.js-variant-quantityInStock{background:#af1a4a; padding:5px 10px; border-radius:15px; color:white}
+.tab-container {border:none!important; padding:0!important}
+.tab-container #tab-1{padding-top:10px; width:100%}
+
+.product__type .availability{
+  margin-top: 0px;
+  margin-bottom:20px;
+}
+
+.js-variant-quantityInStock{
+  background: var(--color-base-text);
+  padding: 2px 4px;
+  border-radius:4px;
+  color: white;
+}
+
 .tabs li a.active {background: #f5f5f5!important; color: #000000!important;}
 .tp-min-max, .tp-savings{color:#af1a4a!important}
-.has_tier_prices quantity-input, .cart-item__quantity quantity-input{margin-bottom:5px}
+.has_tier_prices quantity-input, .cart-item__quantity quantity-input{margin-bottom:10px}
 
-.vivino-widget .vivino-widget-wine{ border: 1px solid #eaeaea!important; width: auto!important; padding: 0px 20px 0px 47px; border-radius: 5px; margin-top: 6px; background: url(https://www.vivino.com/assets/widgets/wine_medium_logo-be014a7aef510c03e44ac9fd33f19a7515e51956bda58aff26345afdbeaefc31.png) no-repeat left center!important;
-background-size:40px 40px!important}
+
+
+.vivino-widget .vivino-widget-wine { 
+  border: 1px solid #eaeaea!important;
+  width: auto !important;
+  padding: 0px 20px 0px 47px;
+  border-radius: 5px;
+  margin: 0 0 6px 0;
+  background: url(https://www.vivino.com/assets/widgets/wine_medium_logo-be014a7aef510c03e44ac9fd33f19a7515e51956bda58aff26345afdbeaefc31.png) no-repeat left center!important;
+  background-size: 40px 40px!important
+}
 .vivino-widget .vivino-widget-wine .vivino-widget-rating-stars .vivino-widget-stars [class*='icon'] {}
 .vivino-widget .vivino-widget-wine.vivino-widget-big {margin-top:0}
 .vivino-widget .vivino-widget-wine.vivino-widget-big {max-width: inherit!important;}
@@ -2645,29 +2672,67 @@ background-size:40px 40px!important}
 
 .collection-grid-section {margin-top:20px}
 
-.product_type{color: black!important;}
-.product_type span a{text-decoration: underline!important; font-weight: bold;}
-.product_type span a:hover{color: #af1a4a;}
+.product_type {
+  color: black !important;
+  margin-bottom: 10px;
+}
+.product_type a {
+  text-decoration: underline !important;
+}
+.product_type a:hover {
+  color: var(--color-base-accent-1);
+}
+
+.product_type .product-type {
+  font-weight: normal;
+} 
+
 fieldset.product-form__input .form__label {font-weight: bold!important;}
 .product-form__quantity{position: relative;}
-.tp-min-max{position: absolute;left: 270px; top: -5px;}
-.product-icon-specifications {margin-left:10px}
-.product-icon-specifications img{height:19px; margin-left: 5px;}
-.product-sp-cover-box{display: flex; /*align-items: flex-end;*/ align-items: center;}
+
+.tp-min-max {
+  min-width: 100px;
+  margin-top: -5px;
+}
+
+.tp-min-max div {
+  font-size: 13px;
+  color: var(--color-base-accent-2) !important;
+  margin: 2px 0;
+}
+
 .video-wine-product iframe{width: 100%; height: 200px; }
-.vivino-widget.vivino-wine-card-widget{margin-left:15px}
 .product-type .pdo-icon {height:19px; }
 
 .product-icon-specifications {
-    margin-left: 10px;
-    white-space: nowrap;
-    padding-top: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-size: 11px;
+  color: #AE194A;
+}
+.product-icon-specifications img {
+  height:30px;
+  width:30px;
+  margin-right: 10px;
+}
+
+.product-sp-cover-box{
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.product-cover-wine {
+  margin-bottom: 10px;
+  line-height: 1.1;
+  flex: 1 0 100%;
 }
 
 
 
-#itier_prices{border:none}
-.tp-container, #itier_prices table{border:none}
 .price--on-sale .price-item--regular{line-height: inherit!important;}
 .card-wrapper .product_subtotal{background:#ae194a; padding:20px 20px; border-radius:5px; color:#fff}
 .grid__item .product-hover{bottom:10px; width:80%; left:10%; text-align:center; top: auto}
@@ -2675,13 +2740,15 @@ fieldset.product-form__input .form__label {font-weight: bold!important;}
 .staff-pick-badge:after{ 
     content: " ";
     z-index: 10;
-    width: 72px!important;
-    height: 71px!important;
+    width: 80px!important;
+    height: 80px!important;
     top: 60px!important;
     left: 16px!important;
-    background: url(https://cdn.shopify.com/s/files/1/0654/1056/4327/t/4/assets/staff-pick.svg) no-repeat!important;
-    position: absolute;}
-
+    background-image: url("https://cdn.shopify.com/s/files/1/0654/1056/4327/t/13/assets/staff-pick.svg") !important;
+    background-size: cover !important;
+    position: absolute;
+}
+ 
 /*.staff-pick-badge .media--adapt:after{
     content: " ";
     z-index: 10;
@@ -2701,17 +2768,17 @@ fieldset.product-form__input .form__label {font-weight: bold!important;}
     z-index: 10;
     width: 30px!important;
     height: var(--wine-icons-ht); 
-    bottom: 20px!important;
-    right: 16px!important;
-    background-image: var(--wine-icons-bg); /*url(https://cdn.shopify.com/s/files/1/0654/1056/4327/t/4/assets/natural.svg), url(https://cdn.shopify.com/s/files/1/0654/1056/4327/t/4/assets/pdo.svg)!important;*/
+    bottom: 10px!important;
+    right: 10px!important;
+    background-image: var(--wine-icons-bg); 
     background-repeat: no-repeat!important;
     background-position: 
                      left 0 top 0px,
-                     left 0 top 36px,
-                     left 0 top 72px,
-                     left 0 top 108px,
-                     left 0 top 144px;
-    background-size: 80%,80%,80%,80%,80%;
+                     left 0 top 34px,
+                     left 0 top 68px,
+                     left 0 top 102px,
+                     left 0 top 136px;
+    background-size: 90%,90%,90%,90%,90%;
     position: absolute;}
 
 
@@ -2740,14 +2807,11 @@ fieldset.product-form__input .form__label {font-weight: bold!important;}
 .product-single__description .tabs {border-bottom: 1px solid #dfdfdf; }
 .product-description .tabs li a {border-left: 1px solid #dadada; border-right: 1px solid #dadada; border-top: 1px solid #dadada;}
 #tab-2 .vivino-wine-card-widget {margin-left:0; margin-top: 20px;}
-.product-com-wish{margin-top:15px!important}
-.product-com-wish button {color: #ae194a!important; text-decoration: underline;}
-.product-com-wish button:hover{text-decoration: none;}
 
 .owl-carousel .owl-stage{display:flex; align-items:center}
 .owl-carousel .owl-item img {width:60%}
 
-.tp-container, #itier_prices table {min-height: 61px;}
+
 
 
 /*wishlist*/
@@ -2771,24 +2835,30 @@ fieldset.product-form__input .form__label {font-weight: bold!important;}
     position: absolute;
     bottom: 50px;
     left: 0;
-    width: 400px!important;
-    padding: 5px 20px 10px!important;
+    width: 450px!important;
+    padding: 5px 20px 20px 20px !important;
     border-radius: 10px;
     z-index: 20;
-  box-shadow: 0px 10px 10px #d0d0d0;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.25);
   background: #ffcd1f; 
-  font-weight: 100;
 }
+ @media (max-width: 485px) {
+   .form__label .hidden-box {
+      width: 100% !important;
+   }
+ }
 
 .form__label {display: inline-block; }
-.form__label .show-box{cursor:pointer}
+.form__label .show-box{cursor:pointer; flex: 1 0 auto}
 .form__label span .show-box:hover .hidden-box{display: block;}
-.form__label span img{width:20px}
+.form__label span img{width:22px !important;}
 
 
 
  @media (max-width: 1269px) {
-   .product__info-wrapper.grid__item{width:57%!important}
+   .product__info-wrapper.grid__item {
+     width:70% !important
+   }
  }
 
  @media (max-width: 1120px) {
@@ -2797,14 +2867,21 @@ fieldset.product-form__input .form__label {font-weight: bold!important;}
  }
 
  @media (max-width: 1000px) {
-   .tp-min-max{position:relative; left:0; top:0}
-   .product__info-wrapper.grid__item{width:52%!important}
+   //.tp-min-max{position:relative; left:0; top:0}
+   .product__info-wrapper.grid__item{
+     width:70% !important
+   }
  }
 
  @media (max-width: 980px) {
    .grid__item.product__media-wrapper {width:30%!important;}
-   .product__info-wrapper.grid__item{width:65%!important}
-   .staff-pick-badge:after{width: 57px!important; height: 55px!important;}
+   .product__info-wrapper.grid__item {
+     width:70% !important
+   }
+   .staff-pick-badge:after {
+     width: 60px !important;
+     height: 60px !important;
+   }
    .product-description .tab-container p{width:100%!important}
    .product-description .tab-container img{max-width:47%!important}
  }
@@ -2824,7 +2901,7 @@ fieldset.product-form__input .form__label {font-weight: bold!important;}
 
 
  @media (max-width: 750px) {
-.staff-pick-badge:after {left:35px!important}
+.staff-pick-badge:after {left:10px!important}
  }
 
 
@@ -2832,7 +2909,6 @@ fieldset.product-form__input .form__label {font-weight: bold!important;}
 .grid--2-col .grid__item {width:100%}
 .grid__item.product__media-wrapper, .product__info-wrapper.grid__item{width:100%!important}
 #itier_prices {background-size: 45px!important; padding-left: 55px!important;}
-.staff-pick-badge:after {left:7px!important}
 .card__badge {left: 17px!important;}
  }
 
@@ -2847,11 +2923,14 @@ fieldset.product-form__input .form__label {font-weight: bold!important;}
 
 
 
-/* @media (max-width: 650px) {
-   .tp-min-max{position: initial;}
-    #itier_prices{padding-left: 57px!important; background-size: 55px!important;}
- }
-*/
+
+
+
+
+
+
+
+
 
 
 
