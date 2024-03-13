@@ -300,11 +300,9 @@
     }
 .card-information__wrapper > .price {
     color: var(--color-base-accent-1);
-    font-size: 17px;
-    letter-spacing: .3px;
-    margin-bottom: 12px;
-    font-weight: 700;
-    line-height: 26px;
+    font-size: 18px;
+    margin-top: 8px;
+    font-weight: 600;
     text-align: center;
 }
 .card-information .card-information__text.h5 {
@@ -356,9 +354,9 @@
 .card__badge {
   top: 15px;
   display: block;
-  left: 10px;
+  left: 15px;
   position: absolute;
-  opacity: 0;
+  opacity: 1;
   line-height: 23px;
   transition: all .5s ease 0s;
   -webkit-transition: all .5s ease 0s;
@@ -367,7 +365,7 @@
   -o-transition: all .5s ease 0s;
 }
 
-.grid__item:hover .card__badge {
+.grid__item:hover  {
   opacity: 1;
 }
 .card__badge > * {
@@ -508,9 +506,31 @@
 }
 
 
+#ProductGridContainer .item .item.list-group-item .card-information__wrapper .alt-card-info {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 
 
 
+.staff-pick-badge:after { 
+    content: "";
+    z-index: 2;
+    width: 80px;
+    height: 80px;
+    top: 50px;
+    left: 15px;
+    background-image: url("https://cdn.shopify.com/s/files/1/0654/1056/4327/files/staff-pick.svg") !important;
+    background-size: cover !important;
+    position: absolute;
+}
+@media (max-width: 980px) {
+   .staff-pick-badge:after {
+     width: 60px;
+     height: 60px;
+     //top: 45px;
+   }
+}
 
 
 

@@ -22,9 +22,14 @@
 }
 .article-card__info .caption-with-letter-spacing {
 	color: var(--color-base-button-background);
-	font-weight: 500;
-	font-size: 13px;
-	letter-spacing: .5px;
+	font-weight: 600;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+.article-card__header .article-card__footer span, time {
+	color: var(--color-base-button-background);
+	font-weight: 600;
+	font-size: 14px;
 	text-transform: uppercase;
 }
 .grid--peek .article-card {
@@ -32,6 +37,8 @@
 }
 .blog-articles .circle-divider.caption-with-letter-spacing::after {
   content: '|';
+  font-size: 12px;
+  font-weight: 500;
   position: relative;
   display: inline-block;
   float: none;
@@ -60,11 +67,11 @@
   overflow: hidden;
 }
 
-.article-content img {
+.article-content img, .article-card img {
   transition: transform var(--duration-long) ease;
     }
 
-.article-content:hover img {
+.article-content:hover img, .article-card:hover img {
   transform: scale(1.07);
 }
 
@@ -76,23 +83,24 @@
 }
 .article-card__title {
   width: 100%;
-  padding: 7px 0 10px;
-  font-weight: 500;
+  padding: 8px 0;
+  font-weight: 600;
   font-size: 16px;
-  letter-spacing: .3px;
+  text-transform: uppercase;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
-  line-height: 23px;
+  line-height: 1.2;
 }
 .article-card__title:hover {
   color: var(--color-base-button-background);
     }
 .article-card__info .article-card__excerpt {
-	margin: 0;
+	margin: 0 0 10px;
 	color: var(--color-base-accent-2);
+    font-size: 14px;
 }
 
 .article-card__link {
@@ -103,8 +111,8 @@
   margin: 0;
 }
 .article-card__footer {
-  letter-spacing: .1rem;
-  font-size: 1.4rem;
+  font-size: 14px;
+  font-weight: 400;
   float: left;
   position: relative;
   margin: 0 5px;

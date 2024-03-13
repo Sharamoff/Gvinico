@@ -151,8 +151,8 @@ html.no-js .no-js-hidden {
    }
 }
   .spaced-section:last-child {
-	float: left;
-	width: 100%;
+	//float: left;
+	//width: 100%;
 }
 #sca-brankmark a{
    display:none!important;
@@ -321,15 +321,15 @@ a {
 }
 .top_button {
   top: auto!important;
-  bottom: 40px!important;
+  bottom: 20px !important;
   display: none;
   height: 40px;
   width: 40px;
   position: fixed;
-  right: 50px;
+  right: 20px;
   text-align: center;
   z-index: 9999;
-  border-radius: 25px;
+  border-radius: 50%;
   background: var(--color-secondary-hover);
   border: solid 2px #ffffff;
 }
@@ -674,7 +674,6 @@ a:empty, ul:empty, dl:empty, div:empty, section:empty, article:empty, p:empty, h
     text-underline-offset: 0.3rem;
     color: var(--color-base-text);
     background-color: transparent;
-    font-size: 14px;
     font-family: var(--font-body-family);
 }
 .link--text {
@@ -890,12 +889,7 @@ summary::-webkit-details-marker {
 .title-wrapper {
     margin-bottom: 3rem;
 }
-.article-card__header .article-card__footer span, time {
-	color: var(--color-base-button-background);
-	font-weight: 500;
-	font-size: 13px;
-	text-transform: uppercase;
-}
+
 .title--primary {
     margin: 4rem 0;
 }
@@ -2450,11 +2444,7 @@ details-disclosure > details {
         min-height: 195px;
     }
 }
-@media (max-width: 380px) {  
-    .grid {
-        margin: 0 -10px;
-    }
-}
+
 
   
 /******** wishlist & compare  *********/
@@ -2737,35 +2727,12 @@ fieldset.product-form__input .form__label {font-weight: bold!important;}
 .card-wrapper .product_subtotal{background:#ae194a; padding:20px 20px; border-radius:5px; color:#fff}
 .grid__item .product-hover{bottom:10px; width:80%; left:10%; text-align:center; top: auto}
 .product.grid.grid--1-col.grid--2-col-tablet{position:relative;}
-.staff-pick-badge:after{ 
-    content: " ";
-    z-index: 10;
-    width: 80px!important;
-    height: 80px!important;
-    top: 60px!important;
-    left: 16px!important;
-    background-image: url("https://cdn.shopify.com/s/files/1/0654/1056/4327/t/13/assets/staff-pick.svg") !important;
-    background-size: cover !important;
-    position: absolute;
-}
- 
-/*.staff-pick-badge .media--adapt:after{
-    content: " ";
-    z-index: 10;
-    width: 30px!important;
-    height: 50px!important;
-    bottom: 20px!important;
-    right: 16px!important;
-    background-image: url(https://cdn.shopify.com/s/files/1/0654/1056/4327/t/4/assets/natural.svg), url(https://cdn.shopify.com/s/files/1/0654/1056/4327/t/4/assets/pdo.svg)!important;
-    background-repeat: no-repeat!important;
-    background-position: center top,center bottom;
-    background-size: 80%,100%;
-    position: absolute;}
-*/
+
+
 
 .wine-icons:after{
     content: " ";
-    z-index: 10;
+    z-index: 2;
     width: 30px!important;
     height: var(--wine-icons-ht); 
     bottom: 10px!important;
@@ -2782,8 +2749,6 @@ fieldset.product-form__input .form__label {font-weight: bold!important;}
     position: absolute;}
 
 
-
-.card__badge{left:31px!important; opacity:100!important}
 
 .parallex-title, .parallex-heading {color:#000!important}
 .parallex-image{background-attachment: inherit!important;}
@@ -2878,10 +2843,6 @@ fieldset.product-form__input .form__label {font-weight: bold!important;}
    .product__info-wrapper.grid__item {
      width:70% !important
    }
-   .staff-pick-badge:after {
-     width: 60px !important;
-     height: 60px !important;
-   }
    .product-description .tab-container p{width:100%!important}
    .product-description .tab-container img{max-width:47%!important}
  }
@@ -2900,11 +2861,6 @@ fieldset.product-form__input .form__label {font-weight: bold!important;}
  }
 
 
- @media (max-width: 750px) {
-.staff-pick-badge:after {left:10px!important}
- }
-
-
  @media (max-width: 600px) {
 .grid--2-col .grid__item {width:100%}
 .grid__item.product__media-wrapper, .product__info-wrapper.grid__item{width:100%!important}
@@ -2919,8 +2875,29 @@ fieldset.product-form__input .form__label {font-weight: bold!important;}
 .slider.slider--tablet .slider__slide {width:100%}
  }
 
+.alt-dlv {
+  display: block !important;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  height: 17px;
+  background: url("https://cdn.shopify.com/s/files/1/0654/1056/4327/t/13/assets/dlv.svg") center center no-repeat;
+}
 
-
+.bdwn-presentation {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px dashed var(--color-base-accent-1) !important;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-base-accent-1) !important;
+}
 
 
 

@@ -56,16 +56,7 @@
 }
 
 
-.template-search__results .grid__item .products {
-  border-top: 1px solid #ededed;
-  border-right: 1px solid #ededed;
-}
-.template-search__results .grid__item:nth-child(-n+4) .products {
-  border-top: 0;
-}
-.template-search__results .grid__item:nth-child(4n+4) .products {
-  border-right: 0;
-}
+
 
 /* Remove extra spacing for search inputs in Safari */
 input::-webkit-search-decoration {

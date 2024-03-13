@@ -30,34 +30,34 @@
   <style>
     /*** from settings_data.json ***/
     :root {
-      --font-body-family: "Arimo"; /*{{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};*/
+      --font-body-family: "Inter"; /*{{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};*/
       --font-body-style: normal; /*{{ settings.type_body_font.style }};*/
       --font-body-weight: 400; /*{{ settings.type_body_font.weight }};*/
-      --font-heading-family: "Arimo"; /*{{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};*/
+      --font-heading-family: "Cormorant Garamond"; /*{{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};*/
       --font-heading-style: normal; /*{{ settings.type_header_font.style }};*/
       --font-heading-weight: 400; /*{{ settings.type_header_font.weight }};*/
-      --color-base-text: "#000000"; /*{{ settings.colors_text }};*/
+      --color-base-text: #000000; /*{{ settings.colors_text }};*/
       --color-base-text-rgb: rgb(0, 0, 0); /*{{ settings.colors_text | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
-      --color-base-background-1: "#ffffff"; /*{{ settings.colors_background_1 }};*/
+      --color-base-background-1: #ffffff; /*{{ settings.colors_background_1 }};*/
       --color-base-background-1-rgb: rgb(255, 255, 255); /*{{ settings.colors_background_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
-      --color-base-accent-1: "#ae194a"; /*{{ settings.colors_accent_1 }};*/
+      --color-base-accent-1: #ae194a; /*{{ settings.colors_accent_1 }};*/
       --color-base-accent-1-rgb: rgb(174, 25, 74); /*{{ settings.colors_accent_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
-      --color-base-accent-2: "#777777"; /*{{ settings.colors_accent_2 }};*/
+      --color-base-accent-2: #777777; /*{{ settings.colors_accent_2 }};*/
       --color-base-accent-2-rgb: rgb(119, 119, 119); /*{{ settings.colors_accent_2 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
-      --color-base-border: "#dddddd"; /*{{ settings.colors_border }};*/
-      --color-base-button-text: "#ffffff"; /*{{ settings.button_text }};*/
-      --color-base-button-text-hover: "#000000"; /*{{ settings.button_text_hover }};*/
-      --color-base-button-background: "#ae194a"; /*{{ settings.button_background }};*/
-      --color-base-button-background-hover: "#ffcc1d"; /*{{ settings.button_background_hover }};*/
+      --color-base-border: #dddddd; /*{{ settings.colors_border }};*/
+      --color-base-button-text: #ffffff; /*{{ settings.button_text }};*/
+      --color-base-button-text-hover: #000000; /*{{ settings.button_text_hover }};*/
+      --color-base-button-background: #ae194a; /*{{ settings.button_background }};*/
+      --color-base-button-background-hover: #ffcc1d; /*{{ settings.button_background_hover }};*/
       --color-base-text-opacity-10-percent: rgba(0, 0, 0, 0.1); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 10 }};*/
       --color-base-text-opacity-20-percent: rgba(0, 0, 0, 0.2);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 20 }};*/
       --color-base-text-opacity-55-percent: rgba(0, 0, 0, 0.55);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 55 }};*/
       --color-base-text-opacity-85-percent: rgba(0, 0, 0, 0.85); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 85 }};*/
       --color-base-accent-1-opacity-10-percent: rgba(174, 25, 74, 0.1); /*{{ settings.colors_accent_1 | color_mix: settings.colors_background_1, 10 }};*/
       --color-base-accent-2-opacity-10-percent: rgba(119, 119, 119, 0.1); /*{{ settings.colors_accent_2 | color_mix: settings.colors_background_1, 10 }};*/
-      --color-rating-empty: "#dddddd"; /*{{ settings.rating_empty }};*/
-      --color-rating-filled: "#000000"; /*{{ settings.rating_filled }};*/
-      --color-secondary-hover: "#ffcc1d"; /*{{ settings.secondary_hover_color }};*/
+      --color-rating-empty: #dddddd; /*{{ settings.rating_empty }};*/
+      --color-rating-filled: #000000; /*{{ settings.rating_filled }};*/
+      --color-secondary-hover: #ffcc1d; /*{{ settings.secondary_hover_color }};*/
     }
     :root {
       --color-base-background-2: #f0f0f0;
@@ -85,13 +85,13 @@
       grid-template-columns: 100%;
       min-height: 100%;
       margin: 0;
-      font-size: 14px;
-      letter-spacing: 0.5px;
-      line-height: 24px;
+      font-size: 16px;
+      letter-spacing: normal !important;
+      line-height: 1.4;
       font-family: var(--font-body-family);
       font-style: var(--font-body-style);
       font-weight: var(--font-body-weight);
-      color: var(--color-base-accent-2);
+      color: var(--color-base-text);
     }
   </style>
   <link href="_assets/base.css" rel="stylesheet">
