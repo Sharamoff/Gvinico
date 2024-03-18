@@ -17,10 +17,16 @@
   justify-content: center;
   margin: 1.5rem auto 0;
 }
+.newsletter-form__message .icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
 
 .newsletter-form__message--success {
   margin-top: 2rem;
   color: #fff;
+  font-size: 16px;
 }
 
 .newsletter-form {

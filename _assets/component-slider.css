@@ -213,7 +213,7 @@ transform: rotate(90deg) translateX(-0.15rem) scale(1.07);
   slider-component .slider-buttons {
     bottom: 5px;
     top: auto;
-    width: 85px;
+    width: 120px;
     margin: 0 auto;
     left: 0;
     right: 0;

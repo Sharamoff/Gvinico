@@ -1,8 +1,6 @@
 .alt-pages {
-  color: var(--color-base-text);
   font-size: 16px;
   letter-spacing: normal;
-  line-height: 1.44;
 }
 @media screen and (max-width: 768px) {
   .alt-pages {
@@ -11,6 +9,15 @@
 }
 
 
+.alt-pages  a {
+  color: #333333;
+  text-decoration: underline !important;
+  transition: 0.5s all;
+}
+.alt-pages  a:hover {
+  color: var(--color-base-accent-1);
+  text-decoration: none !important;
+}
 
 .alt-pages .alt-text16 {
   font-size: 16px;
@@ -48,6 +55,7 @@
 }
 
 .alt-pages .h3-gr {
+  font-family: var(--font-body-family);
   font-size: 27px;
   line-height: 1.1;
   font-weight: bold;
@@ -201,11 +209,60 @@
 }
 
 
+.alt-pages .block-article {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 20px
+}
+@media screen and (max-width: 768px) {
+  .alt-pages .block-article {
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 485px) {
+  .alt-pages .block-article {
+    flex-direction: column;
+    gap: 0;
+  }
+}
 
+.alt-pages .block-article__text {
+flex: 0 1 60%;
+}
+@media screen and (max-width: 990px) {
+  .alt-pages .block-article__text {
+    flex: 0 1 50%;
+  }
+}
+@media screen and (max-width: 485px) {
+  .alt-pages .block-article__text {
+    order: 2;
+  }
+}
 
+.alt-pages .block-article__pic {
+  flex: 0 1 40%;
+  margin-top: 27px;
+}
+@media screen and (max-width: 990px) {
+  .alt-pages .block-article__pic {
+    flex: 0 1 50%;
+  }
+}
+@media screen and (max-width: 485px) {
+  .alt-pages .block-article__pic {
+    order: 1;
+  }
+}
 
+.alt-pages .block-article__pic img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+}
 
-
-
+.alt-pages .block-article__50 {
+  flex: 0 1 50%;
+}
 
 

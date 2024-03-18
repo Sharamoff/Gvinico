@@ -191,7 +191,7 @@
   padding: 0;
   display: block;
   position: relative;
-  z-index: 101;
+  z-index: 9;
 }
 @media screen and (min-width: 750px) {
   .collection-filters > * + * {
@@ -465,8 +465,7 @@ a.active-facets__button:hover {
   bottom: 0;
   background-color: var(--color-foreground-50);
   pointer-events: none;
-  z-index: 999 !important;
-  
+ 
 }
 .mobile-facets__wrapper {
   margin-left: 0;

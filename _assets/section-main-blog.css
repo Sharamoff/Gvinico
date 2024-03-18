@@ -7,7 +7,6 @@
 }
 .blog-articles .article-card {
 	padding: 0;
-    cursor: pointer;
 }
 .template-blog .title--primary {
 	float: left;
@@ -23,7 +22,7 @@
     flex-direction: column;
     justify-content: space-between; 
     padding: 20px 20px;
-    min-height: 220px;
+    min-height: 250px;
 }
 @media screen and (max-width: 749px) {
   .blog-articles .article-card__info {

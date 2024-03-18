@@ -16,7 +16,7 @@
 
 .newsletter.center {
 	text-align: center;
-	padding: 69px 0;
+	padding: 40px 0;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
@@ -30,40 +30,33 @@
 }
 .newsletter.center .h1 {
 	position: relative;
-    color: var(--color-base-background-1);
+    color: #ffffff;
     font-weight: 500;
-    line-height: 40px;
     text-transform: uppercase;
-    letter-spacing: .1px;
     margin: 0;
-    font-size: 42px;
-    padding-top: 18px;
+    font-size: 32px;
+    padding-top: 15px;
 }
  .newsletter__subheading.rte a {
-	color: var(--color-base-accent-1);
+	color: #ffffff;
 	font-weight: 600;
-	font-size: 14px;
+	font-size: 16px;
 }
-.newsletter__subheading {
-	letter-spacing: .7px;
-}
+
 .newsletter-form__field-wrapper .field__label {
 	color: #bcbcbc;
-	font-size: 13px;
-	top: 1.3rem;
-	letter-spacing: .5px;
+	font-size: 14px;
+	top: 12px;
 }
 .newsletter .newsletter__subheading.rte {
-	font-size: 14px;
-    line-height: 34px;
-    color: var(--color-base-background-1);
+	font-size: 16px;
+    color: #ffffff;
     text-transform: none;
     margin-top: 10px;
-    margin-bottom: 18px;
-    letter-spacing: 0.5px;
+    margin-bottom: 20px;
 }
 .newsletter__wrapper .newsletter-form__field-wrapper {
-  max-width: 49rem;
+  max-width: 490px;
 }
 
 .newsletter-form__field-wrapper .newsletter-form__message {
@@ -82,6 +75,8 @@
     padding: 11px 18px;
     background: var(--color-secondary-hover);
     color: #000;
+    font-size: 14px;
+    font-weight: 600;
     min-width: 130px;
 }
 .newsletter.center .footer__list-social.list-unstyled.list-social {
@@ -90,6 +85,10 @@
 }
 .newsletter.center .footer__list-social .list-social__item {
 	margin: 0 5px;
+}
+.newsletter.center .footer__list-social .list-social__item .icon {
+	width: 30px;
+    height: 30px;
 }
 .newsletter.center .icon.icon-mail {
 	width: 52px;

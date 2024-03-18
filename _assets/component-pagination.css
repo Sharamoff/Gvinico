@@ -84,3 +84,9 @@ a.pagination__item:hover::after {
 .pagination__item-arrow:hover::after {
   display: none;
 }
+
+@media screen and (max-width: 479px) {
+  .pagination__list {
+    justify-content: center;
+  }
+}

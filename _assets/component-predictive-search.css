@@ -1,5 +1,5 @@
 .site-header__search .predictive-search {
-  top:50px;
+  top:52px;
 }
 .predictive-search {
 	display: none;
@@ -8,9 +8,16 @@
 	width: 100%;
 	left: auto;
 	border: 1px solid var(--color-base-border);
-	z-index: 3;
+	z-index: 9999 !important;
 	background-color: var(--color-background);
 }
+.predictive-search h2 {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: var(--font-body-family);
+}
+
 
 .predictive-search--search-template {
   z-index: 2
@@ -35,9 +42,6 @@
 } 
 
 @media screen and (min-width: 750px) {
-  .predictive-search {
-    border-top: none; 
-  }
 
   .header predictive-search { 
     position: relative;
@@ -105,6 +109,9 @@ predictive-search[loading] .predictive-search__results-list:first-child {
   grid-column-gap: 2rem;
   grid-template-areas: 'product-image product-content';
 } 
+.predictive-search__item--link:hover {
+  background: #eeeeee;
+}
 
 .predictive-search__item-content {
   grid-area: product-content;
@@ -119,29 +126,25 @@ predictive-search[loading] .predictive-search__results-list:first-child {
 .predictive-search__item-vendor {
 	font-size: 12px;
 	color: var(--color-base-accent-1);
-	font-family: var(--font-heading-family);
 	font-style: italic;
-}
-
-.predictive-search__item-heading {
-  margin: 0;
 }
 
 .predictive-search__item .price {
   font-size: 1.2rem;
   display: flex;
 }
-.predictive-search__item-vendor + .predictive-search__item-heading{
-	margin-top: .5rem;
-	font-size: 14px;
-	font-family: var(--font-body-family);
-	color: var(--color-base-accent-2);
+
+.predictive-search__item-headin {
+    font-family: var(--font-heading-family);
+    font-size: 21px;
+    font-weight: 500;
+    margin: 0;
 }
 
+
 .predictive-search .price {
-  	font-family: var(--font-heading-family);
-  	margin-top: .5rem;
-	font-size: 16px;
+  	margin-top: 2px;
+	font-size: 14px;
 	color: var(--color-base-accent-1);
 }
 
@@ -151,6 +154,7 @@ predictive-search[loading] .predictive-search__results-list:first-child {
 	padding: 1.3rem 2rem;
 	word-break: break-all;
 	color: var(--color-base-accent-2);
+  font-size: 14px;
 }
 
 @media screen and (min-width: 750px) {
