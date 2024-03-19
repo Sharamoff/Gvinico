@@ -50,6 +50,21 @@
   }
 }
 
+.alt-pages .alt-note {
+  color: var(--color-base-accent-2);
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: center;
+  line-height: 1.2;
+}
+.alt-pages .alt-note a {
+  color: #000000;
+  text-decoration: none !important;
+}
+.alt-pages .alt-note a:hover {
+  color: var(--color-base-accent-1);
+}
+
 .alt-pages .h-color-accent-1 {
   color: #ae194a !important;
 }
@@ -227,7 +242,7 @@
 }
 
 .alt-pages .block-article__text {
-flex: 0 1 60%;
+  flex: 0 1 60%;
 }
 @media screen and (max-width: 990px) {
   .alt-pages .block-article__text {
