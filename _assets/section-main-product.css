@@ -215,7 +215,7 @@
   text-transform: uppercase;
   font-weight: 600;
   border: 1px solid transparent;
-  font-size: 13px;
+  font-size: 14px;
   border-radius: 4px 4px 0 0; 
 }
 .product__info-wrapper {
@@ -488,7 +488,7 @@ a.product__text {
   line-height: 1.1;
   text-transform: capitalize;
   margin: 0 0 20px 0;
-  padding-right: 100px;
+  padding-right: 150px;
 }
 .product__title a {
   color: var(--color-base-accent-2);

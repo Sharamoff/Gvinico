@@ -25,14 +25,13 @@
     transform: scale(1.0) !important;
 }
 .collection-list__item h3 {
-	font-size: 17px;
+	font-size: 25px;
+    line-height: 20px;
     font-weight: 500;
-    line-height: 22px;
-    letter-spacing: .5px;
     text-transform: capitalize;
     color: var(--color-base-text);
     text-align: center;
-    font-family: var(--font-body-family);
+    font-family: var(--font-heading-family);
     text-overflow: ellipsis;
     white-space: nowrap;
     display: block;
@@ -49,7 +48,8 @@
     padding: 0;
 }
 .collection-list__item.grid__item .product_count {
-    font-size: 15px;
+    font-size: 16px;
+    color: var(--color-base-accent-2);
     justify-content: center;
     display: flex;
     transition: all 0.3s ease 0s;
@@ -72,7 +72,6 @@
     background: 0 0;
     color: var(--color-base-accent-1);
     font-size: 14px;
-    line-height: 18px;
     opacity: 0;
     text-transform: uppercase;
     transition: all 0.5s ease 0s;

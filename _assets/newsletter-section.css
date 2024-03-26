@@ -34,7 +34,8 @@
     font-weight: 500;
     text-transform: uppercase;
     margin: 0;
-    font-size: 32px;
+    font-size: 27px;
+    line-height: 1;
     padding-top: 15px;
 }
  .newsletter__subheading.rte a {
@@ -81,6 +82,7 @@
 }
 .newsletter.center .footer__list-social.list-unstyled.list-social {
 	justify-content: center;
+  align-items: center;
 	margin-top: 30px;
 }
 .newsletter.center .footer__list-social .list-social__item {
@@ -104,17 +106,7 @@
 }
 
 
-@media screen and (max-width: 1269px) { 
-  	.newsletter.center .h1 {
-		font-size: 32px;
-	}
-}
-@media screen and (max-width: 989px) { 
-  .newsletter.center .h1 {
-      font-size: 28px;
-      line-height: 30px;
-  }
-}
+
  @media screen and (max-width: 749px) {
 	.newsletter__button {
 		margin-top: 0;
@@ -141,10 +133,6 @@
         line-height: 20px;
         text-align: center;
     }
-   .newsletter.center .h1 {
-      font-size: 26px;
-      line-height: 28px;
-  }
 }  
 @media screen and (max-width: 479px) {
 	.newsletter__button.button {
@@ -157,7 +145,6 @@
     }
     .newsletter.center .h1 {
         font-size: 24px;
-        line-height: 26px;
         padding-top: 15px;
     }
 }

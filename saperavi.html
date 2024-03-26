@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--**************************************************** from template.liquid **************************************************-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="">
+  <title>GVINICO_PAGE-TEMPLATE</title>
+  <link href="https://cdn.shopify.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.shopifycdn.com" rel="preconnect" crossorigin>
+  <link href="_assets/component-price.css" rel="stylesheet" media="print">
+  <script src="_assets/product-form.js" defer="defer"></script>
+  <script src="_assets/global.js" defer="defer"></script>
+  <script src="_assets/owl.carousel.min.js" defer="defer"></script>
+  <script src="_assets/wishlist.js" defer="defer"></script>
+  <script src="_assets/compare.js" defer="defer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css">
+  <link href="_assets/quickview.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <style>
+    /*** from settings_data.json ***/
+    :root {
+      --font-body-family: "Inter"; /*{{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};*/
+      --font-body-style: normal; /*{{ settings.type_body_font.style }};*/
+      --font-body-weight: 400; /*{{ settings.type_body_font.weight }};*/
+      --font-heading-family: "Cormorant Garamond"; /*{{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};*/
+      --font-heading-style: normal; /*{{ settings.type_header_font.style }};*/
+      --font-heading-weight: 400; /*{{ settings.type_header_font.weight }};*/
+      --color-base-text: #000000; /*{{ settings.colors_text }};*/
+      --color-base-text-rgb: rgb(0, 0, 0); /*{{ settings.colors_text | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-background-1: #ffffff; /*{{ settings.colors_background_1 }};*/
+      --color-base-background-1-rgb: rgb(255, 255, 255); /*{{ settings.colors_background_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-1: #ae194a; /*{{ settings.colors_accent_1 }};*/
+      --color-base-accent-1-rgb: rgb(174, 25, 74); /*{{ settings.colors_accent_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-2: #777777; /*{{ settings.colors_accent_2 }};*/
+      --color-base-accent-2-rgb: rgb(119, 119, 119); /*{{ settings.colors_accent_2 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-border: #dddddd; /*{{ settings.colors_border }};*/
+      --color-base-button-text: #ffffff; /*{{ settings.button_text }};*/
+      --color-base-button-text-hover: #000000; /*{{ settings.button_text_hover }};*/
+      --color-base-button-background: #ae194a; /*{{ settings.button_background }};*/
+      --color-base-button-background-hover: #ffcc1d; /*{{ settings.button_background_hover }};*/
+      --color-base-text-opacity-10-percent: rgba(0, 0, 0, 0.1); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-text-opacity-20-percent: rgba(0, 0, 0, 0.2);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 20 }};*/
+      --color-base-text-opacity-55-percent: rgba(0, 0, 0, 0.55);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 55 }};*/
+      --color-base-text-opacity-85-percent: rgba(0, 0, 0, 0.85); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 85 }};*/
+      --color-base-accent-1-opacity-10-percent: rgba(174, 25, 74, 0.1); /*{{ settings.colors_accent_1 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-accent-2-opacity-10-percent: rgba(119, 119, 119, 0.1); /*{{ settings.colors_accent_2 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-rating-empty: #dddddd; /*{{ settings.rating_empty }};*/
+      --color-rating-filled: #000000; /*{{ settings.rating_filled }};*/
+      --color-secondary-hover: #ffcc1d; /*{{ settings.secondary_hover_color }};*/
+    }
+    :root {
+      --color-base-background-2: #f0f0f0;
+      --color-base-background-2-rgb: rgb(240, 240, 240);
+      --color-base-solid-button-labels: #000000;
+      --color-base-solid-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-outline-button-labels: #000000;
+      --color-base-outline-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-color-base-accent-1: var(--color-base-accent-1); ;
+    }
+    /*** end from settings_data.json ***/
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+    html {
+      box-sizing: border-box;
+      font-size: 62.5%;
+      height: 100%;
+    }
+    body {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: normal !important;
+      line-height: 1.4;
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
+      color: var(--color-base-text);
+    }
+  </style>
+  <link href="_assets/base.css" rel="stylesheet">
+  <link href="_assets/component-predictive-search.css" rel="stylesheet">
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+  <style>
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 600;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-600.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-600.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-600.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 700;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-700.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-700.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-700.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    .slideshow__subheading, .slideshow__subtitle,
+    .title, .title-wrapper-with-link,
+    .cms-banner-title-three,
+    .parallex-title,
+    .two-banner .cms-banner-subtitle-three,
+    .newsletter.center .h1,
+    .breadcrumb_title{
+      font-family: 'Cormorant Garamond', serif !important;
+    }
+  </style>
+  <!--*** from page.liquid ***-->
+  <link href="_assets/component-rte.css" rel="stylesheet">
+  <link href="_assets/section-main-page.css" rel="stylesheet">
+  <!--*** end from page.liquid ***-->
+  <!--*** style of inserted content in template.liquid ***-->
+
+
+  <link href="_assets/section-blog-post.css" rel="stylesheet">
+
+
+  <link href="assets/alt-pages.css" rel="stylesheet">
+  <!--*** end style of inserted content in template.liquid ***-->
+
+
+
+
+
+</head>
+<body class="template-page">
+<main class="main-content" id="MainContent" role="main" tabindex="-1">
+<!--**************************************************** end from template.liquid **************************************************-->
+<div class="page-width contents">
+<div class="main-container">
+<section class="shopify-section spaced-section">
+<div class="page-width page-width--narrow">
+<div class="rte" style="padding-top: 100px; padding-bottom: 100px">
+
+
+
+
+
+
+
+
+
+
+  <!-- INSERTED CONTENT -->
+
+<section class="alt-pages">
+<p class="alt-text18 alt-text-width66 p--first"><strong>Saperavi</strong>, the most widely planted grape in Georgia, has earned its place as a global ambassador for the country's viticultural heritage. This intensely pigmented red grape is renowned for crafting some of the nation's most celebrated wines. Anyone who has tried it at least once will never forget its vibrant flavor and inky, almost black color.</p>
+<div class="block-article">
+<div class="block-article__pic">
+<img alt="Saperavi Grape" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/p-saperavi1.jpg">
+<div class="alt-note">Ripe Saperavi grapes at the <a href="https://gvinico.com/collections/pongino-wine">Pongino Wine</a> vineyard.</div>
+</div>
+<div class="block-article__text">
+<h3 class="h3-gr h-color-accent-1">Name</h3>
+<p>Saperavi (or საფერავი in Georgian) translates as "dye" – and it is a fitting name for this grape variety with red pigmented juice and flesh that belongs to the unique category of teinturier grapes.</p>
+<h3 class="h3-gr h-color-accent-1">Origin</h3>
+<p>Saperavi is as ancient as the Georgian winemaking tradition itself. Believed to have originated in western Georgia, it has flourished nationwide for centuries. While there aren’t any written records to confirm, morphological features of the variety itself, like the colored pulp of the berry, the similarity to other aboriginal varieties, and a large number of specific types and clones of Saperavi in the territory of Georgia, indicate that the variety has been cultivated here for centuries in various terroirs. Professor Cholokashvili and Dr. N. Chakhnashvili, based on their study of flower characteristics in wild and cultivated varieties, even concluded that Saperavi, Rkatsiteli, and Chkhapa might represent a transitional stage between wild and domesticated grapes. These varieties are certainly among the oldest cultivated ones.</p>
+<h3 class="h3-gr h-color-accent-1">Viticulture</h3>
+<p>Saperavi, a remarkably resilient grape, provides quality even when the yield is high. Of all the varieties cultivated in Kakheti, it is the most resistant to powdery mildew and other fungal diseases. Saperavi is also very resistant to frost, which makes it an extremely suitable variety for regions with a continental climate and cold winters. However, it suffers greatly from phylloxera and is currently grown on rootstock almost everywhere, except for the old Georgian province of Saingilo (now the territory of Azerbaijan), where Saperavi and Rkatsiteli are still cultivated on their original roots.</p>
+<p>Kakheti remains the heartland of Saperavi cultivation, with Kartli following behind. Outside Georgia, Saperavi is spread across the Caucasus region and along the Black Sea shores, primarily in former Soviet republics like Ukraine, Russia, Moldova, Armenia, Azerbaijan, and even as far as Uzbekistan and Kazakhstan. It has even ventured into vineyards across the globe, finding its place in the USA, Canada, Australia, and New Zealand.</p>
+</div>
+</div>
+<div class="block-article">
+<div class="block-article__pic">
+<img alt="Khashimi" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/p-saperavi2.jpg">
+<div class="alt-note">The <a href="https://gvinico.com/collections/pongino-wine">Pongino Wine</a> vineyard in the village Bakurtsikhe of Khashmi micro-zone.</div>
+</div>
+<div class="block-article__text">
+<h3 class="h3-gr h-color-accent-1">Wine styles</h3>
+<ul class="ul--list-reddot">
+<li>
+<p>Dry Saperavi can be made using either the traditional method of fermentation in qvevri or the European method with subsequent aging in oak. Sometimes winemakers combine both methods to achieve a more complex aroma and soften the tannins. In cooler terroirs, it shines with vibrant acidity and notes of red berries, exuding elegance. Warmer climates yield bolder Saperavi, boasting deep color, rich dark fruit aromas, hints of spice, and robust tannins built for aging. Dry red Saperavi wines are produced throughout Georgia, but biggest part is in Kakheti with acclaimed vineyards found along the Alazani River: the most famous terroir and PDO Mukuzani, as well as the micro-zones of Tsinandali, Vazisubani, Gurjaani, Kardenakhi, and Bakurtsikhe. On the left bank, the best Saperavi can be found in the PDOs Napareuli and Kvareli.</p>
+</li>
+<li>
+<p>Semi-sweet Saperavi is mainly produced in Kakheti on the south-facing vineyards in the Kvareli Municipality (Kindzmarauli PDO). More balanced and elegant wines are obtained on the right bank of the Alazani River in the Akhasheni PDO. Saperavi's inherent acidity and tannins create a beautiful balance with the touch of residual sweetness. This makes semi-sweet wines a classic pairing for Georgian cuisine's rich, flavorful spices.</p>
+</li>
+<li>
+<p>Saperavi Rosé wines mostly range from dry to semi-dry. These light-bodied rosés burst with delicate floral and red berry aromas, complemented by pleasant acidity. Their hues range from the pale blush to near-ruby, showcasing the winemaker's touch. Saperavi Rosé provides a delightful alternative to heavier reds, especially during warmer weather.</p>
+</li>
+<li>
+<p>Sparkling Saperavi is quite often crafted by small, artisanal winemakers as red or rosé pét-nat. Expect light-bodied yet intensely aromatic and flavorful wines.</p>
+</li>
+<li>
+<p>Sweet Saperavi style lends beautifully the grape’s bold character. These wines are typically made using the late harvest method. Less frequently, they are produced as fortified wines in the style of Port. Both styles yielding wines that explode with blackcurrant and sweet spice aromas, with a luxurious richness on the palate balanced by tannins.</p>
+</li>
+</ul>
+</div>
+</div>
+</section>
+
+  <!-- END INSERTED CONTENT -->
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body>
+</html>

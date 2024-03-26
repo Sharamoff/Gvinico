@@ -1,5 +1,5 @@
 .site-header__search .predictive-search {
-  top:52px;
+  top: 44px;
 }
 .predictive-search {
 	display: none;
@@ -28,9 +28,6 @@
     right: 0;
     left: 0;
     top: 100%;
-  }
-  .site-header__search .predictive-search {
-      top: 48px;
   }
 }
 
@@ -136,9 +133,12 @@ predictive-search[loading] .predictive-search__results-list:first-child {
 
 .predictive-search__item-headin {
     font-family: var(--font-heading-family);
-    font-size: 21px;
+    font-size: 22px;
     font-weight: 500;
     margin: 0;
+}
+.predictive-search__item-headin span {
+  color: var(--color-base-accent-2);
 }
 
 

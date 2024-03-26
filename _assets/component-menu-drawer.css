@@ -31,11 +31,11 @@ menu-drawer > details[open] > summary::before {
 	position: fixed;
 	transform: translateX(-100%);
 	visibility: hidden;
-	z-index: 10;
-    height: 100%;
+	z-index: 999;
+    height: 100dvh;
 	left: 0;
     top: 0;
-	width: 30rem;
+	min-width: 30rem;
 	padding: 0;
 	border-left: 0;
 	background-color: var(--color-background);
@@ -71,7 +71,11 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .menu-drawer__inner-container {
   position: relative;
+  z-index: 999;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .menu-drawer__navigation-container {
@@ -80,6 +84,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   align-content: space-between;
   overflow-y: auto;
   height: 100%;
+}
+
+.menu-drawer__navigation {
+  padding-top: 40px;
 }
 
 .menu-drawer__inner-submenu {
@@ -105,13 +113,16 @@ details[open].menu-opening > .menu-drawer__submenu {
 	text-decoration: none;
 	color: var(--color-base-text);
 	text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 500;
 }
 .menu-drawer__menu-item:hover {
 	color: var(--color-base-button-background);
 }
 
 .no-js .menu-drawer__menu-item {
-  font-size: 1.6rem;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .no-js .menu-drawer__submenu .menu-drawer__menu-item {
@@ -186,14 +197,14 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__utility-links {
-  padding: 2rem;
+  padding: 10px 20px;
   background-color: var(--color-foreground-3);
 }
 
 .tm_header-dropdown.site-header__icon .menu-drawer__account {
   display: inline-flex;
   align-items: center;
-  font-size: 13px;
+  font-size: 14px;
   vertical-align: initial;
   color: var(--color-base-text);
 }
@@ -209,7 +220,18 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 .cm-account-button {
 	float: right;
-    margin-left: 35px;
+    margin-left: 40px;
+    margin-top: 1px;
+}
+@media (max-width: 479px) {
+  .cm-account-button {
+    margin-left: 20px;
+    margin-top: 6px;
+  }
+  .cm-account-button svg {
+    width: 25px;
+    height: 25px;
+  }
 }
 .menu-drawer__account .icon-account {
  	height: 32px;
@@ -255,14 +277,4 @@ details[open].menu-opening > .menu-drawer__submenu {
       margin-left: 20px;
     }
 }
-@media (max-width:989px){
-    .cm-account-button {
-        margin-left: 0;
-        margin-top: 10px;
-    }
-}
-@media (max-width:479px){
-    .cm-account-button {
-        margin-top: 5px;
-    }
-}
+

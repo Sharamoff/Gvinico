@@ -1,7 +1,5 @@
 dialog {
     border-radius: 10px;
-    font-size: 28px;
-    font-weight: bold;
     width: 500px;
     border: none;
     padding: 0;
@@ -15,11 +13,20 @@ dialog hr {
 }
 
 dialog p {
-  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 16px;
+    font-weight: bold;
   text-align: center;
   margin-top: 0px;
-  margin-bottom: 15px;
-  padding: 20px 15px 0 15px;
+  margin-bottom: 20px;
+  padding: 20px 20px 0 20px;
+}
+
+.dialog_btns {
+  display: flex;
+  justify-content: center;
+}
+.dialog_btns button {
+  flex: 1 1 auto;
 }
 
 #wishlist_clear {

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--**************************************************** from template.liquid **************************************************-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="">
+  <title>GVINICO_PAGE-TEMPLATE</title>
+  <link href="https://cdn.shopify.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.shopifycdn.com" rel="preconnect" crossorigin>
+  <link href="_assets/component-price.css" rel="stylesheet" media="print">
+  <script src="_assets/product-form.js" defer="defer"></script>
+  <script src="_assets/global.js" defer="defer"></script>
+  <script src="_assets/owl.carousel.min.js" defer="defer"></script>
+  <script src="_assets/wishlist.js" defer="defer"></script>
+  <script src="_assets/compare.js" defer="defer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css">
+  <link href="_assets/quickview.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <style>
+    /*** from settings_data.json ***/
+    :root {
+      --font-body-family: "Inter"; /*{{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};*/
+      --font-body-style: normal; /*{{ settings.type_body_font.style }};*/
+      --font-body-weight: 400; /*{{ settings.type_body_font.weight }};*/
+      --font-heading-family: "Cormorant Garamond"; /*{{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};*/
+      --font-heading-style: normal; /*{{ settings.type_header_font.style }};*/
+      --font-heading-weight: 400; /*{{ settings.type_header_font.weight }};*/
+      --color-base-text: #000000; /*{{ settings.colors_text }};*/
+      --color-base-text-rgb: rgb(0, 0, 0); /*{{ settings.colors_text | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-background-1: #ffffff; /*{{ settings.colors_background_1 }};*/
+      --color-base-background-1-rgb: rgb(255, 255, 255); /*{{ settings.colors_background_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-1: #ae194a; /*{{ settings.colors_accent_1 }};*/
+      --color-base-accent-1-rgb: rgb(174, 25, 74); /*{{ settings.colors_accent_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-2: #777777; /*{{ settings.colors_accent_2 }};*/
+      --color-base-accent-2-rgb: rgb(119, 119, 119); /*{{ settings.colors_accent_2 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-border: #dddddd; /*{{ settings.colors_border }};*/
+      --color-base-button-text: #ffffff; /*{{ settings.button_text }};*/
+      --color-base-button-text-hover: #000000; /*{{ settings.button_text_hover }};*/
+      --color-base-button-background: #ae194a; /*{{ settings.button_background }};*/
+      --color-base-button-background-hover: #ffcc1d; /*{{ settings.button_background_hover }};*/
+      --color-base-text-opacity-10-percent: rgba(0, 0, 0, 0.1); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-text-opacity-20-percent: rgba(0, 0, 0, 0.2);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 20 }};*/
+      --color-base-text-opacity-55-percent: rgba(0, 0, 0, 0.55);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 55 }};*/
+      --color-base-text-opacity-85-percent: rgba(0, 0, 0, 0.85); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 85 }};*/
+      --color-base-accent-1-opacity-10-percent: rgba(174, 25, 74, 0.1); /*{{ settings.colors_accent_1 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-accent-2-opacity-10-percent: rgba(119, 119, 119, 0.1); /*{{ settings.colors_accent_2 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-rating-empty: #dddddd; /*{{ settings.rating_empty }};*/
+      --color-rating-filled: #000000; /*{{ settings.rating_filled }};*/
+      --color-secondary-hover: #ffcc1d; /*{{ settings.secondary_hover_color }};*/
+    }
+    :root {
+      --color-base-background-2: #f0f0f0;
+      --color-base-background-2-rgb: rgb(240, 240, 240);
+      --color-base-solid-button-labels: #000000;
+      --color-base-solid-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-outline-button-labels: #000000;
+      --color-base-outline-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-color-base-accent-1: var(--color-base-accent-1); ;
+    }
+    /*** end from settings_data.json ***/
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+    html {
+      box-sizing: border-box;
+      font-size: 62.5%;
+      height: 100%;
+    }
+    body {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: normal !important;
+      line-height: 1.4;
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
+      color: var(--color-base-text);
+    }
+  </style>
+  <link href="_assets/base.css" rel="stylesheet">
+  <link href="_assets/component-predictive-search.css" rel="stylesheet">
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+  <style>
+    @font-face {
+      font-family: 'Cormorant';
+      font-style: normal;
+      font-weight: 600;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-600.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-600.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-600.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 700;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-700.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-700.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-700.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    .slideshow__subheading, .slideshow__subtitle,
+    .title, .title-wrapper-with-link,
+    .cms-banner-title-three,
+    .parallex-title,
+    .two-banner .cms-banner-subtitle-three,
+    .newsletter.center .h1,
+    .breadcrumb_title{
+      font-family: 'Cormorant Garamond', serif !important;
+    }
+  </style>
+  <!--*** from page.liquid ***-->
+  <link href="_assets/component-rte.css" rel="stylesheet">
+  <link href="_assets/section-main-page.css" rel="stylesheet">
+  <!--*** end from page.liquid ***-->
+  <!--*** style of inserted content in template.liquid ***-->
+  <link href="assets/alt-collection.css" rel="stylesheet">
+  <!--*** end style of inserted content in template.liquid ***-->
+</head>
+<body class="template-page">
+<main class="main-content" id="MainContent" role="main" tabindex="-1">
+<!--**************************************************** end from template.liquid **************************************************-->
+<div class="page-width contents">
+<div class="main-container">
+<section class="shopify-section spaced-section">
+<div class="page-width page-width--narrow">
+
+
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+
+<!-- INSERTED CONTENT -->
+<section class="alt-collection-description">
+  <div class="alt-collection-description__collage">
+    <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/cl-kakheti.jpg" alt="Kakheti">
+  </div>
+  <div class="alt-collection-description__c-descript">
+    <div class="c-descript-panel">
+      <div class="c-descript__map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d640358.2982231495!2d45.28121121377658!3d41.792062094657915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40468746afc43f8f%3A0xfd4f9b5de3e7dcb4!2sKakheti%2C%20Georgia!5e0!3m2!1sen!2spl!4v1711485749522!5m2!1sen!2spl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="c-descript__links-block">
+        <h3>Kakheti Municipalities (Districts)</h3>
+        <div class="c-descript__links">
+          <ul class="links--regions">
+            <li><a href="https://gvinico.com/collections/Telavi">Telavi</a></li>
+            <li><a href="https://gvinico.com/collections/Akhmeta">Akhmeta</a></li>
+            <li><a href="https://gvinico.com/collections/Gurjaani">Gurjaani</a></li>
+            <li><a href="https://gvinico.com/collections/Kvareli">Kvareli</a></li>
+            <li><a href="https://gvinico.com/collections/Dedoplistskaro">Dedoplistskaro</a></li>
+            <li><a href="https://gvinico.com/collections/Lagodekhi">Lagodekhi</a></li>
+            <li><a href="https://gvinico.com/collections/Sagarejo">Sagarejo</a></li>
+            <li><a href="https://gvinico.com/collections/Sighnaghi">Sighnaghi</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="c-descript__txt">
+      <p><strong>Kakheti</strong> is the most important wine region in Georgia in every sense. It has the biggest number of wineries, appellations of origin, diverse styles and terroirs. It is the birthplace of the Kakhetian winemaking method, recognized as an intangible cultural heritage by UNESCO.</p>
+      <p>And what a heritage it is. Archaeological excavations confirm that grapes have been cultivated in Kakheti for at least 7,000 years. In 2012, archaeologists discovered clay vessels dating back to 5000 BC in the village of Dzegvi. Over the centuries, local winegrowers have fought to preserve and prosper their vines, and today, Kakheti's vineyards account for 65% of the total number of vineyards in Georgia and produce 80% of the country's wine volume.</p>
+      <p>Perhaps the most iconic wines for the region are amber wines made from white grapes fermented with the skin, which gives them a signature color, aroma, and rich tannic taste for those who try them for the first time.</p>
+      <h3>Terroir Features</h3>
+      <p>Kakheti terroir is exceptionally diverse. In this large region in the east of Georgia, vineyards are grown on the plains along the Alazani River and partly right terraces of the Iori River, on the hills, and in the foothills of the Caucasus Mountains. Thus, there is a great diversity of soils and climatic features in each micro-zone of Kakheti, and the sheer variety of wines produced is outstanding.</p>
+      <p>Kakheti is quite distant from the Black Sea, so it experiences a transient continental climate characterized by a relatively dry and hot summer and most precipitation falling during winter. Most of Kakheti's vineyards are 200–750 meters above sea level. The prevailing soil type is black brown, humus-like, reddish-colored, calcareous clay with high iron content. All of it contributes a depth of flavor and rustic, earthy notes to the local wines.</p>
+      <h3>The Kakhetian Method</h3>
+      <p>The traditional Kakhetian winemaking method involves fermenting both white and red grape must in qvevris, large clay vessels, with the skins and stems of the grapes. The skins give the wine a rich and complex aroma, while the stems add structure and tannins. During fermentation, the must and pomace are regularly mixed, but after the skins, seeds, and stems settle to the bottom, the qvevris are sealed with a lid and left untouched for about 6 months until spring or even longer, depending on the winemaker's decision.</p>
+      <h3>Districts & Micro-zones (PDOs)</h3>
+      <p>Kakheti is divided into several municipalities, with 20 designated micro-zones with PDO status (European Union certification of Protected Designation of Origin) —more than in any other region of the country.</p>
+      <p>While wines made using the Kakhetian method are the calling card of the region and are produced everywhere, some PDOs specialize in wines made using the European method, such as Tsinandali for whites and Teliani for reds.</p>
+      <div class="c-descript__txt-subpanel">
+        <div class="c-descript__links-block">
+          <h3>List of PDOs</h3>
+          <div class="c-descript__links">
+            <ul class="links--pdos">
+              <li><a href="https://gvinico.com/collections/Akhasheni">Akhasheni<span>semi-sweet red</span></a></li>
+              <li><a href="https://gvinico.com/collections/Akhmeta">Akhmeta<span>dry, semidry, semisweet white</span></a></li>
+              <li><a href="https://gvinico.com/collections/Akhoebi">Akhoebi<span>dry red</span></a></li>
+              <li><a href="https://gvinico.com/collections/Gurjaani">Gurjaani<span>dry white</span></a></li>
+              <li><a href="https://gvinico.com/collections/Kakheti">Kakheti (Kakhuri)<span>white, amber, rose, red with</span></a></li>
+              <li><a href="https://gvinico.com/collections/Kardenakhidry">Kardenakhidry<span>amber or fortified white</span></a></li>
+              <li><a href="https://gvinico.com/collections/Kindzmarauli">Kindzmarauli<span>semi-sweet red</span></a></li>
+            </ul>
+            <ul class="links--pdos">
+              <li><a href="https://gvinico.com/collections/Kisi">Kisi Magraani<span>dry white or amber</span></a></li>
+              <li><a href="https://gvinico.com/collections/Kotekhi">Kotekhi<span>dry white, dry red</span></a></li>
+              <li><a href="https://gvinico.com/collections/Kvareli">Kvareli<span>dry red</span></a></li>
+              <li><a href="https://gvinico.com/collections/Manavi">Manavi<span>dry white</span></a></li>
+              <li><a href="https://gvinico.com/collections/Mukuzani">Mukuzani<span>dry red</span></a></li>
+              <li><a href="https://gvinico.com/collections/Napareuli">Napareuli<span>dry white, dry red</span></a></li>
+              <li><a href="https://gvinico.com/collections/Saperavi">Saperavi Khashmi<span>dry red</span></a></li>
+            </ul>
+            <ul class="links--pdos">
+              <li><a href="https://gvinico.com/collections/Teliani">Teliani<span>dry red</span></a></li>
+              <li><a href="https://gvinico.com/collections/Tibaani">Tibaani<span>dry amber</span></a></li>
+              <li><a href="https://gvinico.com/collections/Tsarapi">Tsarapi<span>dry amber</span></a></li>
+              <li><a href="https://gvinico.com/collections/Tsinandali">Tsinandali<span>dry white, dry red</span></a></li>
+              <li><a href="https://gvinico.com/collections/Vazisubani">Vazisubani<span>dry white</span></a></li>
+              <li><a href="https://gvinico.com/collections/Zegaani">Zegaani<span>dry red</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="c-descript__links-block">
+          <h3>Main grape varieties</h3>
+          <div class="c-descript__links">
+            <ul class="links--grapes">
+              <li><a href="https://gvinico.com/collections/Rkatsiteli">Rkatsiteli</a></li>
+              <li><a href="https://gvinico.com/collections/Kakhuri-Mtsvane">Kakhuri Mtsvane</a></li>
+              <li><a href="https://gvinico.com/collections/Kisi">Kisi</a></li>
+              <li><a href="https://gvinico.com/collections/Khikhvi">Khikhvi</a></li>
+              <li><a href="https://gvinico.com/collections/Mtsvivani-Kakhuri">Mtsvivani Kakhuri</a></li>
+              <li><a href="https://gvinico.com/collections/Chitistvala">Chitistvala</a></li>
+              <li><a href="https://gvinico.com/collections/Rkatsiteli-Rose">Rkatsiteli Rose</a></li>
+              <li><a href="https://gvinico.com/collections/Saperavi">Saperavi</a></li>
+              <li><a href="https://gvinico.com/collections/Saperavi-Budeshuri">Saperavi-Budeshuri</a></li>
+              <li><a href="https://gvinico.com/collections/Cabernet-Sauvignon">Cabernet Sauvignon</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END INSERTED CONTENT -->
+
+
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+
+
+
+
+</div>
+</section>
+</div>
+</div>
+</main>
+</body>
+</html>

@@ -8,13 +8,20 @@
   }
 }
 
+.alt-pages .p--first {
+  margin-top: 0;
+}
 
-.alt-pages  a {
+.alt-pages .div--first p {
+  margin-top: 0;
+}
+
+.alt-pages a {
   color: #333333;
   text-decoration: underline !important;
   transition: 0.5s all;
 }
-.alt-pages  a:hover {
+.alt-pages a:hover {
   color: var(--color-base-accent-1);
   text-decoration: none !important;
 }
