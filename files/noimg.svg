@@ -1,10 +1,17 @@
 <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_405_595)">
+<path d="M400 0H0V400H400V0Z" fill="white"/>
+<path d="M217 43V30C217 29.4477 216.552 29 216 29L184 29C183.448 29 183 29.4477 183 30V43C183 43.5523 183.448 44 184 44H216C216.552 44 217 43.5523 217 43Z" stroke="#666666" stroke-width="2"/>
+<path d="M185 44C185 44 185 60.13 185 101.09C185 142.049 154 189.031 154 236.813C154 258.641 154 332.461 154 372.537C154 374.965 155.5 379 160 379C164.5 379 200 379 200 379" stroke="#666666" stroke-width="2"/>
+<path d="M215 44C215 44 215 60.13 215 101.09C215 142.049 246 189.031 246 236.813C246 258.641 246 332.461 246 372.537C246 374.965 244.5 379 240 379C235.5 379 200 379 200 379" stroke="#666666" stroke-width="2"/>
+<path d="M212.5 154.5C214.5 161.5 217.5 170.5 220.5 177.5M224.5 187.5C228.5 196 232.5 213.5 233.5 223.5" stroke="#666666" stroke-width="2" stroke-linecap="round"/>
+<path d="M234 242V342H166V242H234Z" stroke="#666666" stroke-width="2"/>
+<path d="M215 29V21H185V29" stroke="#666666" stroke-width="2" stroke-linejoin="round"/>
+<path d="M185 102H215" stroke="#666666" stroke-width="2"/>
+</g>
+<defs>
+<clipPath id="clip0_405_595">
 <rect width="400" height="400" fill="white"/>
-<rect x="217" y="47.5" width="15" height="34" rx="1" transform="rotate(90 217 47.5)" stroke="#EEEEEE" stroke-width="6"/>
-<path d="M213.875 60.8594C213.875 60.8594 213.875 76.9494 213.875 114.975C213.875 153 245 198.5 245 242.859C245 263.123 245 317.531 245 354.736C245 356.99 243.875 361.5 239.375 361.5C234.875 361.5 211.25 361.5 200 361.5" stroke="#EEEEEE" stroke-width="6"/>
-<path d="M186.125 60.8594C186.125 60.8594 186.125 76.9494 186.125 114.975C186.125 153 155 198.5 155 242.859C155 263.123 155 317.531 155 354.736C155 356.99 156.125 361.5 160.625 361.5C165.125 361.5 188.75 361.5 200 361.5" stroke="#EEEEEE" stroke-width="6"/>
-<path d="M206.999 157.5C208.578 164.353 211.089 171.558 213.503 177.038M218.624 187.897C222.969 196.219 227 209.5 228.5 220.5" stroke="#EEEEEE" stroke-width="6" stroke-linecap="round"/>
-<path d="M234 241.5L234 331.5L166 331.5L166 241.5L234 241.5Z" stroke="#EEEEEE" stroke-width="6"/>
-<path d="M214 47.5V39H185V47.5" stroke="#EEEEEE" stroke-width="6" stroke-linejoin="round"/>
-<path d="M189 107H217" stroke="#EEEEEE" stroke-width="6"/>
+</clipPath>
+</defs>
 </svg>

@@ -60,20 +60,41 @@
   flex: 3 1 auto;
 }
 
+.alt-collection-description h3 {
+  font-family: var(--font-base-family);
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+@media screen and (max-width: 485px) {
+  .alt-collection-description h3 {
+    font-size: 16px;
+  }
+}
+
 .c-descript__txt__link {
   display: block;
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 600;
   color: var(--color-base-accent-1);
   margin-top: 30px;
+  text-overflow: ellipsis;
 }
 .c-descript__txt__link:hover {
   color: #000000;
 }
 
-.c-descript__map {
+.c-descript-panel {
   flex: 1 0 250px;
   width: 250px;
+  max-width: 250px;
+}
+
+.c-descript__map {
+  flex: 1 0 250px;
+  width: 100%;
   height: 250px;
   max-width: 250px;
   max-height: 250px;
@@ -112,9 +133,13 @@
 
 @media screen and (max-width: 749px) {
 
-  .c-descript__map {
+  .c-descript-panel {
     max-width: 200px;
-    max-height: 200px;
+  }
+
+  .c-descript__map {
+    min-width: 200px;
+    min-height: 200px;
   }
 
 }
@@ -135,6 +160,12 @@
     overflow: hidden;
   }
 
+  .c-descript-panel {
+    width: 100%;
+    max-width: none;
+
+  }
+
   .c-descript__map {
     margin-top: 40px;
     width: 100%;
@@ -144,6 +175,96 @@
   }
 
 }
+
+.c-descript__txt-subpanel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0 40px;
+  margin-top: 20px;
+}
+
+.c-descript__links {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -12px;
+  gap: 0 40px;
+}
+
+.c-descript__links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.c-descript__links ul li {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.c-descript__links ul li a {
+  color: #000000;
+  border-bottom: solid 1px #666666;
+}
+.c-descript__links ul li a:hover {
+  color: var(--color-base-accent-1);
+  border-color: transparent;
+}
+
+.c-descript__links ul li a span {
+  display: block;
+  color: #333333 !important;
+  font-size: 14px;
+  margin-left: 24px;
+}
+
+.c-descript__links ul.links--regions li:before {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  content: '';
+  background: url('https://cdn.shopify.com/s/files/1/0654/1056/4327/files/i-dregion.svg') center center no-repeat;
+  margin-right: 8px;
+}
+
+.c-descript__links ul.links--pdos li:before {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  content: '';
+  background: url('https://cdn.shopify.com/s/files/1/0654/1056/4327/files/i-dwine.svg?') center center no-repeat;
+  margin-right: 8px;
+}
+
+.c-descript__links ul.links--grapes li:before {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  content: '';
+  background: url('https://cdn.shopify.com/s/files/1/0654/1056/4327/files/i-dgrape.svg?') center center no-repeat;
+  margin-right: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

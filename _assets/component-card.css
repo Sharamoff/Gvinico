@@ -500,10 +500,6 @@
   color: var(--color-base-accent-1);
 }
 
-.alt-card-info  .alt-card-info__product-title a {
-  white-space: nowrap;
-}
-
 
 #ProductGridContainer .item .item.list-group-item .card-information__wrapper .alt-card-info {
   justify-content: flex-start;

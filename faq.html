@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--**************************************************** from template.liquid **************************************************-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="">
+  <title>GVINICO_PAGE-TEMPLATE</title>
+  <link href="https://cdn.shopify.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.shopifycdn.com" rel="preconnect" crossorigin>
+  <link href="_assets/component-price.css" rel="stylesheet" media="print">
+  <script src="_assets/product-form.js" defer="defer"></script>
+  <script src="_assets/global.js" defer="defer"></script>
+  <script src="_assets/owl.carousel.min.js" defer="defer"></script>
+  <script src="_assets/wishlist.js" defer="defer"></script>
+  <script src="_assets/compare.js" defer="defer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css">
+  <link href="_assets/quickview.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <style>
+    /*** from settings_data.json ***/
+    :root {
+      --font-body-family: "Inter"; /*{{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};*/
+      --font-body-style: normal; /*{{ settings.type_body_font.style }};*/
+      --font-body-weight: 400; /*{{ settings.type_body_font.weight }};*/
+      --font-heading-family: "Cormorant Garamond"; /*{{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};*/
+      --font-heading-style: normal; /*{{ settings.type_header_font.style }};*/
+      --font-heading-weight: 400; /*{{ settings.type_header_font.weight }};*/
+      --color-base-text: #000000; /*{{ settings.colors_text }};*/
+      --color-base-text-rgb: rgb(0, 0, 0); /*{{ settings.colors_text | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-background-1: #ffffff; /*{{ settings.colors_background_1 }};*/
+      --color-base-background-1-rgb: rgb(255, 255, 255); /*{{ settings.colors_background_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-1: #ae194a; /*{{ settings.colors_accent_1 }};*/
+      --color-base-accent-1-rgb: rgb(174, 25, 74); /*{{ settings.colors_accent_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-2: #777777; /*{{ settings.colors_accent_2 }};*/
+      --color-base-accent-2-rgb: rgb(119, 119, 119); /*{{ settings.colors_accent_2 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-border: #dddddd; /*{{ settings.colors_border }};*/
+      --color-base-button-text: #ffffff; /*{{ settings.button_text }};*/
+      --color-base-button-text-hover: #000000; /*{{ settings.button_text_hover }};*/
+      --color-base-button-background: #ae194a; /*{{ settings.button_background }};*/
+      --color-base-button-background-hover: #ffcc1d; /*{{ settings.button_background_hover }};*/
+      --color-base-text-opacity-10-percent: rgba(0, 0, 0, 0.1); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-text-opacity-20-percent: rgba(0, 0, 0, 0.2);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 20 }};*/
+      --color-base-text-opacity-55-percent: rgba(0, 0, 0, 0.55);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 55 }};*/
+      --color-base-text-opacity-85-percent: rgba(0, 0, 0, 0.85); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 85 }};*/
+      --color-base-accent-1-opacity-10-percent: rgba(174, 25, 74, 0.1); /*{{ settings.colors_accent_1 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-accent-2-opacity-10-percent: rgba(119, 119, 119, 0.1); /*{{ settings.colors_accent_2 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-rating-empty: #dddddd; /*{{ settings.rating_empty }};*/
+      --color-rating-filled: #000000; /*{{ settings.rating_filled }};*/
+      --color-secondary-hover: #ffcc1d; /*{{ settings.secondary_hover_color }};*/
+    }
+    :root {
+      --color-base-background-2: #f0f0f0;
+      --color-base-background-2-rgb: rgb(240, 240, 240);
+      --color-base-solid-button-labels: #000000;
+      --color-base-solid-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-outline-button-labels: #000000;
+      --color-base-outline-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-color-base-accent-1: var(--color-base-accent-1); ;
+    }
+    /*** end from settings_data.json ***/
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+    html {
+      box-sizing: border-box;
+      font-size: 62.5%;
+      height: 100%;
+    }
+    body {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: normal !important;
+      line-height: 1.4;
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
+      color: var(--color-base-text);
+    }
+  </style>
+  <link href="_assets/base.css" rel="stylesheet">
+  <link href="_assets/component-predictive-search.css" rel="stylesheet">
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+  <style>
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 600;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-600.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-600.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-600.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 700;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-700.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-700.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-700.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    .slideshow__subheading, .slideshow__subtitle,
+    .title, .title-wrapper-with-link,
+    .cms-banner-title-three,
+    .parallex-title,
+    .two-banner .cms-banner-subtitle-three,
+    .newsletter.center .h1,
+    .breadcrumb_title{
+      font-family: 'Cormorant Garamond', serif !important;
+    }
+  </style>
+  <!--*** from page.liquid ***-->
+  <link href="_assets/component-rte.css" rel="stylesheet">
+  <link href="_assets/section-main-page.css" rel="stylesheet">
+  <!--*** end from page.liquid ***-->
+  <!--*** style of inserted content in template.liquid ***-->
+  <link href="assets/alt-pages.css" rel="stylesheet">
+  <!--*** end style of inserted content in template.liquid ***-->
+</head>
+<body class="template-page">
+<main class="main-content" id="MainContent" role="main" tabindex="-1">
+<!--**************************************************** end from template.liquid **************************************************-->
+<div class="page-width contents">
+<div class="main-container">
+<section class="shopify-section spaced-section">
+<div class="page-width page-width--narrow">
+<div class="rte" style="padding-top: 100px; padding-bottom: 100px">
+
+
+
+
+
+
+
+
+
+
+  <!-- INSERTED CONTENT -->
+
+  <section class="alt-pages">
+    <details class="alt-details">
+      <summary>Do you retail?</summary>
+      <p>Gvinico carries out wholesale B2B (business-to-business) sales only. These are sales where one legal entity acts as a customer, and another legal entity acts as a supplier. We're sorry to say that, but we don't work with retail customers.</p>
+    </details>
+    <details class="alt-details">
+      <summary>Do you sell to Georgian companies?</summary>
+      <p>Gvinico does not sell in Georgia. We work for export only.</p>
+    </details>
+    <details class="alt-details">
+      <summary>I'm interested in a certain product, can I get samples?</summary>
+      <p>Yes, we will certainly consider your request for product samples. The nuances of this process can be found here:
+        <a href="https://gvinico.com/pages/product-sample-policy">gvinico.com/pages/product-sample-policy</a>.</p>
+    </details>
+    <details class="alt-details">
+      <summary>How does the ordering process work?</summary>
+      <p>B2B transactions involve increased responsibility. Therefore, they require special attention and more demanding processes of legal registration, preparation of goods, organization of logistics and additional checks of the quality of the transaction. That is why we apply an additional order approval process.</p>
+      <p>After you add items to your shopping cart and confirm your order, we treat it as a pre-order with fixed transaction parameters in terms of the composition of the product lot, shipping parameters and price. From that moment on, our experts start working on optimizing your order to ensure maximum cost efficiency. We calculate the ordered items up to the correct multiplicity of cases, their layout. We also calculate the possible reduction in the cost of logistics, and then we go back to you with a counter offer that takes into account all sorts of nuances. Our goal at this stage is to provide you with the most favorable unit cost.</p>
+      <p>If you accept the terms of the offer, we will sign the contract and start working on its implementation.</p>
+    </details>
+    <details class="alt-details">
+      <summary>What is the minimum amount I can order?</summary>
+      <p>Due to the peculiarities of the Georgian export legislation, we are not able to issue a batch of 1 case or fewer. Therefore, it would be cost-effective to order batches of 150 bottles of units or more. And that is why you will see a minimum order limit of 150 bottles for most of the products in our store. If for some reason you need a smaller quantity of a particular item, and you are ready for a significant increase in the cost per item, please contact us.</p>
+    </details>
+    <details class="alt-details">
+      <summary>What order quantity would be cost-effective?</summary>
+      <p>When placing an order, we recommend making the total number of ordered products a multiple of:
+        <br>
+        150 bottles&nbsp;&mdash;&nbsp;1/4 pallet;
+        <br>
+        300 bottles&nbsp;&mdash;&nbsp;1/2 pallet;
+        <br>
+        600 bottles&nbsp;&mdash;&nbsp;1 pallet.
+      </p>
+      <p>In this case, the capability of finding the optimal logistics solution is higher. You can surely order any other quantity, but be prepared that then the delivery cost per unit can happen to be higher.</p>
+    </details>
+    <details class="alt-details">
+      <summary>Where do you deliver, and what are the times?</summary>
+      <p>You are more than welcome to place an order from any country! We gladly deal with complicated and custom routes.</p>
+      <p>Delivery time depends on the country you are in. That being said, Gvinico does their best to find the perfect shipping method and shorten the waiting time for your order. Shipping costs are calculated individually, depending on the volume of the order and the distance. Please note that all countries have their own laws that regulate or restrict the import of alcohol. Please follow these legal rules to avoid problems with customs procedures. All the conditions of cargo insurance should be discussed.</p>
+    </details>
+    <details class="alt-details">
+      <summary>How is the export process from Georgia carried out?</summary>
+      <p>In order to protect consumer rights and control quality, all wine exports are strictly regulated by the state. Each shipment is certified by competent authorities, which issue a permit indicating the consumer characteristics of the product.</p>
+      <p>After agreeing with the Client on the final order and payment, we transfer all product samples to competent state authorities and begin the certification procedure. At the same time, preparation, marking and packaging of a batch of goods is carried out. After the certification and batch preparation processes, we transfer the goods with accompanying documents to the delivery company. Responsibility for the further transportation of the goods to the Customer passes to the delivery company. At the same time, Gvinico provides information support for the delivery process until the Customer receives the order.</p>
+    </details>
+    <details class="alt-details">
+      <summary>What happens if my wine is shattered?</summary>
+      <p>This is a highly unlikely incident, but if your wine is damaged, Gvinico will deal with the issue on a case-by-case basis. We must be notified immediately, and we would also like to get a picture of the damaged product, so we can accurately assess the damage.</p>
+    </details>
+    <details class="alt-details">
+      <summary>Does the wine in my order have to come from the same winery?</summary>
+      <p>No, you can purchase wine in the quantity you need from any supplier. Also, you can get wines from different wine regions of Georgia. We will collect all the wines you ordered in one batch to improve logistics. Please feel free to contact us if you need any assistance in choosing.</p>
+    </details>
+    <details class="alt-details">
+      <summary>How do I know that my wine is on its way?</summary>
+      <p>Once we completed all the paperwork, and the wine is ready to ship, we send you an ETA with all the details and tracking information.</p>
+    </details>
+    <details class="alt-details">
+      <summary>Can I amend or cancel my order?</summary>
+      <p>Once payment is received, your order will be processed. If you would like to amend your order, please contact us as soon as possible, and we will do our best to make these changes before the order is shipped.</p>
+    </details>
+    <details class="alt-details">
+      <summary>How long will it take for my order to be delivered?</summary>
+      <p>It depends on the destination country and shipping method. As soon as we receive information about the shipment of your order by the shipping company, we will send you an ETA with all the necessary information.</p>
+    </details>
+    <details class="alt-details">
+      <summary>Does the price of wine include shipping costs?</summary>
+      <p>Shipping costs are not included in the wine price. The cost of delivery is calculated individually, depending on the weight of the cargo and the distance.</p>
+    </details>
+    <details class="alt-details">
+      <summary>Can I order by phone call?</summary>
+      <p>You can contact our Gvinico support team, and we will be happy to assist you in placing your order.</p>
+    </details>
+  </section>
+
+  <!-- END INSERTED CONTENT -->
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body>
+</html>

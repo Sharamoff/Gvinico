@@ -288,3 +288,48 @@
 }
 
 
+.alt-pages .alt-details {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding-left: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.alt-pages .alt-details summary {
+  font-family: var(--font-body-family);
+  font-size: 20px;
+  line-height: 1.1;
+  font-weight: bold;
+  padding-bottom: 12px;
+}
+.alt-pages .alt-details summary:before {
+  content: "\25B7";
+  color: var(--color-base-accent-1);
+  display: inline-block;
+  width: 20px;
+  position: relative;
+  top: -4px;
+  margin-left: -20px;
+  font-size: 10px;
+}
+.alt-pages .alt-details[open] summary:before {
+  content: "\25BD";
+
+}
+
+.alt-pages .alt-details p {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 768px) {
+
+  .alt-pages .alt-details summary {
+    font-size: 18px;
+  }
+
+  .alt-pages .alt-details summary:before {
+    top: -3px;
+  }
+
+}

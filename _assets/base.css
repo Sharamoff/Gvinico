@@ -1254,7 +1254,7 @@ deferred-media {
     border: 0;
     border-radius: 4px;
     color: var(--color-base-text);
-    font-size: 14px;
+    font-size: 16px;
     width: 100%;
     box-shadow: none;
     height: 44px;
@@ -1265,7 +1265,7 @@ deferred-media {
     font-family: var(--font-body-family);
     font-style: var(--font-body-style);
     font-weight: var(--font-body-weight);
-    font-size: 14px;
+    font-size: 16px;
 }
 /* .field__input:hover, .select__select:hover, .customer .field input:hover, .customer select:hover, .localization-form__select:hover {
     box-shadow: 0 0 0 0.2rem var(--color-foreground-55);
