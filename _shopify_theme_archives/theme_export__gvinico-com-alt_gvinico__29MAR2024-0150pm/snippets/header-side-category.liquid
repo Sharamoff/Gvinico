@@ -1,0 +1,105 @@
+{{ 'header-sidecategory.css' | asset_url | stylesheet_tag }}
+
+<div class="header-sidecategory">
+	<ul class="site-cat" id="header-SiteCat">
+		{% for link in linklists[section.settings.side-categories].links %}
+    	{%- assign child_list_handle = link.title | handleize -%}
+    	{% if linklists[child_list_handle].links != blank %}
+      		<li class="site-cat--has-dropdown{% if link.active %} site-cat--active{% endif %}">
+        		<a href="{{ link.url }}" class="site-cat__link site-cat__link--main">
+          			{% render 'icon-left-cat' %}{{ link.title }}
+                  	{% render 'icon-cat' %}
+        		</a>
+        		<div class="site-cat__dropdown site-nav__childlist-drop" id="SiteCatLabel-{{ child_list_handle }}">
+          			<ul class="has-dropdown">            
+                    	{% for childlink in linklists[child_list_handle].links %}
+             				{% assign grand_child_list_handle = childlink.title | handle %}            
+            				{% if linklists[grand_child_list_handle].links != blank %}
+								<li class="site-nav__childlist-item-dropdown"> 
+               						<a href="{{ childlink.url }}" class="site-nav__link site-nav__child-link site-nav__child-link--parent">{{ childlink.title | escape }}{% render 'icon-cat' %}</a>
+									<div class="header-nav__childlist site-cat__dropdown">
+                          				<ul class="grand-child-has-dropdown">
+                                        	{% for grandchildlink in linklists[grand_child_list_handle].links %}
+                                              <li>
+                                                  <a href="{{ grandchildlink.url }}" class="site-nav__link site-nav__child-link">{{ grandchildlink.title | escape }}</a>
+                                              </li> 
+                          					{% endfor %}
+                            			</ul>
+                        			</div>
+            					</li>
+            				{% else %}
+              					<li {% if childlink.active %}class="site-cat--active"{% endif %}>
+                					<a href="{{ childlink.url }}" class="site-cat__link site-cat__child-link{% if forloop.last %} site-cat__link--last{% endif %}">{{ childlink.title | escape }}</a>
+              					</li>
+            				{% endif %}
+            			{% endfor %}
+          			</ul>
+        		</div>
+      		</li>
+    	{% else %}
+      		<li {% if link.active %}class="site-cat--active"{% endif %}>
+        		<a href="{{ link.url }}" class="site-cat__link site-cat__link--main">{% render 'icon-left-cat' %}{{ link.title }}</a>
+      		</li>
+    	{% endif %}
+  		{% endfor %}
+	</ul>
+</div>
+
+<script>
+//   $(document).ready(function(){
+  
+// 	$(".header-category").click(function(){
+// 	$(".header-menu #header-SiteCat, #header-SiteCat").slideToggle(800);
+// 	$('.header-category').toggleClass('active'); 
+      
+// 	});
+// });
+  
+  
+  $(document).ready(function(){
+  
+	$(".side-categories").click(function(){
+	$("#CategoryBox #header-SiteCat, #header-SiteCat").slideToggle(500);
+	$('.side-categories').toggleClass('active'); 
+      
+	});
+});
+  
+  function mobileToggleMenu2(){
+  if ($(window).width() < 750){
+    $("#CategoryBox  ul#header-SiteCat > li.site-cat--has-dropdown").append( "<span class='mobile_togglemenu'> </span>" );  
+    $("#CategoryBox  ul#header-SiteCat > li.site-cat--has-dropdown").addClass('toggle');
+    $("#CategoryBox  ul#header-SiteCat > li.site-cat--has-dropdown .mobile_togglemenu").click(function(){
+       $(this).parent().toggleClass('active').find('.site-nav__childlist-drop').slideToggle('slow');
+       
+    });    
+  }
+  else
+  {
+    $("#CategoryBox  ul#header-SiteCat > li.site-cat--has-dropdown").removeClass('toggle')
+    $("#CategoryBox  ul#header-SiteCat > li.site-cat--has-dropdown").removeClass('active');
+    $("#CategoryBox  ul#header-SiteCat > li.site-cat--has-dropdown .mobile_togglemenu").remove();
+  }
+}
+$(document).ready(mobileToggleMenu2);
+$(window).resize(function(){mobileToggleMenu2();});
+
+function mobileToggleMenu3(){
+  if ($(window).width() < 750){
+    $(" #CategoryBox  ul#header-SiteCat  li.site-cat--has-dropdown .site-nav__childlist-item-dropdown").append( "<span class='mobile_togglemenu'> </span>" );  
+    $(" #CategoryBox  ul#header-SiteCat li.site-cat--has-dropdown .site-nav__childlist-item-dropdown").addClass('toggle');
+    $(" #CategoryBox  ul#header-SiteCat li.site-cat--has-dropdown .site-nav__childlist-item-dropdown .mobile_togglemenu").click(function(){
+       $(this).parent().toggleClass('active').find('.header-nav__childlist').slideToggle('slow');
+       
+    });    
+  }
+  else
+  {
+    $("#CategoryBox  ul#header-SiteCat  li.site-cat--has-dropdown .site-nav__childlist-item-dropdown").removeClass('toggle')
+    $("#CategoryBox  ul#header-SiteCat  li.site-cat--has-dropdown .site-nav__childlist-item-dropdown").removeClass('active');
+    $("#CategoryBox  ul#header-SiteCat  li.site-cat--has-dropdown .site-nav__childlist-item-dropdown .mobile_togglemenu").remove();
+  }
+}
+$(document).ready(mobileToggleMenu3);
+$(window).resize(function(){mobileToggleMenu3();});
+</script>

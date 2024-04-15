@@ -1,0 +1,97 @@
+{{ 'tm_cms_info.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .cms_info
+  {
+  background-color: {{ section.settings.bg_color}};
+  }
+  .cms_info .info-description{
+      color: {{ section.settings.text_color}};
+  }
+</style>
+
+<div class="cms_info" data-section-id="{{ section.id }}" data-section-type="info-section">
+    	<div class="page-width page-width-desktop">
+              
+          {% if section.blocks.size > 0 %}
+            <div class="info-wrapper">
+              <div class="cms_information">
+                {%- assign i = 1 -%}
+                  {% for block in section.blocks %} 
+
+                {% comment %}
+                    Уберем ссылки для этих блоков, нет возможности настроить индивидуально и все ведут на ту же страницу
+                  	<a href="{{ block.settings.button_link }}" class="info_service info_service-{{ i }}">
+                {% endcomment %}
+                  	<div class="info_service info_service-{{ i }}">
+                      <div class="info-block info-block-{{ i }}">
+                    	
+                        	<div class="info-description"> 
+                            	<div class="info-title">{{ block.settings.info-title | escape }}</div>
+                                <div class="info-subtitle">{{ block.settings.info-subtitle }}</div>
+                        	</div>
+                        </div>
+                      </div>
+                {% comment %}
+                </a>
+                {% endcomment %}
+                
+                {%- assign i = i | plus:1 -%}
+                  {% endfor %}
+              </div>
+            </div>
+          {% endif %}     
+  		</div>  
+	</div>
+
+
+{% schema %}
+  {
+	"name": "t:sections.tm_cms_info.name",
+  	"tag": "section",
+  	"class": "spaced-section cms_info-section spaced-section--full-width",
+    "max_blocks": 3,
+	  "settings": [
+     {
+        "type": "color",
+        "id": "bg_color",
+        "default": "#FFCC1D",
+        "label": "t:sections.tm_cms_info.settings.bg_color.label"
+     },
+     {
+        "type": "color",
+        "id": "text_color",
+        "default": "#222",
+        "label": "t:sections.tm_cms_info.settings.text_color.label"
+     }
+  ],
+    
+    "blocks": [
+      { 
+        "type": "info_image",
+        "name": "t:sections.tm_cms_info.blocks.name",
+        "settings": [
+  		  
+          {
+            "type": "text",
+            "id": "info-title",
+            "label": "t:sections.tm_cms_info.blocks.settings.info-title.label",
+            "default": "Access Our Store From  Worldwide"
+          },
+ 		  {
+            "type": "text",
+            "id": "info-subtitle",
+            "label": "t:sections.tm_cms_info.blocks.settings.info-subtitle.label",
+			"default": "You can now shop from any location. We supply to a wide range of areas."
+          }
+        ]
+      }
+    ],
+	"presets": [
+      {
+        "name": "t:sections.tm_cms_info.presets.name",
+        "category": "t:sections.tm_cms_info.presets.category"
+      }
+    ]
+  }
+{% endschema %}
