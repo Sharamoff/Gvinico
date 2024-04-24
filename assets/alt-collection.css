@@ -61,7 +61,7 @@
 }
 
 .alt-collection-description h3 {
-  font-family: var(--font-base-family);
+  font-family: var(--font-body-family);
   font-size: 18px;
   font-weight: 600;
   margin-top: 24px;
@@ -179,7 +179,7 @@
 .c-descript__txt-subpanel {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 0 40px;
   margin-top: 20px;
 }

@@ -249,12 +249,7 @@
 }
 
 .alt-pages .block-article__text {
-  flex: 0 1 60%;
-}
-@media screen and (max-width: 990px) {
-  .alt-pages .block-article__text {
-    flex: 0 1 50%;
-  }
+
 }
 @media screen and (max-width: 485px) {
   .alt-pages .block-article__text {
@@ -263,13 +258,8 @@
 }
 
 .alt-pages .block-article__pic {
-  flex: 0 1 40%;
   margin-top: 27px;
-}
-@media screen and (max-width: 990px) {
-  .alt-pages .block-article__pic {
-    flex: 0 1 50%;
-  }
+  min-width: 40%;
 }
 @media screen and (max-width: 485px) {
   .alt-pages .block-article__pic {
