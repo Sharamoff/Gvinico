@@ -19,7 +19,6 @@
 .alt-pages a {
   color: #333333;
   text-decoration: underline !important;
-  transition: 0.5s all;
 }
 .alt-pages a:hover {
   color: var(--color-base-accent-1);
@@ -277,6 +276,9 @@
   flex: 0 1 50%;
 }
 
+details[open] summary ~ * {
+  animation: all .5s ease-in-out;
+}
 
 .alt-pages .alt-details {
   margin-top: 20px;
@@ -305,7 +307,6 @@
 }
 .alt-pages .alt-details[open] summary:before {
   content: "\25BD";
-
 }
 
 .alt-pages .alt-details p {
@@ -322,4 +323,40 @@
     top: -3px;
   }
 
+}
+
+.alt-pages .alt-detailsmore {
+  margin: 20px 0;
+}
+
+
+.alt-pages .alt-detailsmore summary {
+  color: var(--color-base-accent-1);
+  font-family: var(--font-body-family);
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 2px;
+}
+
+.alt-pages .alt-detailsmore summary:before {
+  content: "\25BC";
+  color: var(--color-base-accent-1);
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+  transition: .25s transform;
+}
+.alt-pages .alt-detailsmore[open] summary:before {
+  transform: rotate(180deg);
+}
+
+.alt-pages .alt-detailsmore summary:after {
+  content: 'Learn more';
+  border-bottom: dotted 1px var(--color-base-accent-1);
+  padding-bottom: 2px;
+}
+.alt-pages .alt-detailsmore[open] summary:after {
+  content: "Сollapse content";
+  border-bottom: dotted 1px var(--color-base-accent-1);
+  padding-bottom: 2px;
 }

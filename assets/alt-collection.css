@@ -59,6 +59,13 @@
 .c-descript__txt {
   flex: 3 1 auto;
 }
+.c-descript__txt a {
+  text-decoration: underline !important;
+  transition: 0.5s all;
+}
+.c-descript__txt a:hover {
+  text-decoration: none !important;
+}
 
 .alt-collection-description h3 {
   font-family: var(--font-body-family);

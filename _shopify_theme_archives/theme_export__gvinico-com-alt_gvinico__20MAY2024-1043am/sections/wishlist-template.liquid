@@ -1,0 +1,74 @@
+{% comment %}
+  Shopify Wishlist
+  Usage:
+    - Create a new page in the Shopify admin
+      - Admin > Online store > Pages > Add page
+    - Set the new page's template to: 'page.wishlist'
+    - Do NOT remove the `grid-wishlist` attribute
+  
+  Notes:
+  - The grid will be populated with product cards using Javascript
+  - Any content inside of the `[grid-wishlist]` element will be completely replaced by the product cards
+  
+  Tip:
+  - Place a loading element inside the `[grid-wishlist]` element and it will automatically be removed once the product cards have loaded
+  - Add any liquid code before/after the grid element
+{% endcomment %}
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("Y-svXJQ1tqZutxlpq");
+   })();
+</script>
+
+{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'snackbar.css' | asset_url | stylesheet_tag }}
+{{ 'wishlist-dialog.css' | asset_url | stylesheet_tag }}
+
+{% comment %} Added editable Content from the Page, fix if there is a better way to access than pages["wishlist"].content   {% endcomment %}
+<div class="article-template__content page-width page-width--narrow rte" itemprop="articleBody">
+    {{ pages["wishlist"].content }}
+
+<input type="hidden" id="customer_email" value={{ customer.email }}/>
+<button type="submit" id="submit_form" onclick="SendMail()" class="newsletter__button button wishlist-m-button" name="commit">
+                Request Samples
+              </button>
+
+<button id="wishlist_clear" class="newsletter__button button wishlist-m-button">
+                Clear Wish & Sample List
+              </button>
+<dialog>
+  <hr id="dialog_hr"/>
+   <p>Are you sure you want to remove all items from Wish & Sample List?</p>
+  <div class="dialog_btns">
+    <button class="newsletter__button button wishlist-m-button" id="clear_and_close_dialog">Yes</button>
+    <button class="newsletter__button button wishlist-m-button" id="close_dialog">No</button>
+  </div>
+</dialog>
+  <br/><br/>
+<div id="snackbar">Your request has been sent, we will contact you shortly</div>
+<div id="snackbarError">Failed to send request</div>
+
+  <br/>
+<div class="alt-dlv">&nbsp;</div>
+  
+<div class="wishlist__grid grid flex container" grid-wishlist>
+  {% comment %} Sample loading element {% endcomment %}
+  <p class="wishlist__loader full-width text-center">Loading...</p>   
+</div>
+
+<div class="wish-info">
+<h3 class="no_products_data wish_msg">{{ 'general.wish_msg' | t }}</h3>
+<a href="{{ routes.all_products_collection_url }}" class="link">
+      {{ 'general.continue_shopping' | t }}
+</a>
+</div>
+
+{% schema %}
+  {
+    "templates": ["page"]
+  }
+{% endschema %}
