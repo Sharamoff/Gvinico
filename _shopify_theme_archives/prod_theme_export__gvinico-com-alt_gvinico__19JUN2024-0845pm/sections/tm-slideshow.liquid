@@ -1,0 +1,110 @@
+{{ 'section-slideshow.css' | asset_url | stylesheet_tag }}
+{{ 'flexslider.css' | asset_url | stylesheet_tag }}
+
+
+
+<div class="flexslider">
+	<ul class="slides">
+      {%- for block in section.blocks -%}
+      {%- assign block_image = block.settings.image -%}
+        <li>
+          {%- if block_image != blank -%}
+          
+          <img src="{{ block_image | img_url: '2048x' }};"/>    
+          {%- else -%}
+    <div class="{% if block_image == blank %} placeholder{% endif %}">
+      {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+    </div>
+  {%- endif -%}                     
+          <div class="slideshow-text slideshow-text--onlybtn">
+            <div class="slideshow__slidetitle">
+              {{ block.settings.slide_title | escape }}
+            </div>
+
+            <div class="slideshow__subheading">
+              {{ block.settings.subheading | escape }}
+            </div>
+             <div class="slideshow__subtitle">
+              {{ block.settings.subtitle | escape }}
+            </div>
+
+            
+            <div class="slideshow__btn-wrapper">
+              <a href="{{ block.settings.button_link }}" class="btn slideshow__btn button">
+                {{ block.settings.button_label | escape }}
+              </a>
+            </div>
+            
+
+          </div>
+        </li>
+      {%- endfor -%}
+	</ul>
+</div>
+
+<script src="{{ 'jquery.flexslider.js' | asset_url }}" defer="defer"></script>
+
+<script type="text/javascript" charset="utf-8">
+  $(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "fade",
+    controlNav: true
+
+  });
+});
+</script>
+
+
+{% schema %}
+{
+  "name": "t:sections.tm-slideshow.name",
+  "tag": "section",
+  "class": "spaced-section slideshow spaced-section--full-width",
+  "blocks": [
+    {
+      "type": "image",
+      "name": "t:sections.tm-slideshow.blocks.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.tm-slideshow.blocks.settings.image.label"
+        },
+        {
+          "type": "text",
+          "id": "slide_title",
+          "label": "t:sections.tm-slideshow.blocks.settings.slide_title.label",
+          "default": "Discount Up To 50% Off"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "t:sections.tm-slideshow.blocks.settings.subheading.label",
+ 		   "default": "Villenoir Cabernet"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "t:sections.tm-slideshow.blocks.settings.subtitle.label",
+ 		   "default": "Sauvignon"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "t:sections.tm-slideshow.blocks.settings.button_label.label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:sections.tm-slideshow.blocks.settings.button_link.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.tm-slideshow.presets.name"
+    }
+  ]
+}
+{% endschema %}

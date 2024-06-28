@@ -1,0 +1,165 @@
+<div id="prompt-background" class="alt-agecheck">
+  <img class="logo" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/soc-gvinico.png" alt="Gvinico.com - Wine import hub">
+  <div id="age-check-prompt" class="modal-prompt">
+    <h1>
+      <div class="warn-sign">21+</div>
+      <div class="warn-title">Age<br>Verification</div>
+    </h1>
+    <p>
+      You must be 21 years or older to enter this site. By clicking enter, you confirm that you are at least 21 years of age.
+    </p>
+    <div class="modal-footer">
+      <button id="submit_birthdate" class="button-enter btn styled-submit button-enter" onclick="ageCheck()">Enter</button> 
+      <div>&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;</div>
+      <a href="http://google.com/" id="button-exit" class="button-exit">Exit</a>
+    </div>  
+  </div>
+</div>
+
+<script>
+  
+  function ageCheck() {
+     var days = 14; //number of days until they must go through the age checker again.
+     var date = new Date();
+     date.setTime(date.getTime()+(days*24*60*60*1000));
+     var expires = "; expires="+date.toGMTString();
+     document.cookie = 'isAnAdult=true;'+expires+"; path=/";
+     location.reload();
+  };
+
+  function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+  };
+
+  var isAnAdult = readCookie('isAnAdult');
+  if (isAnAdult) {
+    document.write("<style> .alt-agecheck { display: none; }</style>");
+  };
+
+</script>
+
+<style>
+
+.alt-agecheck {
+  background-color: var(--color-base-accent-1);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999999;
+  font-family: var(--font-body-family);
+}
+
+.alt-agecheck .logo {
+  display: block;
+  width: 315px;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  top: 10%;
+}
+  
+  
+.alt-agecheck .modal-prompt {
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  width: 350px;
+  height: auto;
+  margin: 0 auto;
+  padding: 30px;
+  position: relative;
+  top: 15%;
+  z-index: 1000000;
+}
+
+.alt-agecheck h1 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+}
+
+.alt-agecheck .warn-sign {
+  text-align: center;
+  font-family: var(--font-body-family) !important;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 80px;
+  width: 80px;
+  height: 80px;
+  color: #ffffff;
+  background-color: var(--color-base-accent-1);
+  border-radius: 50%;
+}
+
+.alt-agecheck .warn-title {
+  font-family: var(--font-body-family) !important;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.1;
+  color: #000000;
+}
+
+.alt-agecheck p {
+  font-size: 14px;
+  color: #000000;
+}
+
+.alt-agecheck .modal-footer {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+} 
+
+.alt-agecheck .button-enter {
+  font-size: 18px;
+  font-weight: 500;
+  min-width: 80px;
+  padding: 10px;
+  text-align: center;
+  background-color: var(--color-base-accent-1);
+  color: #ffffff;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.alt-agecheck .button-enter:hover {
+  background-color: #ffcc1d;
+  color: #000000;
+}
+
+.alt-agecheck .button-exit {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-base-accent-1);
+  padding: 10px 0;
+  transition: all 0.5s;
+}
+.alt-agecheck .button-exit:hover {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+  text-decoration: underline;
+} 
+  
+</style>
+
+
+
+
+
+
+
+
+

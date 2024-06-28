@@ -1,0 +1,236 @@
+{%- if variant.metafields.custom.winemaking.value != blank -%}
+
+
+<div class="winemaking-stages">
+  {%- assign stages_desc = "" -%}
+  {%- assign stages_html = "" -%}
+  
+  {%- assign color = product.metafields.custom.color.value -%}
+  {%- if color == 'Amber' -%}
+    {%- assign color = "White" -%}
+  {%- endif -%}
+  
+  {%- assign prev_stage_type = "" -%}
+  {%- assign prev_stage_vat = "" -%}
+  {%- assign prev_stage_skins = "0%" -%}
+  {%- assign prev_stage_stems = "0%" -%}
+  {%- assign color_afer_skins = false -%}
+  {%- assign color_after_stems = false -%}
+
+  {%- assign wm = variant.metafields.custom.winemaking | downcase -%}
+  {%- assign stages = wm | split: ", " -%}
+  {% for stage in stages %}
+    {%- assign stage_pic = "wm-" | append: color -%}
+    {%- assign stage_type = "" -%}
+    {%- assign stage_vat = "" -%}
+    {%- assign stage_yeast = "" -%}
+    {%- assign stage_skins = "0%" -%}
+    {%- assign stage_stems = "0%" -%}
+    {%- assign stage_lees = "" -%}
+    {%- assign stage_temp = "" -%}
+    {%- assign stage_duration = "" -%}
+
+
+    {%- if stage contains 'ferment' -%}
+      {%- assign stage_type = "Fermentation" -%}
+    {%- elsif stage contains 'macerat' -%}
+      {%- assign stage_type = "Aging" -%}
+    {%- elsif stage contains 'aging' or stage contains 'aged' -%}
+      {%- assign stage_type = "Aging" -%}
+    {%- endif -%}
+
+    {%- if stage_type != blank -%}
+      {%- if stage contains 'qvevri' -%}
+        {%- assign stage_vat = "Qvevri" -%}
+      {%- elsif stage contains 'stainless' or stage contains 'steel' -%}
+        {%- assign stage_vat = "Steel" -%}
+      {%- elsif stage contains 'oak' or stage contains 'barrel' -%}
+        {%- assign stage_vat = "Oak" -%}
+      {%- elsif stage contains 'bottle' -%}
+        {%- assign stage_vat = "Bottle" -%}
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if stage_type == "Fermentation" -%}
+      {%- if stage contains 'cultured' -%}
+        {%- assign stage_yeast = "Cultured" -%}
+      {%- elsif stage contains 'wild' -%}
+        {%- assign stage_yeast = "Wild" -%}
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if stage_type == "Aging" -%}
+      {%- if stage contains 'lees' -%}
+        {%- assign stage_lees = "Lees" -%}
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- assign temp_values = "" -%}
+    {%- assign stage_parts = stage | split: ' ' -%}
+
+    {%- for part in stage_parts -%}
+      {%- if part contains '°' -%}
+        {%- assign clean_part = part | remove: '°c' | remove: '°C' -%}
+        {%- if temp_values == "" -%}
+          {%- assign temp_values = clean_part -%}
+        {%- else -%}
+          {%- assign temp_values = temp_values | append: "-" | append: clean_part -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if temp_values != "" -%}
+      {%- assign stage_temp = temp_values | append: "°C" -%}
+    {%- endif -%}
+
+    {%- assign found_skins = false -%}
+    {%- assign found_stems = false -%}
+    
+    {%- assign previous_part = "" -%}
+    {%- for part in stage_parts -%}
+      {%- if part contains 'skins' -%}
+        {%- assign found_skins = true -%}
+        {%- assign word_before_skins = previous_part -%}
+      {%- elsif part contains 'stems' -%}
+        {%- assign found_stems = true -%}
+        {%- assign word_before_stems = previous_part -%}
+      {%- elsif part contains 'day' or part contains 'month' or part contains 'year' or part contains 'week' -%}
+        {%- assign stage_duration = previous_part | append: " " | append: part -%}
+      {%- endif -%}
+      {%- assign previous_part = part -%}
+    {%- endfor -%}
+
+    {%- if found_skins == true -%}  
+      {%- if word_before_skins == 'with'  or word_before_skins == 'full' or word_before_skins == 'on'-%}
+        {%- assign stage_skins = "100%" -%}
+      {%- elsif word_before_skins == 'without' or word_before_skins == 'no' -%}
+        {%- assign stage_skins = "0%" -%}
+      {%- elsif word_before_skins contains '%' -%}
+        {%- assign stage_skins = word_before_skins -%}
+      {%- endif -%}
+    {%- endif -%}
+   
+    {%- if found_stems == true -%}  
+      {%- if word_before_stems == 'with' -%}
+        {%- assign stage_stems = "100%" -%}
+      {%- elsif word_before_stems == 'and' -%}
+        {%- assign stage_stems = stage_skins -%}
+      {%- elsif word_before_stems == 'ripe' -%}
+        {%- assign stage_stems = "ripe" -%}
+      {%- elsif word_before_stems == 'without' or word_before_stems == 'no' -%}
+        {%- assign stage_stems = "0%" -%}
+      {%- elsif word_before_stems contains '%' -%}
+        {%- assign stage_stems = word_before_stems -%}
+      {%- endif -%}
+    {%- endif -%}
+
+    {% comment %} If skins and stems not mentioned explicitly for Red Fermentation we should set it to 100%
+    {% endcomment %}
+      
+
+    {% comment %} If skins and stems not mentioned explicitly we make different assumptions
+    {% endcomment %}
+    {% if found_skins != true and found_stems != true %} 
+      {% comment %} If skins and stems not mentioned explicitly for Red or Rose Fermentation we should set it to 100%
+      {% endcomment %}
+      {% if stage_type == "Fermentation" and color == 'Red' %}
+        {%- assign stage_skins = "100%" -%}
+      {%- else -%}
+        {% comment %} When moving from qvervi stage to another qvevri stage, we set them to the previous stage values
+        {% endcomment %}
+        {% if stage_vat == "Qvevri" and prev_stage_vat == "Qvevri" %}
+          {%- assign stage_skins = prev_stage_skins -%}
+          {%- assign stage_stems = prev_stage_stems -%}       
+        {% else %}
+          {% comment %} Otherwise we set them to 0%
+          {% endcomment %}
+          {%- assign stage_stems = "0%" -%}
+          {%- assign stage_skins = "0%" -%}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+    
+    {% assign stage_type_short = stage_type | slice: 0, 1 %}
+    {% assign stage_pic = stage_pic | append: stage_type_short %}
+    {% assign stage_vat_short = stage_vat | slice: 0, 1 %}
+    {% assign stage_pic = stage_pic | append: stage_vat_short %}
+    {% if stage_lees != blank  %}
+      {% assign stage_pic = stage_pic | append: "lees" %}
+      {% if color == 'White'  %}
+        {% if color_after_stems == true  %}
+          {% assign stage_pic = stage_pic | append: "AfterStems" %}
+        {% elsif color_afer_skins == true %}
+          {% assign stage_pic = stage_pic | append: "AfterSkins" %}
+        {% endif %}
+      {% endif %}
+    {% elsif stage_stems != "0%" %}
+     {%- assign color_after_stems = true -%}
+     {% assign stage_pic = stage_pic | append: "stems" %}
+    {% elsif stage_skins != "0%" %}
+     {%- assign color_afer_skins = true -%}
+     {% assign stage_pic = stage_pic | append: "skins" %}
+    {% elsif color == 'White' %}
+      {% if color_after_stems == true %}
+        {% assign stage_pic = stage_pic | append: "AfterStems" %}
+      {% elsif color_afer_skins == true %}
+        {% assign stage_pic = stage_pic | append: "AfterSkins" %}
+      {% endif %}
+    {% endif %}
+
+    {% assign stage_pic = stage_pic | append: ".png" %}
+    
+      
+
+    {%- if stage_type != blank and stage_pic != blank -%}
+
+      
+      {%- if color == "White" or color == "Red" or color == "Rose"-%}
+        
+          <div class="winemaking-stages-block">
+            <div class="stages-block__header">{{ stage_type }}</div>
+            <div class="stages-block__container">
+              <div class="winemaking-stage">
+                <div class="winemaking-stage__illustration">
+                  {{ stage_pic | file_url | img_tag }}
+                  {%- if stage_duration != blank -%}
+                    <span>{{ stage_duration }}</span>
+                  {%- else -%}
+                    <span>&nbsp;</span>
+                  {% endif %}
+                </div>
+                <div class="winemaking-stage__description">
+                  {%- if stage_type == "Fermentation" and stage_yeast != blank -%}
+                    <span>{{ stage_yeast }} yeast</span>
+                  {%- endif -%}
+                  {%- if stage_temp != blank -%}
+                    <span>{{ stage_temp }}</span>
+                  {%- endif -%}
+                  {%- if stage_skins != '0%' or color_afer_skins == true -%}
+                    <span>{{ stage_skins }} skins</span>
+                  {%- endif -%}
+                  {%- if stage_stems != '0%' or color_after_stems-%}
+                    <span>{{ stage_stems }} stems</span>
+                  {%- endif -%}
+                </div>  
+              </div>  
+            </div>  
+          </div>  
+        
+      {%- endif -%}
+
+      
+
+      {% assign stages_desc = stages_desc | append: "[" | append: stage_type | append: ":" | append: stage_vat | append: "," | append: stage_yeast | append: ",skins:" | append: stage_skins | append: ",stems:" | append: stage_stems | append: "," | append: stage_lees | append: "," | append: stage_duration | append: "," | append: stage_temp | append: "," | append: stage_pic | append: "]"%}
+
+    {%- endif -%}
+
+
+    {%- assign prev_stage_type = stage_type -%}
+    {%- assign prev_stage_vat = stage_vat -%}
+    {%- assign prev_stage_skins = stage_skins -%}
+    {%- assign prev_stage_stems = stage_stems -%}
+    
+  {% endfor %}
+</div>
+
+{{ stages_desc }}
+{%- endif -%}
