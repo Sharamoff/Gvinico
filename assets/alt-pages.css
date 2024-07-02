@@ -454,3 +454,52 @@ details[open] summary ~ * {
   list-style-position: inside;
 }
 
+
+
+.alt-pages .blockpicks {
+  display: block;
+  margin: 20px 0 40px 0 !important;
+  text-decoration: none !important;
+}
+
+.alt-pages .blockpics__plate {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.alt-pages .blockpics__plate img {
+  flex: 0 0 auto;
+  margin-bottom: 12px;
+}
+
+.alt-pages .blockpics.blockpics--shemachunk img {
+  height: 144px;
+  width: auto;
+}
+
+.blockpics__description {
+  color: var(--color-base-accent-2);
+  font-size: 14px;
+  //margin-top: 5px;
+  text-align: left;
+  line-height: 1.2;
+}
+.blockpics__description a {
+  color: #000000;
+  text-decoration: none !important;
+}
+.blockpics__description a:hover {
+  color: var(--color-base-accent-1);
+}
+
+.blockpics__description .hdr {
+  font-weight: 600;
+}
+
+.alt-pages .blockpicks:hover .hdr {
+  color: var(--color-base-accent-1);
+}
+
+.c-red {
+  color: var(--color-base-accent-1) !important;
+}

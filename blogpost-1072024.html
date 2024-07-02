@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--**************************************************** from template.liquid **************************************************-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="">
+  <title>GVINICO_PAGE-TEMPLATE</title>
+  <link href="https://cdn.shopify.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.shopifycdn.com" rel="preconnect" crossorigin>
+  <link href="_assets/component-price.css" rel="stylesheet" media="print">
+  <script src="_assets/product-form.js" defer="defer"></script>
+  <script src="_assets/global.js" defer="defer"></script>
+  <script src="_assets/owl.carousel.min.js" defer="defer"></script>
+  <script src="_assets/wishlist.js" defer="defer"></script>
+  <script src="_assets/compare.js" defer="defer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css">
+  <link href="_assets/quickview.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <style>
+    /*** from settings_data.json ***/
+    :root {
+      --font-body-family: "Inter"; /*{{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};*/
+      --font-body-style: normal; /*{{ settings.type_body_font.style }};*/
+      --font-body-weight: 400; /*{{ settings.type_body_font.weight }};*/
+      --font-heading-family: "Cormorant Garamond"; /*{{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};*/
+      --font-heading-style: normal; /*{{ settings.type_header_font.style }};*/
+      --font-heading-weight: 400; /*{{ settings.type_header_font.weight }};*/
+      --color-base-text: #000000; /*{{ settings.colors_text }};*/
+      --color-base-text-rgb: rgb(0, 0, 0); /*{{ settings.colors_text | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-background-1: #ffffff; /*{{ settings.colors_background_1 }};*/
+      --color-base-background-1-rgb: rgb(255, 255, 255); /*{{ settings.colors_background_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-1: #ae194a; /*{{ settings.colors_accent_1 }};*/
+      --color-base-accent-1-rgb: rgb(174, 25, 74); /*{{ settings.colors_accent_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-2: #777777; /*{{ settings.colors_accent_2 }};*/
+      --color-base-accent-2-rgb: rgb(119, 119, 119); /*{{ settings.colors_accent_2 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-border: #dddddd; /*{{ settings.colors_border }};*/
+      --color-base-button-text: #ffffff; /*{{ settings.button_text }};*/
+      --color-base-button-text-hover: #000000; /*{{ settings.button_text_hover }};*/
+      --color-base-button-background: #ae194a; /*{{ settings.button_background }};*/
+      --color-base-button-background-hover: #ffcc1d; /*{{ settings.button_background_hover }};*/
+      --color-base-text-opacity-10-percent: rgba(0, 0, 0, 0.1); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-text-opacity-20-percent: rgba(0, 0, 0, 0.2);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 20 }};*/
+      --color-base-text-opacity-55-percent: rgba(0, 0, 0, 0.55);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 55 }};*/
+      --color-base-text-opacity-85-percent: rgba(0, 0, 0, 0.85); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 85 }};*/
+      --color-base-accent-1-opacity-10-percent: rgba(174, 25, 74, 0.1); /*{{ settings.colors_accent_1 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-accent-2-opacity-10-percent: rgba(119, 119, 119, 0.1); /*{{ settings.colors_accent_2 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-rating-empty: #dddddd; /*{{ settings.rating_empty }};*/
+      --color-rating-filled: #000000; /*{{ settings.rating_filled }};*/
+      --color-secondary-hover: #ffcc1d; /*{{ settings.secondary_hover_color }};*/
+    }
+    :root {
+      --color-base-background-2: #f0f0f0;
+      --color-base-background-2-rgb: rgb(240, 240, 240);
+      --color-base-solid-button-labels: #000000;
+      --color-base-solid-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-outline-button-labels: #000000;
+      --color-base-outline-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-color-base-accent-1: var(--color-base-accent-1); ;
+    }
+    /*** end from settings_data.json ***/
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+    html {
+      box-sizing: border-box;
+      font-size: 62.5%;
+      height: 100%;
+    }
+    body {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: normal !important;
+      line-height: 1.4;
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
+      color: var(--color-base-text);
+    }
+  </style>
+  <link href="_assets/base.css" rel="stylesheet">
+  <link href="_assets/component-predictive-search.css" rel="stylesheet">
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+  <style>
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 600;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-600.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-600.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-600.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 700;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-700.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-700.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-700.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    .slideshow__subheading, .slideshow__subtitle,
+    .title, .title-wrapper-with-link,
+    .cms-banner-title-three,
+    .parallex-title,
+    .two-banner .cms-banner-subtitle-three,
+    .newsletter.center .h1,
+    .breadcrumb_title{
+      font-family: 'Cormorant Garamond', serif !important;
+    }
+  </style>
+  <!--*** from page.liquid ***-->
+  <link href="_assets/component-rte.css" rel="stylesheet">
+  <link href="_assets/section-main-page.css" rel="stylesheet">
+  <!--*** end from page.liquid ***-->
+  <!--*** style of inserted content in template.liquid ***-->
+
+
+  <link href="_assets/section-blog-post.css" rel="stylesheet">
+
+
+  <link href="assets/alt-pages.css" rel="stylesheet">
+  <!--*** end style of inserted content in template.liquid ***-->
+
+
+
+
+
+</head>
+<body class="template-page">
+<main class="main-content" id="MainContent" role="main" tabindex="-1">
+<!--**************************************************** end from template.liquid **************************************************-->
+<div class="page-width contents">
+<div class="main-container">
+<section class="shopify-section spaced-section">
+<div class="page-width page-width--narrow">
+<div class="rte" style="padding-top: 100px; padding-bottom: 100px">
+
+
+
+
+
+
+
+
+
+
+  <!-- INSERTED CONTENT -->
+
+  <section class="alt-pages">
+    <div class="block-article">
+      <div class="block-article__text">
+        <h3 class="h3-gr h-color-accent-1">Introducing Winemaking Infographics</h3>
+        <p>Hey wine lovers! We’re super excited to roll out our newest feature: Winemaking Infographics. These cool visuals show off the main winemaking processes like fermentation and aging for every wine on our site. Now, you can see exactly how your favorite wines go from grape to bottle!</p>
+        <h3 class="h3-gr h-color-accent-1">Why Infographics?</h3>
+        <p>Wine isn’t just a drink; it’s a story of tradition and craftsmanship. At festivals and tastings, winemakers spend a lot of time explaining their magic. Our Winemaking Infographics make these stories easy to see and fun to understand.</p>
+        <h3 class="h3-gr h-color-accent-1">Introducing Winemaking Infographics</h3>
+        <p>Every wine diagram will show:</p>
+        <ul class="ul--base">
+          <li><strong>Vessel Type:</strong> From Qvevri to stainless steel tanks and oak barrels.</li>
+          <li><strong>Skins/Stems:</strong> How much grape skin and stem are used, impacting flavor and complexity.</li>
+          <li><strong>Lees:</strong> The use of lees (those funky dead yeast cells) for adding richness.</li>
+          <li><strong>Duration:</strong> A timeline of the wine’s journey.</li>
+          <li><strong>Temperature Levels:</strong> The specific temps during fermentation and aging.</li>
+        </ul>
+      </div>
+      <div class="block-article__pic"><img alt="Winemaking Infographics" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic1-1072024.jpg"></div>
+    </div>
+    <div class="blockpicks">
+      <div class="blockpics__plate blockpics--shemachunk"><img alt="" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic3-1072024-1.png"> <img alt="" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic3-1072024-2.png"> <img alt="" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic3-1072024-3.png"></div>
+      <div class="blockpics__description">Traditional Kakhetian method with full skins and stems, extended with 3 years of no skin aging, used for winemaking of <a href="https://www.gvinico.com/products/qvevriseuli-rkatsiteli">Qvevriseuli Rkatsiteli</a>.</div>
+      <h3 class="h3-gr h-color-accent-1">Colors</h3>
+      <p>The transformation from juice to wine encompasses a spectrum of colors, including white, red, and the delightful rosé. Additionally, Georgia's famed amber wines, often referred to as liquid gold, exhibit varying shades based on the extent of skin and stem contact used during fermentation.</p>
+    </div>
+    <div class="blockpicks">
+      <div class="blockpics__plate blockpics--shemachunk"><img alt="" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic4-1072024-1.png"> <img alt="" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic4-1072024-2.png"> <img alt="" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic4-1072024-3.png"></div>
+      <div class="blockpics__description">Saperavi qvevri skin contact with oak aging, used for winemaking of <a href="https://www.gvinico.com/products/orilo-saperavi-khashmi-oak">ORILO Saperavi Khashmi Oak</a>.</div>
+    </div>
+    <h3 class="h3-gr h-color-accent-1">Why You’ll Love It</h3>
+    <div class="two-column">
+      <div>
+        <p><strong class="c-red">For Winemakers:</strong></p>
+        <ul class="ul--base">
+          <li><strong>Easy Explaining:</strong> Simplify your winemaking tales.</li>
+          <li><strong>Show Your Skills:</strong> Highlight your unique techniques.</li>
+        </ul>
+      </div>
+      <div>
+        <p><strong class="c-red">For Wine Fans:</strong></p>
+        <ul class="ul--base">
+          <li><strong>Quick Grasp:</strong> Instantly understand what goes into each wine.</li>
+          <li><strong>Smart Choices:</strong> Pick wines based on your taste preferences.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="blockpicks">
+      <div class="blockpics__plate blockpics--shemachunk"><img alt="" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic5-1072024-1.png"> <img alt="" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic5-1072024-2.png"> <img alt="" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic5-1072024-3.png"></div>
+      <div class="blockpics__description">Amazing usage of stainless tanks with aging on the lees to produce the Rosé <a href="https://www.gvinico.com/products/zhuka-sano-wine-3-47">Zhuka-Sano Wine 3/47</a>.</div>
+    </div>
+    <div class="blockpicks">
+      <div class="blockpics__plate blockpics--shemachunk"><img alt="" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic6-1072024-1.png"> <img alt="" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic6-1072024-2.png"></div>
+      <div class="blockpics__description">Champagne method for <a href="https://www.gvinico.com/products/chateau-ateni-atenuri-brut">Chateau Ateni Atenuri Brut</a>.</div>
+    </div>
+    <h3 class="h3-gr h-color-accent-1">Dive Into Wine</h3>
+    <p>With Winemaking Infographics, we’re making wine-buying fun and educational. Check out this new feature and discover the awesome stories behind your favorite wines.</p>
+    <p>Stay tuned for more cool updates from gvinico.com, and happy sipping!</p>
+  </section>
+
+  <!-- END INSERTED CONTENT -->
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body>
+</html>
