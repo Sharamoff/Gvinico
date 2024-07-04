@@ -456,6 +456,53 @@ details[open] summary ~ * {
 
 
 
+.alt-block-minibtn {
+  display: flex;
+  gap: 20px;
+}
+.alt-block-minibtn > a {
+  flex: 0 1 auto;
+  text-decoration-color: transparent !important;
+  display: block;
+  font-weight: 400;
+  color: #ffffff !important;
+  background-color: var(--color-base-accent-1);
+  padding: 7px 15px;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 1.2;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 749px) {
+
+  .alt-block-minibtn {
+    justify-content: center;
+  }
+
+}
+
+
+@media screen and (max-width: 475px) {
+
+  .alt-block-minibtn {
+    display: block;
+  }
+
+  .alt-block-minibtn > a {
+    margin-top: 20px;
+  }
+
+}
+
+.alt-block-minibtn > a:hover {
+  background-color: var(--color-base-button-background-hover);
+  color: #000000 !important;
+}
+
+
 .alt-pages .blockpicks {
   display: block;
   margin: 20px 0 40px 0 !important;
@@ -480,7 +527,7 @@ details[open] summary ~ * {
 .blockpics__description {
   color: var(--color-base-accent-2);
   font-size: 14px;
-  //margin-top: 5px;
+//margin-top: 5px;
   text-align: left;
   line-height: 1.2;
 }

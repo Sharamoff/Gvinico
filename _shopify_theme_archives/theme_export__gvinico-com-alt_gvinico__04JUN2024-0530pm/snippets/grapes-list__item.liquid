@@ -1,9 +1,0 @@
-<li class="grapes-list__item">
-  <a href="/collections/{{ collection.handle }}">
-    {% if collection.image %}
-      <img src="{{ collection | image_url }}" alt="{{ collection.title }}" />
-    {% endif %}
-      <div class="grapes-list__item-title">{{ collection.title }}</div>
-      <div class="grapes-list__item-count">{{ collection.all_products_count }}<span>item{% if collection.all_products_count > 1 %}s{% endif %}</span></div>
-  </a>
-</li>
