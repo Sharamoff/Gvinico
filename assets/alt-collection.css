@@ -59,7 +59,7 @@
 .c-descript__txt {
   flex: 3 1 auto;
 }
-.c-descript__txt a {
+.c-descript__txt p a {
   text-decoration: underline !important;
   transition: 0.5s all;
 }
@@ -315,6 +315,75 @@
 }
 
 
+.card-collection {
+  width: 66%;
+  margin: 40px 0;
+  border: 1px solid var(--color-base-border);
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 1100px) {
+
+  .card-collection {
+    width: 100%;
+  }
+
+}
+
+.card-collection__img {
+  display: block;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  border-radius: 5px;
+}
+
+.card-collection__img img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  object-fit: cover;
+}
+
+.card-collection__info {
+  padding: 10px 20px 20px 20px;
+}
+
+@media screen and (max-width: 749px) {
+
+  .card-collection__info {
+    padding: 10px;
+  }
+
+}
+
+.card-collection__info-title {
+  display: block;
+  margin-bottom: 10px;
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-decoration-color: #ffffff !important;
+}
+
+.card-collection__info p {
+  margin: 0 0 20px;
+  color: var(--color-base-accent-2);
+  font-size: 14px;
+}
+
+.card-collection:hover .card-collection__img img {
+  scale: 1.05;
+}
+
+.card-collection:hover .card-collection__info .button,
+.card-collection__info .button:hover {
+  background: #000000;
+  color: #ffffff;
+}
 
 
 

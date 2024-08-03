@@ -455,7 +455,6 @@ details[open] summary ~ * {
 }
 
 
-
 .alt-block-minibtn {
   display: flex;
   gap: 20px;
@@ -549,4 +548,95 @@ details[open] summary ~ * {
 
 .c-red {
   color: var(--color-base-accent-1) !important;
+}
+
+
+.text-qa {
+  margin: 30px auto;
+}
+
+@media screen and (max-width: 475px) {
+
+  .text-qa {
+    margin: 20px auto;
+  }
+
+}
+
+.text-qa .txt-q {
+  font-weight: 600;
+}
+
+.text-qa .txt-a {
+  margin-left: 30px;
+}
+
+.text-qa .txt-a p {
+  margin-top: 10px;
+}
+
+.text-qa .txt-a:before {
+  float: left;
+  content: "―";
+  margin-left: -30px;
+  font-weight: 400;
+}
+
+.pics-qa {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 30px auto;
+}
+
+@media screen and (max-width: 990px) {
+
+  .pics-qa {
+    gap: 15px;
+  }
+
+}
+
+@media screen and (max-width: 475px) {
+
+  .pics-qa {
+    flex-direction: column;
+    align-items: center;
+    margin: 15px auto;
+  }
+
+}
+
+.pics-qa figure {
+  flex: 1 1 auto;
+  width: 28%;
+  margin: 0;
+}
+
+.pics-qa img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 475px) {
+
+  .pics-qa figure {
+    width: 100%;
+    max-width: 300px;
+  }
+
+}
+
+.alt-pages figcaption {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+}
+
+@media screen and (max-width: 749px) {
+
+  .alt-pages figcaption {
+    font-size: 12px;
+  }
+
 }

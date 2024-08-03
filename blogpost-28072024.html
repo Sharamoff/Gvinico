@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--**************************************************** from template.liquid **************************************************-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="">
+  <title>GVINICO_PAGE-TEMPLATE</title>
+  <link href="https://cdn.shopify.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.shopifycdn.com" rel="preconnect" crossorigin>
+  <link href="_assets/component-price.css" rel="stylesheet" media="print">
+  <script src="_assets/product-form.js" defer="defer"></script>
+  <script src="_assets/global.js" defer="defer"></script>
+  <script src="_assets/owl.carousel.min.js" defer="defer"></script>
+  <script src="_assets/wishlist.js" defer="defer"></script>
+  <script src="_assets/compare.js" defer="defer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css">
+  <link href="_assets/quickview.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <style>
+    /*** from settings_data.json ***/
+    :root {
+      --font-body-family: "Inter"; /*{{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};*/
+      --font-body-style: normal; /*{{ settings.type_body_font.style }};*/
+      --font-body-weight: 400; /*{{ settings.type_body_font.weight }};*/
+      --font-heading-family: "Cormorant Garamond"; /*{{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};*/
+      --font-heading-style: normal; /*{{ settings.type_header_font.style }};*/
+      --font-heading-weight: 400; /*{{ settings.type_header_font.weight }};*/
+      --color-base-text: #000000; /*{{ settings.colors_text }};*/
+      --color-base-text-rgb: rgb(0, 0, 0); /*{{ settings.colors_text | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-background-1: #ffffff; /*{{ settings.colors_background_1 }};*/
+      --color-base-background-1-rgb: rgb(255, 255, 255); /*{{ settings.colors_background_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-1: #ae194a; /*{{ settings.colors_accent_1 }};*/
+      --color-base-accent-1-rgb: rgb(174, 25, 74); /*{{ settings.colors_accent_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-2: #777777; /*{{ settings.colors_accent_2 }};*/
+      --color-base-accent-2-rgb: rgb(119, 119, 119); /*{{ settings.colors_accent_2 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-border: #dddddd; /*{{ settings.colors_border }};*/
+      --color-base-button-text: #ffffff; /*{{ settings.button_text }};*/
+      --color-base-button-text-hover: #000000; /*{{ settings.button_text_hover }};*/
+      --color-base-button-background: #ae194a; /*{{ settings.button_background }};*/
+      --color-base-button-background-hover: #ffcc1d; /*{{ settings.button_background_hover }};*/
+      --color-base-text-opacity-10-percent: rgba(0, 0, 0, 0.1); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-text-opacity-20-percent: rgba(0, 0, 0, 0.2);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 20 }};*/
+      --color-base-text-opacity-55-percent: rgba(0, 0, 0, 0.55);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 55 }};*/
+      --color-base-text-opacity-85-percent: rgba(0, 0, 0, 0.85); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 85 }};*/
+      --color-base-accent-1-opacity-10-percent: rgba(174, 25, 74, 0.1); /*{{ settings.colors_accent_1 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-accent-2-opacity-10-percent: rgba(119, 119, 119, 0.1); /*{{ settings.colors_accent_2 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-rating-empty: #dddddd; /*{{ settings.rating_empty }};*/
+      --color-rating-filled: #000000; /*{{ settings.rating_filled }};*/
+      --color-secondary-hover: #ffcc1d; /*{{ settings.secondary_hover_color }};*/
+    }
+    :root {
+      --color-base-background-2: #f0f0f0;
+      --color-base-background-2-rgb: rgb(240, 240, 240);
+      --color-base-solid-button-labels: #000000;
+      --color-base-solid-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-outline-button-labels: #000000;
+      --color-base-outline-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-color-base-accent-1: var(--color-base-accent-1); ;
+    }
+    /*** end from settings_data.json ***/
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+    html {
+      box-sizing: border-box;
+      font-size: 62.5%;
+      height: 100%;
+    }
+    body {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: normal !important;
+      line-height: 1.4;
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
+      color: var(--color-base-text);
+    }
+  </style>
+  <link href="_assets/base.css" rel="stylesheet">
+  <link href="_assets/component-predictive-search.css" rel="stylesheet">
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+  <style>
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 600;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-600.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-600.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-600.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 700;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-700.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-700.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-700.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    .slideshow__subheading, .slideshow__subtitle,
+    .title, .title-wrapper-with-link,
+    .cms-banner-title-three,
+    .parallex-title,
+    .two-banner .cms-banner-subtitle-three,
+    .newsletter.center .h1,
+    .breadcrumb_title{
+      font-family: 'Cormorant Garamond', serif !important;
+    }
+  </style>
+  <!--*** from page.liquid ***-->
+  <link href="_assets/component-rte.css" rel="stylesheet">
+  <link href="_assets/section-main-page.css" rel="stylesheet">
+  <!--*** end from page.liquid ***-->
+  <!--*** style of inserted content in template.liquid ***-->
+
+
+  <link href="_assets/section-blog-post.css" rel="stylesheet">
+
+
+  <link href="assets/alt-pages.css" rel="stylesheet">
+  <!--*** end style of inserted content in template.liquid ***-->
+
+
+
+
+
+</head>
+<body class="template-page">
+<main class="main-content" id="MainContent" role="main" tabindex="-1">
+<!--**************************************************** end from template.liquid **************************************************-->
+<div class="page-width contents">
+<div class="main-container">
+<section class="shopify-section spaced-section">
+<div class="page-width page-width--narrow">
+<div class="rte" style="padding-top: 100px; padding-bottom: 100px">
+
+
+
+
+
+
+
+
+
+
+  <!-- INSERTED CONTENT -->
+
+  <section class="alt-pages">
+
+    <p class="alt-text18">We’re kicking off our series of interviews with our favorite winery in Busheti, Ghvenakhe! Run by the amazing Shorena Bochorishvili, this charming, one-woman operation is the epitome of boutique vine-growing and winemaking. Get ready for some insights straight from the heart of Shorena's incredible vineyard!</p>
+    <figure class="hdr-img">
+      <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic1-28072024.jpg" alt="">
+      <figcaption>Gvenakhe vineyard</figcaption>
+    </figure>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">When and how did you first become interested in winemaking, and how did you start your journey in this field? Was your initial connection with wine rooted in family traditions, or did this interest develop later on? We would love to hear your story.</div>
+      <div class="txt-a">
+        <p>The connection with tradition is naturally intertwined with the centuries-old history of Georgian wine, which instills a sense of pride and love for the vine in every Georgian. My father made wine at home, and today, I continue the tradition using the same Qvevri. However, for my father, it was merely a hobby and a way to produce wine for family use. He had a small vineyard that he tended himself. As a child, I was involved in grape harvesting and was particularly fascinated by the activities around the Qvevri. Unfortunately, my father passed away early, and the Qvevri remained unused for a long time.</p>
+        <p>My interest in wine began when I started working at a wine production company in September 2000. The harvest season was starting, and I was involved in all processes from the arrival of the grapes at the cellar to the completion of fermentation. I also began learning how to taste wine. Later, I worked on preparing the wine for bottling and the bottling process itself. Eventually, I focused on quality control of the product. It became clear that winemaking starts in the vineyard, where the foundation is laid. My interest shifted towards vineyard management.</p>
+      </div>
+    </div>
+  
+    <div class="pics-qa">
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic2-28072024.jpg" alt="">
+        <figcaption>Picture wineyard 1</figcaption>
+      </figure>
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic3-28072024.jpg" alt="">
+        <figcaption>Picture wineyard 2</figcaption>
+      </figure>
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic4-28072024.jpg" alt="">
+        <figcaption>Picture wineyard 3</figcaption>
+      </figure>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">What was the first wine you made, and how was the experience?</div>
+      <div class="txt-a">
+        <p>Before I started bottling, I pressed a small amount of grapes and learned by observing the wine. The soil structure, composition, and overall terroir potential provided the foundation for aging wine in bottles. The intense color, aromas, high sugar concentration, and acidity allowed me to leave the wine in the bottle for years. The first wine I made was Saperavi, and the first wine I bottled was Saperavi from the 2019 harvest. However, before reaching this decision, I learned how to manage the vineyard and interact with it. Good terroir alone is not enough to achieve the desired result.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Can you share some memorable reactions or stories from people who have tasted your wine?</div>
+      <div class="txt-a">
+        <p>I am always happy to see people satisfied with tasting my wine and enjoy hearing their feedback. However, when a professional tastes my wine, I expect criticism and want to understand their objective opinion. I shared my 2019 and 2020 Saperavi with a French winemaker, a friend who never hesitates to give direct feedback. He was silent for a while, then looked at me and exclaimed, "Fantastic!" and kept tasting it attentively. Such evaluations increase my motivation and desire to improve.</p>
+      </div>
+    </div>
+
+    <div class="pics-qa">
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic5-28072024.jpg" alt="">
+        <figcaption>Picture wineyard 4</figcaption>
+      </figure>
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic6-28072024.jpg" alt="">
+        <figcaption></figcaption>
+      </figure>
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic7-28072024.jpg" alt="">
+        <figcaption>Picture wineyard 6</figcaption>
+      </figure>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">What is your favorite process in viticulture and winemaking?</div>
+      <div class="txt-a">
+        <p>I really don't know which one to highlight; every process has its importance, and it is necessary to carry them out correctly. I love pruning in the vineyard. In the cellar, during fermentation, the aroma that fills the air is a sign of a good outcome. I want to do everything with my own hands and try to reach as much as possible without involving others, although this is physically impossible.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">What challenges and difficulties have you encountered in the process of wine production and sales? How did you overcome them?</div>
+      <div class="txt-a">
+        <p>I overcame the difficulties in wine production with hard work. However, the main challenge is selling the wine at an adequate price. People often ask why my wine is so expensive, giving examples of other good wines available at reasonable prices. Yes, there are many good wines, but it's not just about good wine. Wine made in small cellars, where the viticulturist and winemaker are the same person, and who has a specific goal from the vineyard, creating unique and distinctive wine, is not like the mass-produced wines. Explaining to the consumer why my wine is better and why it should cost more is definitely challenging. There are other difficulties as well.</p>
+      </div>
+    </div>
+
+    <div class="pics-qa">
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic8-28072024.jpg" alt="">
+        <figcaption></figcaption>
+      </figure>
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic9-28072024.jpg" alt="">
+        <figcaption></figcaption>
+      </figure>
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic10-28072024.jpg" alt="">
+        <figcaption></figcaption>
+      </figure>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Please tell us about your vineyards. What varieties do you have, and which wines do you produce?</div>
+      <div class="txt-a">
+        <p>My vineyard is dear to me. I don't use herbicides or broad-spectrum chemicals, and I have stopped using insecticides. For us, chemicals are like medicine; we use them only when necessary. We don't use mineral fertilizers. The first vine we planted in 2002 was with the whole family's involvement, and it was the Saperavi variety. Later, we added Rkatsiteli and Mtsvane, then Khikhvi, and finally Kakhetian Mtsvivani. Currently, I produce two types of wine: Saperavi, which is aged in oak and continues aging in the bottle, and Kotsakhuri, which is made in Qvevri. This year, Khikhvi will be added.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Share the story of when you first sold your wine. When and how did it happen?</div>
+      <div class="txt-a">
+        <p>It was a very pleasant feeling; I don't know how to describe it. I was happy, and I still enjoy every bottle sold.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">What does Georgian wine mean to you, and how do you see its future? How should it develop?</div>
+      <div class="txt-a">
+        <p>Georgian wine is unique, special, and diverse to me. Georgian wine has the potential to create high-quality, valuable products. Otherwise, I don't know why we should produce wine like the rest of the world's market. This direction should be left to wine factories; we, the cellars, should offer true Georgian wine to the consumer. Deepening knowledge and gaining experience are necessary for any field's development. Great attention should be paid to the vineyard, and the terroir should be chosen correctly concerning the vine variety. Proper soil management, care, and conservation are important. A viticulturist who boasts about a large harvest probably doesn't understand the vineyard and certainly doesn't know about wine.</p>
+      </div>
+    </div>
+
+    <div class="pics-qa">
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic11-28072024.jpg" alt="">
+        <figcaption></figcaption>
+      </figure>
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic12-28072024.jpg" alt="">
+        <figcaption>Picture</figcaption>
+      </figure>
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic13-28072024.jpg" alt="">
+        <figcaption></figcaption>
+      </figure>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Tell us about your future plans. Do you plan to grow new varieties, produce new wines, or expand your cellar?</div>
+      <div class="txt-a">
+        <p>I plan to expand only according to the production capacity of the grapes harvested from my own vineyard. Finding a market and selling wine at a fair price is a challenge. The market is already saturated with low-priced wines, and mine doesn't deserve to be sold at a low price. I don't know how I will achieve this, but I have no choice; I must find a solution.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Do you have any advice for new winemakers? What should they consider to be successful in this field?</div>
+      <div class="txt-a">
+        <p>I would advise them not to avoid the vineyard if they really want to pursue winemaking. First and foremost, they should learn and love the vine. Everyone has their own path to success; there is probably no ready-made recipe. However, if you do what you truly want and love, you will undoubtedly feel successful.</p>
+      </div>
+    </div>
+
+    <figure class="hdr-img">
+      <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic1-28072024.jpg" alt="">
+      <figcaption></figcaption>
+    </figure>
+
+
+  </section>
+
+  <!-- END INSERTED CONTENT -->
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body>
+</html>
