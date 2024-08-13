@@ -640,3 +640,57 @@ details[open] summary ~ * {
   }
 
 }
+
+.text--centered {
+  margin: 40px auto;
+}
+
+@media screen and (max-width: 475px) {
+
+  .text--centered {
+    margin: 20px auto;
+  }
+
+}
+
+.ul--dpan > li {
+  margin-bottom: 14px;
+}
+
+
+.alt-pages .hdr-fourimg {
+  margin: 40px auto 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+@media screen and (max-width: 475px) {
+
+  .alt-pages .hdr-fourimg {
+    margin: 30px auto;
+  }
+
+}
+
+.alt-pages .hdr-fourimg img {
+  object-fit: cover;
+  width: 24%;
+  height: auto;
+}
+@media screen and (max-width: 768px) {
+
+  .alt-pages .hdr-fourimg img {
+    width: 33%;
+  }
+
+}
+
+@media screen and (max-width: 475px) {
+
+  .alt-pages .hdr-fourimg img {
+    width: 49%;
+  }
+
+}
