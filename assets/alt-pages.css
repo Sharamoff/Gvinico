@@ -694,3 +694,39 @@ details[open] summary ~ * {
   }
 
 }
+
+.logo-qa {
+  margin: 30px auto 0 auto;
+  display: block;
+}
+
+@media screen and (max-width: 475px) {
+
+  .logo-qa {
+    margin: -20px auto;
+    scale: 60%;
+  }
+
+}
+
+.h--centered {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.alt-gallery {
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+  gap: 10px;
+}
+
+.alt-gallery a {
+  display: block;
+}
+
+.alt-gallery a img {
+  height: 120px;
+}
