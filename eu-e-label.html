@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EU E-Label</title>
+  <link href="assets/elabel.css" rel="stylesheet">
+</head>
+
+
+
+
+
+
+<body class="elabel-page">
+
+
+
+
+
+<div class="elabel">
+
+
+
+  <form class="elabel-lang">
+    <label for="elabel-lang__select" class="elabel--eprop">Language</label>
+    <select id="elabel-lang__select" class="elabel--eval">
+      <option value="en" onselect="changeLanguage('en')" selected>English</option>
+      <option value="ge" onselect="changeLanguage('ge')">German</option>
+      <option value="fr" onselect="changeLanguage('fr')">French</option>
+      <option value="it" onselect="changeLanguage('it')">Italian</option>
+      <option value="bg" onselect="changeLanguage('bg')" disabled>Bulgarian</option>
+      <option value="hr" onselect="changeLanguage('hr')" disabled>Croatian</option>
+      <option value="cz" onselect="changeLanguage('cz')" disabled>Czech</option>
+      <option value="da" onselect="changeLanguage('da')" disabled>Danish</option>
+      <option value="fi" onselect="changeLanguage('fi')" disabled>Finnish</option>
+      <option value="el" onselect="changeLanguage('el')" disabled>Greek</option>
+      <option value="hu" onselect="changeLanguage('hu')" disabled>Hungarian</option>
+      <option value="ga" onselect="changeLanguage('ga')" disabled>Irish</option>
+      <option value="pl" onselect="changeLanguage('pl')" disabled>Polish</option>
+    </select>
+  </form>
+
+
+
+  <section class="elabel-product">
+
+    <div id="elabel-product__pic">
+      <img src="https://gvinico.com/cdn/shop/files/dano-qvevri_2021_809x.jpg" alt="">
+    </div>
+
+    <h1 id="elabel-product__title">Khornabuji Qvevri Rkatsiteli</h1>
+
+    <div class="elabel-block">
+      <table class="elabel--table">
+      <tbody>
+        <tr>
+          <td class="elabel--eprop">Winery</td>
+          <td class="elabel--eval"><span id="elabel-product__winery">Dano Winery</span></td>
+        </tr>
+        <tr>
+          <td class="elabel--eprop">Product</td>
+          <td class="elabel--eval"><span id="elabel-product__product">Rkatsiteli</span></td>
+        </tr>
+        <tr>
+          <td class="elabel--eprop">Origin Country</td>
+          <td class="elabel--eval"><span id="elabel-product__country">Georgia</span></td>
+        </tr>
+        <tr>
+          <td class="elabel--eprop">Terroir</td>
+          <td class="elabel--eval"><span id="elabel-product__terroir">Kakheti&ndash;Signagi&ndash;Khornabuji</span></td>
+        </tr>
+        <tr>
+          <td class="elabel--eprop">Vintage</td>
+          <td class="elabel--eval"><span id="elabel-product__vintage">2022</span></td>
+        </tr>
+        <tr>
+          <td class="elabel--eprop">Sugar Content</td>
+          <td class="elabel--eval"><span id="elabel-product__sugarcontent">Dry Amber</span></td>
+        </tr>
+        <tr>
+          <td class="elabel--eprop">Alc. Volume</td>
+          <td class="elabel--eval"><span id="elabel-product__alcvolume">13.1%</span></td>
+        </tr>
+        <tr>
+          <td class="elabel--eprop">Net Quantity</td>
+          <td class="elabel--eval"><span id="elabel-product__netquantity">750ml vol.</span></td>
+        </tr>
+        <tr>
+          <td class="elabel--eprop">Wine Agency Lot</td>
+          <td class="elabel--eval"><span id="elabel-product__lot">L19032005242</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+  </section>
+
+
+
+  <section class="elabel-nutrition">
+
+    <div class="elabel-block">
+      <h2>Nutrition Information</h2>
+      <div class="elabel--table-hdr">
+        <div>Type</div>
+        <div>per 100 ml</div>
+      </div>
+      <table class="elabel--table">
+        <tbody>
+          <tr>
+            <td class="elabel--eprop">
+              <strong>Energy</strong>
+            </td>
+            <td class="elabel--eval">
+              <span id="elabel-nutrition__energy-kj"><strong>351 kJ</strong></span>
+              <span id="elabel-nutrition__energy-kcal">84 kCal</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="elabel--eprop">
+              <strong>Fat</strong><br>
+              of wich Saturates
+            </td>
+            <td class="elabel--eval">
+              <span id="elabel-product__fat"><strong>0 g</strong></span>
+              <span id="elabel-product__fatsaturates">0 g</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="elabel--eprop">
+              <strong>Carbohydrate</strong><br>
+              of wich Sugars
+            </td>
+            <td class="elabel--eval">
+              <span id="elabel-product__carbohydrate"><strong>0.8 g</strong></span>
+              <span id="elabel-product__carbohydratesugar">0.8 g</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="elabel--eprop">
+              <strong>Protein</strong>
+            </td>
+            <td class="elabel--eval">
+              <span id="elabel-product__protein"><strong>0 g</strong></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="elabel--eprop">
+              <strong>Salt</strong>
+            </td>
+            <td class="elabel--eval">
+              <span id="elabel-product__salt"><strong>0 g</strong></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="elabel-block">
+      <h2>Ingredients</h2>
+      <div id="elabel-nutrition__ingredients">
+        Grapes, preservative:&nbsp;sulphites; stabilizing agents:&nbsp;contains metatartaric acid and/or potassium polyaspartate; acidity regulators:&nbsp;contains lactic acid and/or calcium sulphate.
+      </div>
+    </div>
+
+    <div class="elabel-block">
+      <h2>Alergens</h2>
+      <div id="elabel-nutrition__alergens">
+        Contain sulfites.
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <section class="elabel-information">
+
+    <div class="elabel-block">
+      <h2>Additional Information</h2>
+      <div id="elabel-nutrition__informations">
+        <span class="elabel--eprop">Winemaking:</span>&nbsp;Fermented with wild yeast in a Qvevri on full skins and no stems, Aged in Qvevri with full skins for 6 months, Unfiltered. <span class="elabel--eprop">Aromas:</span>&nbsp;Fresh stone fruit, Fresh flowers, Herbs, Pineapple, Honey. <span class="elabel--eprop">Taste:</span>&nbsp;Light body, Creamy mouthfeel, Refreshing acidity, Soft tannins, Long after taste.
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <div class="elabel-footer">
+    <div>Created by</div>
+    <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/gvinico-logo.svg" alt="Gvinico Import Wine Hub">
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+</html>

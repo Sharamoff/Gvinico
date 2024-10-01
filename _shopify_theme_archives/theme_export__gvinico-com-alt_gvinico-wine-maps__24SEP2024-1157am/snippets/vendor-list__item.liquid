@@ -1,0 +1,22 @@
+{% assign match = False %}
+{% assign vendor_collection_handle = vendor | handleize | strip | escape %}
+{% assign img_src = "" %}
+{% for collection in collections %}
+	{% if vendor_collection_handle == collection.handle %}
+		{% assign match = true %}
+        {% if collection.image %}
+          {% assign img_src = collection | image_url %}
+        {% else %}
+          {% assign img_src = 'logo-' | append: vendor_collection_handle | append: '.png' | file_url %}
+        {% endif %}      
+        <li class="vendor-list__item">
+          <a href="/collections/{{ vendor_collection_handle }}">
+            <div class="vendor-list__item-img"><img src="{{ img_src }}" alt="{{ collection.title }}" /></div>
+            <div class="vendor-list__item-title">{{ vendor }}</div>
+          </a>
+        </li>
+	{% endif %}
+{% endfor %}
+{% if match == False %}
+	<li class="vendor-list__item">{{ vendor | link_to_vendor }}</li>
+{% endif %}
