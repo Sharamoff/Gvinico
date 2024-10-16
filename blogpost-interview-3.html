@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--**************************************************** from template.liquid **************************************************-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="">
+  <title>GVINICO_PAGE-TEMPLATE</title>
+  <link href="https://cdn.shopify.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.shopifycdn.com" rel="preconnect" crossorigin>
+  <link href="_assets/component-price.css" rel="stylesheet" media="print">
+  <script src="_assets/product-form.js" defer="defer"></script>
+  <script src="_assets/global.js" defer="defer"></script>
+  <script src="_assets/owl.carousel.min.js" defer="defer"></script>
+  <script src="_assets/wishlist.js" defer="defer"></script>
+  <script src="_assets/compare.js" defer="defer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css">
+  <link href="_assets/quickview.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <style>
+    /*** from settings_data.json ***/
+    :root {
+      --font-body-family: "Inter"; /*{{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};*/
+      --font-body-style: normal; /*{{ settings.type_body_font.style }};*/
+      --font-body-weight: 400; /*{{ settings.type_body_font.weight }};*/
+      --font-heading-family: "Cormorant Garamond"; /*{{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};*/
+      --font-heading-style: normal; /*{{ settings.type_header_font.style }};*/
+      --font-heading-weight: 400; /*{{ settings.type_header_font.weight }};*/
+      --color-base-text: #000000; /*{{ settings.colors_text }};*/
+      --color-base-text-rgb: rgb(0, 0, 0); /*{{ settings.colors_text | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-background-1: #ffffff; /*{{ settings.colors_background_1 }};*/
+      --color-base-background-1-rgb: rgb(255, 255, 255); /*{{ settings.colors_background_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-1: #ae194a; /*{{ settings.colors_accent_1 }};*/
+      --color-base-accent-1-rgb: rgb(174, 25, 74); /*{{ settings.colors_accent_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-2: #777777; /*{{ settings.colors_accent_2 }};*/
+      --color-base-accent-2-rgb: rgb(119, 119, 119); /*{{ settings.colors_accent_2 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-border: #dddddd; /*{{ settings.colors_border }};*/
+      --color-base-button-text: #ffffff; /*{{ settings.button_text }};*/
+      --color-base-button-text-hover: #000000; /*{{ settings.button_text_hover }};*/
+      --color-base-button-background: #ae194a; /*{{ settings.button_background }};*/
+      --color-base-button-background-hover: #ffcc1d; /*{{ settings.button_background_hover }};*/
+      --color-base-text-opacity-10-percent: rgba(0, 0, 0, 0.1); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-text-opacity-20-percent: rgba(0, 0, 0, 0.2);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 20 }};*/
+      --color-base-text-opacity-55-percent: rgba(0, 0, 0, 0.55);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 55 }};*/
+      --color-base-text-opacity-85-percent: rgba(0, 0, 0, 0.85); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 85 }};*/
+      --color-base-accent-1-opacity-10-percent: rgba(174, 25, 74, 0.1); /*{{ settings.colors_accent_1 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-accent-2-opacity-10-percent: rgba(119, 119, 119, 0.1); /*{{ settings.colors_accent_2 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-rating-empty: #dddddd; /*{{ settings.rating_empty }};*/
+      --color-rating-filled: #000000; /*{{ settings.rating_filled }};*/
+      --color-secondary-hover: #ffcc1d; /*{{ settings.secondary_hover_color }};*/
+    }
+    :root {
+      --color-base-background-2: #f0f0f0;
+      --color-base-background-2-rgb: rgb(240, 240, 240);
+      --color-base-solid-button-labels: #000000;
+      --color-base-solid-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-outline-button-labels: #000000;
+      --color-base-outline-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-color-base-accent-1: var(--color-base-accent-1); ;
+    }
+    /*** end from settings_data.json ***/
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+    html {
+      box-sizing: border-box;
+      font-size: 62.5%;
+      height: 100%;
+    }
+    body {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: normal !important;
+      line-height: 1.4;
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
+      color: var(--color-base-text);
+    }
+  </style>
+  <link href="_assets/base.css" rel="stylesheet">
+  <link href="_assets/component-predictive-search.css" rel="stylesheet">
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+  <style>
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 600;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-600.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-600.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-600.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 700;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-700.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-700.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-700.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    .slideshow__subheading, .slideshow__subtitle,
+    .title, .title-wrapper-with-link,
+    .cms-banner-title-three,
+    .parallex-title,
+    .two-banner .cms-banner-subtitle-three,
+    .newsletter.center .h1,
+    .breadcrumb_title{
+      font-family: 'Cormorant Garamond', serif !important;
+    }
+  </style>
+  <!--*** from page.liquid ***-->
+  <link href="_assets/component-rte.css" rel="stylesheet">
+  <link href="_assets/section-main-page.css" rel="stylesheet">
+  <!--*** end from page.liquid ***-->
+  <!--*** style of inserted content in template.liquid ***-->
+
+
+  <link href="_assets/section-blog-post.css" rel="stylesheet">
+
+
+  <!--*** fancybox ***-->
+  <script src="assets/fancybox.umd.js"></script>
+  <link  href="assets/fancybox.css" rel="stylesheet">
+
+
+
+
+  <link href="assets/alt-pages.css" rel="stylesheet">
+  <!--*** end style of inserted content in template.liquid ***-->
+
+
+
+
+
+</head>
+<body class="template-page">
+<main class="main-content" id="MainContent" role="main" tabindex="-1">
+<!--**************************************************** end from template.liquid **************************************************-->
+<div class="page-width contents">
+<div class="main-container">
+<section class="shopify-section spaced-section">
+<div class="page-width page-width--narrow">
+<div class="rte" style="padding-top: 100px; padding-bottom: 100px">
+
+
+  <script src="assets/fancybox.umd.js"></script>
+  <link  href="assets/fancybox.css" rel="stylesheet">
+
+
+
+
+
+
+
+  <!-- INSERTED CONTENT -->
+
+  <section class="alt-pages">
+
+
+    <p class="alt-text18">We are excited to share the third interview in our series, featuring Dano Winery, by David Mosulishvili and Nona Mchedlishvili. This small family farm produces natural wines from their own 40-year-old vineyard without using systemic pesticides, fertilizers, or herbicides. Their collection includes old Georgian grape varieties like Grdzelmtevana, Khikhvi, and Vardisperi Rkatsiteli. Dano is a member of the Natural Wine Association (NWA) and the Women in Wine Industry (WWI) Association.</p>
+
+    <img class="logo-qa" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/logo-dano.png" alt="Dano Winery" width="250" height="140">
+
+
+    <figure class="hdr-img">
+      <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic1-interview-3.jpg" alt="">
+      <figcaption>David Mosulishvili and Nona Mchedlishvili&nbsp;&mdash;&nbsp;Dano Winery founders</figcaption>
+    </figure>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">How did your love for wine and winemaking begin? Was it a family tradition, or did it evolve differently?</div>
+      <div class="txt-a-name">David Mosulishvili:</div>
+      <div class="txt-a">
+        <p>My love for wine is deeply tied to my family’s history and our vineyard. The vineyard was established in the mid-1980s during the Soviet era by a farming state enterprise called Sovkhoz. After the USSR collapsed in the 1990s, the vineyards were divided among the members of the Sovkhoz, and this is how my father became the owner of a 1-hectare vineyard. The majority of this vineyard consists of 40-year-old vines, which have been producing high-quality grapes for decades. At the time, there was no small wine industry in Georgia, and for years, we sold our grapes to bigger enterprises that produced mass-market wines. We didn’t fully realize the potential of what we had. It was only recently that we came to understand what a gem we were sitting on, and that’s when we decided to start making wine ourselves.</p>
+      </div>
+      <div class="txt-a-name">Nona Mchedlishvili:</div>
+      <div class="txt-a">
+        <p>Yes, I’d like to add that this realization changed everything for us. Growing up, working in the vineyard was a part of life. We helped with the pruning in the spring and harvesting in the fall, but the focus was always on selling the grapes. When we bottled our first two sample bottles in 2017 and presented them at the New Wine Festival, we didn’t know what to expect. To our surprise, the wine was accepted, and that moment sparked something in us. It was then that we began to see winemaking as more than just selling grapes—we could create something unique from these 40-year-old vines that had been in our care for so long.</p>
+      </div>
+      <div class="txt-a-name">David Mosulishvili:</div>
+      <div class="txt-a">
+        <p>The shift from selling grapes to making our own wine was a major turning point. For years, those 40-year-old vines were producing grapes that went into mass-market wines, and we didn’t appreciate the true value of what we had. Once we took control of the winemaking process ourselves, we realized just how special our vineyard was. The vines have deep roots and produce grapes with incredible character, which we’ve now channeled into our own wine.</p>
+      </div>
+      <div class="txt-a-name">Nona Mchedlishvili:</div>
+      <div class="txt-a">
+        <p>Exactly. Understanding the quality of those 40-year-old vines gave us the confidence to stop selling to larger enterprises and to craft something that truly reflects our family’s history and the unique qualities of this land. The journey really started with that first bottling in 2017, but now we see that we have something even more precious—vines that have been growing for decades, producing grapes that deserve to be turned into exceptional wine.</p>
+      </div>
+    </div>
+
+    <div class="pics-qa">
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic2-interview-3.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic3-interview-3.jpg" alt="">
+      </figure>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">How did you develop your winemaking style, and what led you to embrace natural and organic methods?</div>
+      <div class="txt-a-name">David:</div>
+      <div class="txt-a">
+        <p>From the beginning, we knew we couldn’t compete with the large wineries, and frankly, we didn’t want to. We operate on a small scale, with about one hectare of vineyard, and we produce around 2,000 to 3,000 bottles of wine a year. We embraced natural winemaking early on because it suited our lifestyle and values. Large-scale production doesn’t appeal to us. Everything we produce comes from our own vineyard, and this is a philosophy we are committed to maintaining.</p>
+      </div>
+      <div class="txt-a-name">Nona:</div>
+      <div class="txt-a">
+        <p>A key turning point for us was the decision to go fully organic, which was partially influenced by health issues. We no longer use chemicals like pesticides or herbicides. Since 2022, we’ve been full members of the Natural Wine Association, and our wines now carry their logo. Our approach is minimal intervention, both in the vineyard and in the winemaking process. We let nature lead, using only small amounts of sulfur and relying on natural filtration methods. The idea has always been to stay true to who we are—modest, authentic winemakers who respect the land and the traditions.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">How does the environment in your region influence the character of your wine? Do factors like the landscape and soil play a role?</div>
+      <div class="txt-a-name">David:</div>
+      <div class="txt-a">
+        <p>Without a doubt, the environment shapes everything about our wine. The vineyards are situated at the end of the Signagi region, which gives us a somewhat isolated microclimate. The soil is unique here, and even within our vineyard, the different elevations affect how the grapes grow. There’s an old vineyard in my village called "Khati’s Vineyards," which was renowned for producing excellent wines. Although we have fewer vineyards now than we did in the past, the ones that remain continue to reflect the natural characteristics of this land.</p>
+      </div>
+      <div class="txt-a-name">Nona:</div>
+      <div class="txt-a">
+        <p>The uniqueness of the region plays a big role. For example, in my village, Anaga, vineyards were known for producing wine with deep character. This local history influences how we approach winemaking. The landscape, the mountains, and even the winds contribute to the specific style of wine we produce. We have a mix of old and new vineyards, some of which we’ve replanted with historical varieties like “Grdzelmtevana,” which is an ancient grape variety native to this area.</p>
+      </div>
+    </div>
+
+    <div class="pics-qa">
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic4-interview-3.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic5-interview-3.jpg" alt="">
+      </figure>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">How have the recent vintages been? Could you talk about the challenges and successes you've faced with recent harvests, including the current 2024 vintage?</div>
+      <div class="txt-a-name">David:</div>
+      <div class="txt-a">
+        <p>The past few years have really shown us how unpredictable winemaking can be, and each vintage has brought its own set of challenges and rewards. In 2022, we dealt with a severe drought that made it difficult for the vines to retain water. That year, we had to be extra careful with our harvest, and while the quality was still decent, the yields were lower. In 2023, the conditions got even worse, due to Mildew we almost lost all harvest. We don't irrigate our vineyards because we want the vines to develop deep roots and absorb nutrients naturally, which paid off. The vines thrived, and we had a very promising harvest with excellent quality grapes.</p>
+      </div>
+      <div class="txt-a-name">Nona:</div>
+      <div class="txt-a">
+        <p>Yes, and now, with the 2024 vintage, things are looking good so far. We've had relatively favorable weather conditions this year, which has kept disease pressure low and allowed the grapes to mature at a steady pace. This vintage is shaping up to be a strong one. The rains came at the right times, and the temperatures have been moderate, so we’re expecting a high-quality harvest. It’s still early to judge the full outcome, but all signs point to another great vintage. Every year, nature teaches us new lessons, and with 2024, it feels like we're finding a good rhythm in our winemaking process.</p>
+      </div>
+      <div class="txt-a-name">David:</div>
+      <div class="txt-a">
+        <p>Exactly. We’ve become better at reading the vineyard and responding to what the season gives us. If the weather holds, we expect this year’s grapes to reflect the perfect balance between the vine’s natural strengths and the environmental conditions. Every vintage is a learning experience, and the 2024 vintage is teaching us patience and the importance of nurturing our vines year-round to ensure a great harvest.</p>
+      </div>
+    </div>
+
+    <div class="pics-qa">
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic6-interview-3.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic7-interview-3.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic8-interview-3.jpg" alt="">
+      </figure>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">You’ve mentioned working with old Georgian grape varieties. How challenging is it to cultivate these, and what’s the potential?</div>
+      <div class="txt-a-name">David:</div>
+      <div class="txt-a">
+        <p>Reviving old Georgian varieties like Chitistvala and Khakhuri Mtsvivani has been both rewarding and challenging. These varieties were almost lost during the Soviet era because the focus back then was on mass production, which prioritized quantity over quality. Cultivating these grapes today is difficult because they tend to have lower yields, and the bunches are more delicate. The vines are fragile, especially during the flowering period, which makes the agro-technical work more complex. We are still perfecting the techniques needed to get the best results, but the potential is huge because these varieties offer something unique that is rooted in our winemaking heritage.</p>
+      </div>
+      <div class="txt-a-name">Nona:</div>
+      <div class="txt-a">
+        <p>The main challenge with these old varieties is that they don’t produce as much as modern varieties, but the quality is exceptional. We are dedicated to reviving these grapes because they represent an important part of Georgian wine culture. Some of the vines are so old that they need extra care to bring them back to full production, but we are willing to put in the work because we believe the results will be worth it. We see this as an investment in preserving and celebrating Georgia’s rich winemaking history.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">How important is tradition in your winemaking process, and how do you balance that with modern techniques?</div>
+      <div class="txt-a-name">David:</div>
+      <div class="txt-a">
+        <p>Tradition is at the core of everything we do. Even though we use stainless tanks, we also use some Qvevris for fermenting and aging our wine, which are over a century old. These vessels were passed down from our ancestors, and they are still in excellent condition today. During the Soviet era, many families, including ours, had to shift their focus to mass production, which sidelined traditional methods. But now, we are bringing those methods back.</p>
+      </div>
+      <div class="txt-a-name">Nona:</div>
+      <div class="txt-a">
+        <p>Our approach is deeply rooted in tradition, but we also recognize the importance of innovation. The old ways of winemaking, especially with Qvevris, give our wines a sense of history and place, but we aren’t afraid to experiment with new techniques either. For instance, we’ve introduced small adjustments in the fermentation process and maceration periods to refine the flavors and textures of our wines. But the heart of our winemaking process remains traditional.</p>
+      </div>
+    </div>
+
+    <div class="pics-qa">
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic9-interview-3.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic10-interview-3.jpg" alt="">
+      </figure>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">How have you managed to expand your winemaking operations while maintaining your focus on quality?</div>
+      <div class="txt-a-name">David:</div>
+      <div class="txt-a">
+        <p>Our expansion has been steady but controlled. In 2018, we processed our entire harvest ourselves for the first time, and that was a big moment for us. Our focus has always been on quality over quantity, and we prefer to keep things small and manageable. Festivals have helped us gain international recognition. For instance, Monika Reti, a Dutch wine expert, introduced our wine to the Dutch market in 2018, and that was our first step into international exposure. But even with this recognition, we don’t aim to become a large-scale operation.</p>
+      </div>
+      <div class="txt-a-name">Nona:</div>
+      <div class="txt-a">
+        <p>One thing that has helped us grow is our commitment to doing everything ourselves. From the vineyard work to the winemaking process and even designing our labels, we are involved in every step. This allows us to maintain a high level of quality control. Last year, we had a great harvest, and we processed all of the grapes ourselves for the first time, which was a huge milestone. We’re not in this for mass production; we want to keep our wines artisanal, and that’s why we focus on producing wine only from our own vineyard.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">What are your plans for the future of your winery? Are you thinking about growing further?</div>
+      <div class="txt-a-name">David:</div>
+      <div class="txt-a">
+        <p>We are thinking about expanding slightly, but we are cautious about growing too fast. We’re currently considering adding new plots of vieyards, but we want to make sure we can maintain our artisanal approach. The idea is to keep things small enough that we can remain hands-on with every part of the process. We are also interested in reviving more old Georgian grape varieties and bringing them back into the spotlight. There’s a lot of potential in these forgotten grapes, and we want to make sure they aren’t lost to history.</p>
+      </div>
+      <div class="txt-a-name">Nona:</div>
+      <div class="txt-a">
+        <p>Expansion is definitely something we are thinking about, but it’s not just about growing for the sake of it. We want to maintain the quality of our wines, so any growth will be carefully planned. We’ve already planted new varieties on additional plots, but we’re doing it step by step. Our focus remains on staying true to our philosophy of quality over quantity. We believe that by staying small and focused, we can continue to create wines that are deeply connected to our land and traditions.</p>
+      </div>
+    </div>
+
+    <div class="pics-qa">
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic11-interview-3.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic12-interview-3.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic13-interview-3.jpg" alt="">
+      </figure>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Can you tell us more about your wine labels? Do they reflect personal stories or broader themes?</div>
+      <div class="txt-a-name">David:</div>
+      <div class="txt-a">
+        <p>Our labels are very personal to us. For example, the red wine label features a sparrow, which is a symbol of resilience and hard work. It’s a small bird, but it works tirelessly, and that’s how we view our approach to winemaking. Every label has a deeper meaning and reflects a part of our story. For instance, the stork on one of our white wines is a symbol of happiness. We’ve also incorporated elements from our winemaking tradition, like the flower-like image on our Qvevri wines, which represents the mouth of the Qvevri.</p>
+      </div>
+      <div class="txt-a-name">Nona:</div>
+      <div class="txt-a">
+        <p>Each figure on our labels is carefully chosen. The sparrow, the stork—these symbols resonate with us because they reflect qualities that are important in winemaking. We believe that wine is not just about the taste; it’s also about the stories and traditions behind it. That’s why we take great care in designing labels that convey these stories. We’re always looking for ways to evolve our label designs, and we plan to introduce new ones that reflect both our personal journey and the history of Georgian winemaking.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">What inspired you to create new wine styles this year, and how do you go about blending different varieties?</div>
+      <div class="txt-a-name">David:</div>
+      <div class="txt-a">
+        <p>This year, we experimented with blending new varieties, which was partly inspired by the practicalities of our harvest and our desire to push the boundaries of what we can create. We had small amounts of white grapes like Grdzelmtevana and Kakhuri Mtsvivani, as well as red varieties such as Cabernet Sauvignon, Pinot Noir, and Saperavi. Since we didn’t have enough pink Rkatsiteli, we blended it to make something special. This experimentation has been an exciting process, allowing us to create unique blends that reflect the best of what we had available during the harvest.</p>
+      </div>
+      <div class="txt-a-name">Nona:</div>
+      <div class="txt-a">
+        <p>Yes, blending the varieties was partly driven by necessity, but it also opened up new creative possibilities. We love the idea of taking what nature gives us and turning it into something new. This year, for example, we did minimal maceration with some of our wines to refine their texture and flavor, and we’re always adjusting our techniques. The experimentation process is an integral part of what makes winemaking exciting for us. Every year, the conditions change, and it gives us an opportunity to learn and try new things.</p>
+      </div>
+    </div>
+
+    <div class="pics-qa">
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic14-interview-3.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic15-interview-3.jpg" alt="">
+      </figure>
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic16-interview-3.jpg" alt="">
+      </figure>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Do you find that your customers are interested in the stories behind your wines, particularly the traditional methods and old grape varieties?</div>
+      <div class="txt-a-name">David:</div>
+      <div class="txt-a">
+        <p>Absolutely. One of the things that sets us apart is the story behind our wines, and our customers are deeply interested in that. It’s not just about the taste for them; it’s about the connection to the land, the history, and the effort that goes into each bottle. People are fascinated by our use of Qvevris, and they love hearing about the old Georgian grape varieties that we’re working to revive. It gives them a sense of being part of something bigger, something rooted in tradition.</p>
+      </div>
+      <div class="txt-a-name">Nona:</div>
+      <div class="txt-a">
+        <p>Yes, people often tell us that they appreciate the cultural significance of what we’re doing. For them, drinking our wine is an experience—they’re connecting with a piece of Georgian history and craftsmanship. They love learning about how the wines are made, from the Qvevri fermentation process to our organic vineyard practices. The revival of old grape varieties also resonates with them because it’s about preserving a heritage that could have been lost. It adds meaning to every bottle, and that personal connection is a big part of why our customers return.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">What are your long-term goals for the winery? Where do you see yourselves in the next five or ten years?</div>
+      <div class="txt-a-name">David:</div>
+      <div class="txt-a">
+        <p>In the next five to ten years, we hope to continue growing steadily, but always with a focus on maintaining quality. We want to introduce more people to our wines, both locally and internationally, but we will never sacrifice our commitment to small-scale, hands-on production. We’re considering expanding our vineyard slightly, adding some new varieties, but it’s essential that we stay true to our values. We’ll continue experimenting with blends and techniques, but everything we do will remain connected to the traditions we’ve inherited.</p>
+      </div>
+      <div class="txt-a-name">Nona:</div>
+      <div class="txt-a">
+        <p>Our long-term vision is similar. We want to keep expanding slowly, but always with careful planning to ensure we don’t lose the artisanal nature of our work. There’s a lot of potential in reviving forgotten Georgian grape varieties, and that’s something we want to continue focusing on. At the same time, we’re excited to explore new blends and techniques that keep us innovative. The balance between tradition and innovation is key to what we do, and we want to maintain that balance as we grow. In the end, it’s about making wine that tells a story—one that honors our past while also looking to the future.</p>
+      </div>
+    </div>
+
+
+    <figure class="hdr-img">
+      <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic30-interview-3.jpg" alt="">
+      <figcaption>Dano Winery</figcaption>
+    </figure>
+
+
+    <p>&nbsp;</p>
+    <h4 class="h4-gr h--centered">Explore more photos from this interview:</h4>
+
+    <div class="alt-gallery">
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic2-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb2-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic3-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb3-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic4-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb4-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic5-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb5-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic6-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb6-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic7-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb7-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic8-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb8-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic9-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb9-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic10-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb10-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic11-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb11-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic12-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb12-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic13-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb13-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic15-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb15-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic16-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb16-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic17-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb17-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic18-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb18-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic19-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb19-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic20-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb20-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic21-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb21-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic22-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb22-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic23-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb23-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic24-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb24-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic25-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb25-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic26-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb26-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic27-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb27-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic28-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb28-interview-3.jpg">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic29-interview-3.jpg" data-fancybox="interview-gallery" data-caption="">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb29-interview-3.jpg">
+      </a>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+        Fancybox.bind('[data-fancybox="interview-gallery"]', {});
+      });
+    </script>
+
+  </section>
+
+  <!-- END INSERTED CONTENT -->
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body>
+</html>

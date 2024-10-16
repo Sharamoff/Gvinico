@@ -1,0 +1,9 @@
+{{ 'winemap.css' | asset_url | stylesheet_tag }}
+
+<div class="winemap-plate">
+  {% if page.title != 'Georgian wine regions' %}<a href="/pages/georgian-wine-regions" class="wmap-return" title="Back to Georgian wine regions">&nbsp;</a>{% endif %}
+  <h1 class="page_title">{{ page.title }}</h1>
+  {{ page.content }}
+</div>
+
+<script src="{{ 'winemap.js' | asset_url }}" defer></script>

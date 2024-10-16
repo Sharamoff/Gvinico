@@ -1,0 +1,278 @@
+{%- assign page_url = content_for_header | split:'"pageurl":"' | last | split:'"' | first | split: request.host | last | replace:'\/','/' | replace:'%20',' ' | replace:'\u0026','&'  -%}
+{% assign product_param = '' %}
+{% assign variant_param = '' %}
+
+{%- for i in (1..1) -%}
+  {%- unless page_url contains "?" -%}{% break %}{%- endunless -%}
+  {%- assign query_string = page_url | split:'?' | last -%}
+  {%- assign qry_parts= query_string | split:'&' -%}
+
+  {%- for part in qry_parts -%}
+    {%- assign key_and_value = part | split:'=' -%}
+    {%- if key_and_value.size > 1 -%}
+      {% if key_and_value[0] == 'product' %}
+        {% assign product_param = key_and_value[1] | strip %}
+      {% else %}
+        {% if key_and_value[0] == 'variant' %}
+          {% assign variant_param = key_and_value[1] | strip %}
+        {% endif %}
+      {% endif %}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+
+{%- assign cur_product = all_products[product_param] -%}
+{%- for variant in cur_product.variants -%}
+  {%- if variant.id | strip == variant_param -%}
+    {%- assign cur_variant = variant -%}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{%- assign var_alcohol = cur_variant.metafields.custom.alcohol | default: 0 %}
+{%- assign nutrition_sugars = cur_variant.metafields.custom.nutrition_sugars | default: 0 %}
+{%- assign nutrition_energy_alcohol_kcal = var_alcohol | times: 0.789 | times: 7 %}
+{%- assign nutrition_energy_sugars_kcal = nutrition_sugars | times: 4 %}
+{%- assign nutrition_energy_kcal = nutrition_energy_alcohol_kcal | plus: nutrition_energy_sugars_kcal %}
+{%- assign nutrition_energy_kj = nutrition_energy_kcal | times: 4.184 %}
+{%- assign nutrition_fat = cur_variant.metafields.custom.nutrition_fat | default: 0 %}
+{%- assign nutrition_saturates = cur_variant.metafields.custom.nutrition_saturates | default: 0 %}
+{%- assign nutrition_carbohydate = cur_variant.metafields.custom.nutrition_carbohydate | default: 0 %}
+{%- assign nutrition_protein = cur_variant.metafields.custom.nutrition_protein | default: 0 %}
+{%- assign nutrition_salt = cur_variant.metafields.custom.nutrition_salt | default: 0 %}
+
+{{ 'elabel.css' | asset_url | stylesheet_tag }}
+<div class="elabel">
+
+  <form class="elabel-lang">
+    <label for="elabel-lang__select" class="elabel--eprop" id="l_language">Language</label>
+    <select id="elabel-lang__select" class="elabel--eval">
+      <option value="en" selected>English</option>
+      <option value="bg">Bulgarian</option>
+      <option value="hr">Croatian</option>
+      <option value="cs">Czech</option>
+      <option value="da">Danish</option>
+      <option value="nl">Dutch</option>
+      <option value="et">Estonian</option>
+      <option value="fi">Finnish</option>
+      <option value="fr">French</option>
+      <option value="de">German</option>
+      <option value="el">Greek</option>
+      <option value="hu">Hungarian</option>
+      <option value="it">Italian</option>
+      <option value="lv">Latvian</option>
+      <option value="lt">Lithuanian</option>
+      <option value="mt">Maltese</option>
+      <option value="pl">Polish</option>
+      <option value="pt">Portuguese</option>
+      <option value="ro">Romanian</option>
+      <option value="sk">Slovak</option>
+      <option value="sl">Slovenian</option>
+      <option value="es">Spanish</option>
+      <option value="sv">Swedish</option>
+    </select>
+  </form>
+
+  <section class="elabel-product">
+  
+    <div id="elabel-product__pic">
+      <img src="{{ cur_variant.featured_image | default: cur_product.featured_image | img_url: '600x' }}" alt="{{ cur_variant.title | escape }}">
+    </div>
+  
+    <h1 id="elabel-product__title">{{ cur_product.title | escape }}</h1>
+  
+    <div class="elabel-block">
+      <table class="elabel--table">
+        <tbody>
+          <tr>
+            <td class="elabel--eprop" id="l_product">Product</td>
+            <td class="elabel--eval" id="product_title">{{ cur_product.title | escape }}</td>
+          </tr>
+          <tr>
+            <td class="elabel--eprop" id="l_winery">Winery</td>
+            <td class="elabel--eval" id="product_vendor">{{ cur_product.vendor | escape }}</td>
+          </tr>
+          <tr>
+            <td class="elabel--eprop" id="l_origin_country">Origin Country</td>
+            <td class="elabel--eval" id="product_origin_country">{{ cur_product.metafields.custom.origin_country | default: 'Georgia' }}</td>
+          </tr>
+          <tr>
+            <td class="elabel--eprop" id="l_terroir">Terroir</td>
+            <td class="elabel--eval" id="product_terroir">
+              {%- if cur_product.metafields.custom.region.value != blank -%}
+                {{ cur_product.metafields.custom.region }}
+                {%- if cur_product.metafields.custom.pdo.value != blank -%}
+                  &ndash;
+                  {{ cur_product.metafields.custom.pdo }} PDO
+                {%- else -%}
+                  {%- if cur_product.metafields.custom.subregion != blank -%}
+                    &ndash;
+                    {{ cur_product.metafields.custom.subregion }}
+                  {%- endif -%}
+                {%- endif -%}
+                {%- if cur_product.metafields.custom.village != blank -%}
+                  &ndash;
+                  {% assign village_count = 0 %}
+                  {% for village in cur_product.metafields.custom.village.value %}
+                    {% if village_count != 0 %}
+                      ·
+                    {% endif %}
+                    {{ village }}
+                    {% assign village_count = village_count | plus: 1 %}
+                  {% endfor %}
+                {%- endif -%}
+              {%- endif %}
+            </td>
+          </tr>
+          <tr>
+            <td class="elabel--eprop" id="l_grapes">Grapes</td>
+            <td class="elabel--eval" id="product_grapes">
+              {%- if cur_product.metafields.custom.grapes.value != blank -%}
+                {% assign grape_percentage = cur_product.metafields.custom.grape_percentage.value | reverse | reverse %}
+                {% assign grape_count = 0 %}
+                {% for grape in cur_product.metafields.custom.grapes.value %}
+                  {% if grape_count != 0 %}
+                    ·
+                  {% endif %}
+                  {{ grape }}
+                  {%- if grape_percentage[grape_count] != blank -%}
+                    {{ grape_percentage[grape_count] }}%
+                  {%- endif %}
+                  {% assign grape_count = grape_count | plus: 1 %}
+                {% endfor %}
+              {%- endif %}
+            </td>
+          </tr>        
+          <tr>
+            <td class="elabel--eprop" id="l_vintage">Vintage</td>
+            <td class="elabel--eval" id="variant_title">{{ cur_variant.title | escape }}</td>
+          </tr>
+          <tr>
+            <td class="elabel--eprop" id="l_sugar_content">Sugar Content</td>
+            <td class="elabel--eval" id="variant_sugar_content">{{ cur_variant.metafields.custom.sugar_content | default: 'Dry' }}</td>
+          </tr>
+          <tr>
+            <td class="elabel--eprop" id="l_alcohol">Alc. Volume</td>
+            <td class="elabel--eval" id="variant_alcohol">{{ cur_variant.metafields.custom.alcohol | append: '%' }}</td>
+          </tr>
+          <tr>
+            <td class="elabel--eprop" id="l_net_quantity">Net Quantity</td>
+            <td class="elabel--eval" id="product_volume">{{ cur_product.metafields.custom.volume }}</td>
+          </tr>
+          <tr>
+            <td class="elabel--eprop" id="l_lot">Wine Agency Lot</td>
+            <td class="elabel--eval" id="variant_lot">{{ 'L' | append: cur_variant.metafields.custom.lot }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+  </section>
+
+  <!-- Nutrition Section -->
+  <section class="elabel-nutrition">
+    <div class="elabel-block">
+      <h2 id="l_nutrition_information">Nutrition Information</h2>
+      <div class="elabel--table-hdr">
+        <div id="l_type">Type</div>
+        <div id="l_per_100ml">per 100 ml</div>
+      </div>
+      <table class="elabel--table">
+        <tbody>
+          <tr>
+            <td class="elabel--eprop">
+              <strong id="l_energy">Energy</strong>
+            </td>
+            <td class="elabel--eval">
+              <strong id="nutrition_energy_kj">{{ nutrition_energy_kj | round: 1 }}&nbsp;kJ</strong>
+              <span id="nutrition_energy_kcal">{{ nutrition_energy_kcal | round: 1 }}&nbsp;kCal</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="elabel--eprop">
+              <strong id="l_fat">Fat</strong>
+              <span id="l_saturates">of which Saturates</span>
+            </td>
+            <td class="elabel--eval">
+              <strong id="nutrition_fat">{{ nutrition_fat }}&nbsp;g</strong>
+              <span id="nutrition_saturates">{{ nutrition_saturates }}&nbsp;g</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="elabel--eprop">
+              <strong id="l_carbohydrate">Carbohydrate</strong>
+              <span id="l_sugars">of which Sugars</span>
+            </td>
+            <td class="elabel--eval">
+              <strong id="nutrition_carbohydate">{{ nutrition_carbohydate }}&nbsp;g</strong>
+              <span id="nutrition_sugars">{{ nutrition_sugars }}&nbsp;g</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="elabel--eprop">
+              <strong id="l_protein">Protein</strong>
+            </td>
+            <td class="elabel--eval">
+              <strong id="nutrition_protein">{{ nutrition_protein }}&nbsp;g</strong>
+            </td>
+          </tr>
+          <tr>
+            <td class="elabel--eprop">
+              <strong id="l_salt">Salt</strong>
+            </td>
+            <td class="elabel--eval">
+              <strong id="nutrition_salt">{{ nutrition_salt }}&nbsp;g</strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    {%- if cur_variant.metafields.custom.nutrition_ingredients.value != blank -%}
+      <div class="elabel-block">
+        <h2 id="l_ingredients">Ingredients</h2>
+        <div id="nutrition_ingredients">
+          {{ cur_variant.metafields.custom.nutrition_ingredients }}
+        </div>
+      </div>
+    {%- endif %}
+
+    {%- if cur_variant.metafields.custom.nutrition_allergens.value != blank -%}
+      <div class="elabel-block">
+        <h2 id="l_allergens">Allergens</h2>
+        <div id="nutrition_allergens">
+          {{ cur_variant.metafields.custom.nutrition_allergens }}
+        </div>
+      </div>
+    {%- endif %}
+
+  </section>
+
+  <section class="elabel-information">
+    <div class="elabel-block">
+      <h2 id="l_additional_information">Additional Information</h2>
+      <div id="elabel-nutrition__informations">
+        {%- if cur_variant.metafields.custom.viticulture.value != blank -%}
+          &nbsp;<span class="elabel--eprop" id="l_viticulture">Viticulture</span>:&nbsp;{{ cur_variant.metafields.custom.viticulture }}.
+        {%- endif -%}
+        {%- if cur_variant.metafields.custom.winemaking.value != blank -%}
+          &nbsp;<span class="elabel--eprop" id="l_winemaking">Winemaking</span>:&nbsp;{{ cur_variant.metafields.custom.winemaking }}.
+        {%- endif -%}
+        {%- if cur_variant.metafields.custom.bouquet.value != blank -%}
+          &nbsp;<span class="elabel--eprop" id="l_aromas">Aromas</span>:&nbsp;{{ cur_variant.metafields.custom.bouquet }}.
+        {%- endif -%}
+        {%- if cur_variant.metafields.custom.taste.value != blank -%}
+          &nbsp;<span class="elabel--eprop" id="l_taste">Taste</span>:&nbsp;{{ cur_variant.metafields.custom.taste }}.
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+
+  <div class="elabel-footer">
+    <div>Created by</div>
+    <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/gvinico-logo.svg" alt="Gvinico Import Wine Hub">
+  </div>
+
+</div>
+
+<script src="{{ 'elabel-locales.js' | asset_url }}" defer="defer"></script>
