@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--**************************************************** from template.liquid **************************************************-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="">
+  <title>GVINICO_PAGE-TEMPLATE</title>
+  <link href="https://cdn.shopify.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.shopifycdn.com" rel="preconnect" crossorigin>
+  <link href="_assets/component-price.css" rel="stylesheet" media="print">
+  <script src="_assets/product-form.js" defer="defer"></script>
+  <script src="_assets/global.js" defer="defer"></script>
+  <script src="_assets/owl.carousel.min.js" defer="defer"></script>
+  <script src="_assets/wishlist.js" defer="defer"></script>
+  <script src="_assets/compare.js" defer="defer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css">
+  <link href="_assets/quickview.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <style>
+    /*** from settings_data.json ***/
+    :root {
+      --font-body-family: "Inter"; /*{{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};*/
+      --font-body-style: normal; /*{{ settings.type_body_font.style }};*/
+      --font-body-weight: 400; /*{{ settings.type_body_font.weight }};*/
+      --font-heading-family: "Cormorant Garamond"; /*{{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};*/
+      --font-heading-style: normal; /*{{ settings.type_header_font.style }};*/
+      --font-heading-weight: 400; /*{{ settings.type_header_font.weight }};*/
+      --color-base-text: #000000; /*{{ settings.colors_text }};*/
+      --color-base-text-rgb: rgb(0, 0, 0); /*{{ settings.colors_text | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-background-1: #ffffff; /*{{ settings.colors_background_1 }};*/
+      --color-base-background-1-rgb: rgb(255, 255, 255); /*{{ settings.colors_background_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-1: #ae194a; /*{{ settings.colors_accent_1 }};*/
+      --color-base-accent-1-rgb: rgb(174, 25, 74); /*{{ settings.colors_accent_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-2: #777777; /*{{ settings.colors_accent_2 }};*/
+      --color-base-accent-2-rgb: rgb(119, 119, 119); /*{{ settings.colors_accent_2 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-border: #dddddd; /*{{ settings.colors_border }};*/
+      --color-base-button-text: #ffffff; /*{{ settings.button_text }};*/
+      --color-base-button-text-hover: #000000; /*{{ settings.button_text_hover }};*/
+      --color-base-button-background: #ae194a; /*{{ settings.button_background }};*/
+      --color-base-button-background-hover: #ffcc1d; /*{{ settings.button_background_hover }};*/
+      --color-base-text-opacity-10-percent: rgba(0, 0, 0, 0.1); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-text-opacity-20-percent: rgba(0, 0, 0, 0.2);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 20 }};*/
+      --color-base-text-opacity-55-percent: rgba(0, 0, 0, 0.55);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 55 }};*/
+      --color-base-text-opacity-85-percent: rgba(0, 0, 0, 0.85); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 85 }};*/
+      --color-base-accent-1-opacity-10-percent: rgba(174, 25, 74, 0.1); /*{{ settings.colors_accent_1 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-accent-2-opacity-10-percent: rgba(119, 119, 119, 0.1); /*{{ settings.colors_accent_2 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-rating-empty: #dddddd; /*{{ settings.rating_empty }};*/
+      --color-rating-filled: #000000; /*{{ settings.rating_filled }};*/
+      --color-secondary-hover: #ffcc1d; /*{{ settings.secondary_hover_color }};*/
+    }
+    :root {
+      --color-base-background-2: #f0f0f0;
+      --color-base-background-2-rgb: rgb(240, 240, 240);
+      --color-base-solid-button-labels: #000000;
+      --color-base-solid-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-outline-button-labels: #000000;
+      --color-base-outline-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-color-base-accent-1: var(--color-base-accent-1); ;
+    }
+    /*** end from settings_data.json ***/
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+    html {
+      box-sizing: border-box;
+      font-size: 62.5%;
+      height: 100%;
+    }
+    body {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: normal !important;
+      line-height: 1.4;
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
+      color: var(--color-base-text);
+    }
+  </style>
+  <link href="_assets/base.css" rel="stylesheet">
+  <link href="_assets/component-predictive-search.css" rel="stylesheet">
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+  <style>
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 600;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-600.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-600.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-600.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 700;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-700.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-700.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-700.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    .slideshow__subheading, .slideshow__subtitle,
+    .title, .title-wrapper-with-link,
+    .cms-banner-title-three,
+    .parallex-title,
+    .two-banner .cms-banner-subtitle-three,
+    .newsletter.center .h1,
+    .breadcrumb_title{
+      font-family: 'Cormorant Garamond', serif !important;
+    }
+  </style>
+  <!--*** from page.liquid ***-->
+  <link href="_assets/component-rte.css" rel="stylesheet">
+  <link href="_assets/section-main-page.css" rel="stylesheet">
+  <!--*** end from page.liquid ***-->
+  <!--*** style of inserted content in template.liquid ***-->
+
+
+  <link href="_assets/section-blog-post.css" rel="stylesheet">
+
+
+  <link href="assets/alt-pages.css" rel="stylesheet">
+  <!--*** end style of inserted content in template.liquid ***-->
+
+
+
+
+
+</head>
+<body class="template-page">
+<main class="main-content" id="MainContent" role="main" tabindex="-1">
+<!--**************************************************** end from template.liquid **************************************************-->
+<div class="page-width contents">
+<div class="main-container">
+<section class="shopify-section spaced-section">
+<div class="page-width page-width--narrow">
+<div class="rte" style="padding-top: 100px; padding-bottom: 100px">
+
+
+
+
+
+
+
+
+
+  <!-- INSERTED CONTENT -->
+
+  <section class="alt-pages">
+
+    <div class="block-article">
+      <div class="block-article__text">
+        <h3 class="h3-gr h-color-accent-1">Introducing Pre-Order Vintages</h3>
+        <p>At Gvinico, we love getting creative for our customers and winemakers. The idea for our Pre-Order Vintages started when we got a request for wines from Dano Winery—a client favorite—that had completely sold out. After chatting with Dano, we decided to offer pre-orders for future vintages. Now, we’re thrilled to bring this idea to you!</p>
+        <h3 class="h3-gr h-color-accent-1">Why Pre-Order?</h3>
+        <p>Pre-ordering gives you the chance to secure bottles from specific vintages before they’re even bottled. It’s the perfect way to ensure you don’t miss out on limited editions or the most sought-after Georgian wines when they’re released.</p>
+        <h3 class="h3-gr h-color-accent-1">How It Works</h3>
+        <p>Here’s how you can get started with pre-ordering:</p>
+        <ul class="ul--base">
+          <li><strong>Pre-Order Availability:</strong> Once the harvest and fermentation are completed, and the wines are aging, we open up pre-orders. Look for the "Pre-Order" label to reserve your bottles.</li>
+          <li><strong>Secure Your Allocation:</strong> Place your pre-order and guarantee your share of the vintage when it’s ready to ship. No more worrying about missing out on your favorite wines!</li>
+          <li><strong>Estimated Ready Date:</strong> Each pre-order wine includes an estimated ready date, giving you an idea of when it will be bottled and shipped. We’ll keep you updated throughout the aging process.</li>
+        </ul>
+      </div>
+      <div class="block-article__pic">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic1-10202024.jpg" alt="Pre-Order Vintages">
+      </div>
+    </div>
+
+    <div class="block-article">
+      <figure class="block-article__pic">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic2-10202024.png" alt="Pre-Order Vintage Collection">
+        <figcaption>Secure your favorite wines from our upcoming 2024 vintages. Reserve now from our <a href="https://www.gvinico.com/collections/preorder-vintages">Pre-Order Vintage Collection</a>.</figcaption>
+      </figure>
+      <div class="block-article__text">
+        <h3 class="h3-gr h-color-accent-1">Alcohol Content</h3>
+        <p>Since the wines are still aging, the alcohol content is not finalized. We provide an estimated range based on previous vintages or current aging conditions, with the final percentage confirmed at bottling.</p>
+        <h3 class="h3-gr h-color-accent-1">Flexible Pre-Order System</h3>
+        <p>We’ve designed the pre-order system to be as flexible as possible:</p>
+        <ul class="ul--base">
+          <li><strong>Tailored Terms:</strong> Pricing, prepayment, and delivery terms are flexible and can be customized based on your needs. Agreements are made between you, Gvinico, and the winemaker.</li>
+          <li><strong>Continuous Updates:</strong> We’ll keep you informed throughout the maturing process, so you’ll always know when to expect your bottles.</li>
+        </ul>
+        <h3 class="h3-gr h-color-accent-1">Looking Ahead to 2024</h3>
+        <p>Our 2024 vintage is currently aging, and we’ve opened pre-orders for select wines, including new releases from Dano Winery. Reserve your future favorites today!</p>
+        <p>Be among the first to enjoy our upcoming vintages. Explore our <a href="https://gvinico.com/collections/2024-vintage-preorders">Pre-Order 2024 Vintage Collection</a> and secure your bottles before they’re gone. Got questions? Feel free to reach out—we’re here to help!</p>
+      </div>
+    </div>
+
+    <div class="block-inlinepics">
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic3-10202024.jpg" alt="Qvevri">
+        <figcaption>Qvevri.</figcaption>
+      </figure>
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic4-10202024.jpg" alt="Future wine">
+        <figcaption>Future wine.</figcaption>
+      </figure>
+    </div>
+
+  </section>
+
+  <!-- END INSERTED CONTENT -->
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body>
+</html>
