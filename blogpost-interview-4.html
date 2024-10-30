@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--**************************************************** from template.liquid **************************************************-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="">
+  <title>GVINICO_PAGE-TEMPLATE</title>
+  <link href="https://cdn.shopify.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.shopifycdn.com" rel="preconnect" crossorigin>
+  <link href="_assets/component-price.css" rel="stylesheet" media="print">
+  <script src="_assets/product-form.js" defer="defer"></script>
+  <script src="_assets/global.js" defer="defer"></script>
+  <script src="_assets/owl.carousel.min.js" defer="defer"></script>
+  <script src="_assets/wishlist.js" defer="defer"></script>
+  <script src="_assets/compare.js" defer="defer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css">
+  <link href="_assets/quickview.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <style>
+    /*** from settings_data.json ***/
+    :root {
+      --font-body-family: "Inter"; /*{{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};*/
+      --font-body-style: normal; /*{{ settings.type_body_font.style }};*/
+      --font-body-weight: 400; /*{{ settings.type_body_font.weight }};*/
+      --font-heading-family: "Cormorant Garamond"; /*{{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};*/
+      --font-heading-style: normal; /*{{ settings.type_header_font.style }};*/
+      --font-heading-weight: 400; /*{{ settings.type_header_font.weight }};*/
+      --color-base-text: #000000; /*{{ settings.colors_text }};*/
+      --color-base-text-rgb: rgb(0, 0, 0); /*{{ settings.colors_text | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-background-1: #ffffff; /*{{ settings.colors_background_1 }};*/
+      --color-base-background-1-rgb: rgb(255, 255, 255); /*{{ settings.colors_background_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-1: #ae194a; /*{{ settings.colors_accent_1 }};*/
+      --color-base-accent-1-rgb: rgb(174, 25, 74); /*{{ settings.colors_accent_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-2: #777777; /*{{ settings.colors_accent_2 }};*/
+      --color-base-accent-2-rgb: rgb(119, 119, 119); /*{{ settings.colors_accent_2 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-border: #dddddd; /*{{ settings.colors_border }};*/
+      --color-base-button-text: #ffffff; /*{{ settings.button_text }};*/
+      --color-base-button-text-hover: #000000; /*{{ settings.button_text_hover }};*/
+      --color-base-button-background: #ae194a; /*{{ settings.button_background }};*/
+      --color-base-button-background-hover: #ffcc1d; /*{{ settings.button_background_hover }};*/
+      --color-base-text-opacity-10-percent: rgba(0, 0, 0, 0.1); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-text-opacity-20-percent: rgba(0, 0, 0, 0.2);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 20 }};*/
+      --color-base-text-opacity-55-percent: rgba(0, 0, 0, 0.55);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 55 }};*/
+      --color-base-text-opacity-85-percent: rgba(0, 0, 0, 0.85); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 85 }};*/
+      --color-base-accent-1-opacity-10-percent: rgba(174, 25, 74, 0.1); /*{{ settings.colors_accent_1 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-accent-2-opacity-10-percent: rgba(119, 119, 119, 0.1); /*{{ settings.colors_accent_2 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-rating-empty: #dddddd; /*{{ settings.rating_empty }};*/
+      --color-rating-filled: #000000; /*{{ settings.rating_filled }};*/
+      --color-secondary-hover: #ffcc1d; /*{{ settings.secondary_hover_color }};*/
+    }
+    :root {
+      --color-base-background-2: #f0f0f0;
+      --color-base-background-2-rgb: rgb(240, 240, 240);
+      --color-base-solid-button-labels: #000000;
+      --color-base-solid-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-outline-button-labels: #000000;
+      --color-base-outline-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-color-base-accent-1: var(--color-base-accent-1); ;
+    }
+    /*** end from settings_data.json ***/
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+    html {
+      box-sizing: border-box;
+      font-size: 62.5%;
+      height: 100%;
+    }
+    body {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: normal !important;
+      line-height: 1.4;
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
+      color: var(--color-base-text);
+    }
+  </style>
+  <link href="_assets/base.css" rel="stylesheet">
+  <link href="_assets/component-predictive-search.css" rel="stylesheet">
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+  <style>
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 600;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-600.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-600.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-600.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 700;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-700.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-700.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-700.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    .slideshow__subheading, .slideshow__subtitle,
+    .title, .title-wrapper-with-link,
+    .cms-banner-title-three,
+    .parallex-title,
+    .two-banner .cms-banner-subtitle-three,
+    .newsletter.center .h1,
+    .breadcrumb_title{
+      font-family: 'Cormorant Garamond', serif !important;
+    }
+  </style>
+  <!--*** from page.liquid ***-->
+  <link href="_assets/component-rte.css" rel="stylesheet">
+  <link href="_assets/section-main-page.css" rel="stylesheet">
+  <!--*** end from page.liquid ***-->
+  <!--*** style of inserted content in template.liquid ***-->
+
+
+  <link href="_assets/section-blog-post.css" rel="stylesheet">
+
+
+  <!--*** fancybox ***-->
+  <script src="assets/fancybox.umd.js"></script>
+  <link  href="assets/fancybox.css" rel="stylesheet">
+
+
+
+
+  <link href="assets/alt-pages.css" rel="stylesheet">
+  <!--*** end style of inserted content in template.liquid ***-->
+
+
+
+
+
+</head>
+<body class="template-page">
+<main class="main-content" id="MainContent" role="main" tabindex="-1">
+<!--**************************************************** end from template.liquid **************************************************-->
+<div class="page-width contents">
+<div class="main-container">
+<section class="shopify-section spaced-section">
+<div class="page-width page-width--narrow">
+<div class="rte" style="padding-top: 100px; padding-bottom: 100px">
+
+
+  <script src="assets/fancybox.umd.js"></script>
+  <link  href="assets/fancybox.css" rel="stylesheet">
+
+
+
+
+
+
+
+  <!-- INSERTED CONTENT -->
+
+  <section class="alt-pages">
+
+    <p class="alt-text18">Shakriani Estate, founded by Nikoloz Tskhovrebadze in 2020, is deeply rooted in a tradition of viticulture and winemaking passed down through generations. Inspired by his parents and grandparents, Nikoloz decided to follow in their footsteps and continue the family legacy. The estate's journey began in 2006 when Nikoloz's parents planted Saperavi and Rkatsiteli grape varieties on 3 hectares of land in the village of Shakriani, within the Kindzmarauli micro-zone. Over the years, the vineyard expanded to cover 6 hectares, with additional plantings in 2015 and 2021.</p>
+
+    <img class="logo-qa" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/logo-shakriani.png" alt="Shakriani Estate" width="250" height="68">
+
+    <figure class="hdr-img"><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpichdr-interview-4.jpg" alt="Shakriani Estate">
+      <figcaption>Nikoloz Tskhovrebadze&nbsp;—&nbsp;Shakriani Estate founder</figcaption>
+    </figure>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Let’s start with how your journey into winemaking began. What sparked your personal interest in wine, and how did it evolve into making your own wine?</div>
+      <div class="txt-a">
+        <p>My passion for wine is deeply rooted in my family’s legacy. I’m the third generation in this profession. Both of my grandfathers were involved in viticulture and winemaking—one in the Akhmeta district and the other in Kvareli. They worked on vineyards, contributing to the development of local wineries. Growing up surrounded by this environment, I inherited not just their knowledge but a deep appreciation for the craft. My parents followed in their footsteps, representing the second generation. In 2006, they purchased land in Shakriani—a region known for its premium grape-growing conditions—and planted 3 hectares of vines, 2 hectares of Saperavi and 1 hectare of Rkatsiteli. This initial step marked a shift for our family, as we moved from selling grapes to larger wineries to cultivating the idea of producing our own wines. For me, winemaking isn’t just a job—it’s carrying forward my family’s tradition, while also bringing my personal vision to life.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Shakriani is clearly a special place for winemaking. Why is the village named Shakriani, and what makes it stand out from other regions?</div>
+      <div class="txt-a">
+        <p>The name “Shakriani” itself is a reflection of the unique terroir of the region. It’s derived from the word “shakri,” which refers to sugar, and it’s no coincidence. Grapes grown here are known for their naturally high sugar content, which directly impacts the sweetness and depth of the wines produced. The location’s climate plays a huge role in this. Shakriani is nestled close to the Alazani River and surrounded by rocky mountains, creating a microclimate that’s hotter than many neighboring regions. The sun hits the slopes more intensely here, which helps the grapes ripen earlier, developing more concentrated sugars. This combination of early ripening and high sugar levels gives Shakriani wines their signature richness and roundness, especially in varieties like Saperavi, where sweetness and acidity are perfectly balanced. What’s also fascinating is that the rocky, less-forested landscape retains heat during the day, while the proximity to the river provides just enough moisture to support healthy vine growth. These natural elements create the perfect environment for producing wines with bold flavors and complex aromatics.</p>
+      </div>
+    </div>
+
+    <div class="pics-qa">
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic2-interview-4.jpg" alt="Shakriani Estate"></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic3-interview-4.jpg" alt="Shakriani Estate"></figure>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">How did you go from being interested in winemaking to starting your own winery at such a young age?</div>
+      <div class="txt-a">
+        <p>I was determined from a young age to build something of my own. At 18, I took the leap and officially registered my own company. I knew it was an ambitious move—most people around me were skeptical, seeing an 18-year-old trying to break into a field dominated by older, more experienced winemakers. But I didn’t let that stop me. With the little savings I had, I processed 1 ton of Saperavi grapes. That first batch produced about 600 bottles, and it felt like a huge milestone. I started small, with just one stainless steel tank, and gradually reinvested in the business. I expanded by purchasing two French oak barrels, then adding more over time. The breakthrough moment came in 2022, when I won a grant through a Georgian development project. This allowed me to scale up significantly—we were able to build a proper winery, incorporating both modern stainless steel tanks and traditional Qvevri for fermentation. Now, we operate with two distinct lines: the Dionysus line, which is focused on barrel-aged wines with a Bordeaux-inspired approach, and the Dream line, dedicated to Qvevri wines, preserving the ancient Georgian method of winemaking. Each line reflects a different facet of my vision for winemaking, blending tradition with innovation.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Let’s talk about your wine labels. Can you explain the concept behind them?</div>
+      <div class="txt-a">
+        <p>Sure. As we mentioned earlier, we currently have two distinct lines. One is focused on Qvevri wine, and the other on barrel-aged wine. Our brand is called "Shakriani Estate," and the logo reflects the deep-rooted connection between Georgia and winemaking. The logo features the base of a Qvevri, symbolizing the ancient Georgian tradition of winemaking, with a crown above it. This imagery represents the idea that Georgia is recognized globally as the cradle of wine, and I wanted the logo to convey that sense of heritage and respect.</p>
+      </div>
+    </div>
+
+    <div class="pics-qa">
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic4-interview-4.jpg" alt="Shakriani Estate"></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic5-interview-4.jpg" alt="Shakriani Estate"></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic6-interview-4.jpg" alt="Shakriani Estate"></figure>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">How did you decide on the name and theme for each line?</div>
+      <div class="txt-a">
+        <p>The barrel-aged line is called "Dionysus," named after the Greek god of wine and viticulture. This name was also inspired by my father, whose name is Onise. So, I combined elements from both—the mythological figure and my father’s name—to create "Dionysus" as a tribute to the god of wine. The label itself is designed in a Bordeaux style, reflecting the traditional French barrel-aging process, which we also use for this line. These wines are aged in French oak barrels, so I wanted the label to have a classic Bordeaux feel, to emphasize the connection between our Georgian wines and the renowned French winemaking tradition.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">And the Qvevri line?</div>
+      <div class="txt-a">
+        <p>The Qvevri line is called "Dream," and it’s inspired by my childhood dream of becoming a pilot. Although I chose to follow the path of winemaking, my fascination with aviation stayed with me, so I decided to incorporate that into the label. The Qvevri on the label is depicted as flying, symbolizing how some dreams, though unrealized, still find expression in different forms. Everyone has a dream that might not come to fruition, but it can still manifest in other ways. For me, winemaking became the realization of my passion. This line includes varieties like Saperavi, Rkatsiteli, and Kisi, all produced in Qvevri, keeping true to Georgia’s ancient winemaking techniques.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">That’s a unique blend of personal history and professional passion. How do you convey these stories to consumers, especially those unfamiliar with Georgian wine?</div>
+      <div class="txt-a">
+        <p>It’s always a challenge to convey the depth of the story behind the wine, especially to international consumers who may not be familiar with Georgia or Qvevri winemaking. We try to highlight the significance of the place and process on the back of the bottle, explaining that Shakriani is a specific location in Georgia with a rich history in viticulture. The Qvevri image and the narrative help people connect emotionally to the product. When people see the flying Qvevri on the Dream line, it sparks curiosity, and it becomes more than just a bottle of wine—it tells a story.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Have you received feedback on the labels from international markets?</div>
+      <div class="txt-a">
+        <p>Yes, we’ve received positive feedback, especially from markets like Germany. Consumers there appreciate the blend of tradition and modern storytelling that our labels convey. They like knowing that they’re drinking something unique, with a deep cultural heritage. The Dream line, in particular, stands out because of the Qvevri symbol—it’s a visual cue that differentiates it from other wines. As Georgian winemaking continues to gain recognition, I believe these visual and narrative elements will play an increasingly important role in engaging consumers.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Speaking of your two wine lines, do you blend wines from different plots or vineyards, or do you prefer keeping the characteristics of each plot separate?</div>
+      <div class="txt-a">
+        <p>I believe in preserving the uniqueness of each vineyard plot, so I keep them separate. The terroir in Shakriani is incredibly diverse, with varying soil types and microclimates even within small distances. It would be a disservice to blend wines that come from such distinct environments. My Dionysus line, which focuses on barrel aging, is designed to bring out the rich complexity that French oak imparts over time—notes of chocolate, vanilla, and subtle tannins that complement the bold flavors of Saperavi. These wines develop slowly, with the barrels allowing for micro-oxidation, which softens the wine and enhances its structure. On the other hand, the Dream line stays true to the traditional Georgian method of using Qvevri. These large, clay vessels are buried underground, allowing the wine to ferment and age in a completely natural state, without the influence of wood. The result is a pure expression of the terroir. The Qvevri creates a unique environment for fermentation, where the wine interacts more with the earth, bringing out the mineral qualities of the soil. Each method offers something different to the final product, and I want to showcase both.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Your attention to terroir and wine styles is impressive. How involved are you in the actual vineyard management? Do you have any key practices that set your approach apart?</div>
+      <div class="txt-a">
+        <p>I’m extremely hands-on with the management of our vineyards. In fact, my whole family is involved. My mother, who has a degree from the Agrarian University, plays a crucial role in making key decisions, especially when it comes to the technical aspects of vineyard care. Together, we assess the needs of the vineyard based on weather conditions and the specific requirements of each plot. Every year is different, so we don’t follow a rigid schedule. For example, one year might require more attention to moisture control, while another year might demand more focus on pest management. The key is being flexible and responsive to what nature throws our way.</p>
+        <p>One of our core principles is quality over quantity. We deliberately limit the yield of our vineyards by pruning heavily. This ensures that the remaining grapes are of the highest possible quality, with concentrated flavors. The result is a smaller harvest, but the grapes are much richer in sugar, acidity, and phenolic compounds, which are essential for making age-worthy wines. We also take great care in choosing the products we use to treat the vineyards. We rely on top-tier agricultural chemicals from Germany and Spain, such as those from Bayer, because they are more effective at protecting the vines without compromising the quality of the grapes. We avoid cheaper products from places like Turkey or India because, while they might make the grapes look good on the outside, they don’t deliver the same internal structure that’s crucial for premium wine production.</p>
+      </div>
+    </div>
+
+    <div class="pics-qa">
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic10-interview-4.jpg" alt="Shakriani Estate"></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic11-interview-4.jpg" alt="Shakriani Estate"></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic12-interview-4.jpg" alt="Shakriani Estate"></figure>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">How has climate change affected your vineyard and winemaking processes?</div>
+      <div class="txt-a">
+        <p>Climate change has definitely had a noticeable impact. We’ve been dealing with hotter, more unpredictable seasons, and this has led to new challenges in managing the vineyards. One of the biggest changes is the rise in vine diseases, particularly fungal infections. Warmer winters mean that we no longer get the strong frosts that used to kill off pests and diseases naturally. Now, fungal diseases survive the winter in the soil or in fallen leaves, and when spring comes, they re-emerge stronger than ever. We’ve had to adjust our entire approach to vineyard care, increasing our treatments and being much more vigilant about the timing and type of interventions we use. The challenge is finding the right balance—we want to protect the vines without over-treating them, as that could affect the final quality of the wine.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">How would you evaluate this year’s harvest, and what are your expectations for the wines it will produce?</div>
+      <div class="txt-a">
+        <p>This year’s harvest was smaller in terms of yield, but the quality of the grapes was exceptional. I would compare it to 2022, a year that also had lower yields but produced some of the best grapes we’ve ever worked with. The key for us is to harvest at the perfect moment when the balance of sugar and acidity is just right. This year, the grapes were in ideal condition, which gives me great confidence in the potential of the wines. The structure of the wines is superb—the titratable acidity, alcohol levels, and tannins are all perfectly aligned for long-term aging. I expect these wines to develop beautifully over time, becoming richer and more complex with each passing year. For me, this vintage will likely be one of the best we’ve ever produced, especially for those looking for wines that can age gracefully.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">You’ve mentioned the unique terroir of Shakriani a few times. Do you believe it has the potential to be recognized as a distinct terroir, separate from the broader Kindzmarauli microzone?</div>
+      <div class="txt-a">
+        <p>Absolutely. Shakriani has a very distinctive terroir, and I believe it has the potential to be officially recognized as its own micro-terroir within the Kindzmarauli zone. Even though Shakriani is part of the Kindzmarauli microzone, the diversity of soils and microclimates within Shakriani is striking. For instance, we have small areas like “Khoda Bune,” which is famous for producing exceptional Rkatsiteli grapes. This area has unique soil composition and sunlight exposure that create an ideal environment for growing white grapes. The terroir here is so distinct that I think Shakriani could easily be recognized for its own Saperavi and Rkatsiteli, standing apart from the rest of Kindzmarauli. Of course, this level of recognition takes time, but I believe it’s only a matter of time before Shakriani gains the recognition it deserves.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">What are your thoughts on the broader Kindzmarauli microzone and other Georgian microzones, like Mukuzani?</div>
+      <div class="txt-a">
+        <p>The Kindzmarauli microzone has expanded significantly over the years, and while that’s been good for business, I think there’s a need for greater precision in how these zones are defined. Kindzmarauli now includes many villages across the Kvareli and Telavi districts, but not all of those areas truly reflect the original terroir of Kindzmarauli. For example, the core of the Kindzmarauli zone is probably only about 100 hectares, yet the microzone covers a much larger area today. In the future, I believe these larger microzones will need to be divided into smaller, more specific zones to reflect the unique characteristics of each area. This would be similar to how regions like Burgundy in France are classified, with each plot of land being recognized for its individual qualities. This level of precision would not only help winemakers maintain the authenticity of their wines but also give consumers a clearer understanding of what they’re buying.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Let’s talk about the challenges you’ve faced in winemaking—whether in the vineyard, sales, or marketing. Can you walk us through those difficulties?</div>
+      <div class="txt-a">
+        <p>The challenges were there from the very start. We began in 2020, right in the middle of the pandemic. We didn’t have a proper winery then; everything was done at home, with the first batch being processed on our house's balcony. Eventually, we expanded and added a cellar, Qvevri, and barrels, but the initial challenge was entering the Georgian market, where people are often skeptical of new wines until they try them and trust the brand.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Especially given that your vineyard is in Shakriani, a lesser-known location.</div>
+      <div class="txt-a">
+        <p>Exactly. People had preconceived notions about Shakriani—they thought it was associated with sugar, given the name, which was a challenge for us in terms of branding and marketing. At one point, I even considered rebranding, but I decided against it. I wanted the wine to be defined by its quality, not the name. Over time, people began to recognize the uniqueness of Shakriani and our wines.</p>
+      </div>
+    </div>
+
+    <div class="pics-qa">
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic7-interview-4.jpg" alt="Shakriani Estate"></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic8-interview-4.jpg" alt="Shakriani Estate"></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic9-interview-4.jpg" alt="Shakriani Estate"></figure>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">How are your sales and marketing strategies abroad? Are you gaining recognition internationally?</div>
+      <div class="txt-a">
+        <p>Yes, our wines are being exported, primarily to Germany. For example, in Berlin, our wines are sold through contacts we established ourselves. We’re constantly exploring new markets, which is challenging for a small winery. Exporting requires significant investment, and for smaller operations like ours, that can be difficult without government support.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">What’s your vision for the future of Georgian wine, particularly for premium wines?</div>
+      <div class="txt-a">
+        <p>The focus should be on increasing the share of premium wines, reducing the prevalence of cheap wines. This will help elevate the overall quality and reputation of Georgian wine globally. We need to move beyond the Soviet-era legacy, where wines like Kindzmarauli were mass-produced for quick consumption, and shift toward higher-quality, well-aged wines.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">How does the market differ between post-Soviet countries and European markets?</div>
+      <div class="txt-a">
+        <p>The European market demands higher quality and has a different approach to style and wine consumption. In post-Soviet markets, there’s still a preference for cheaper, sweeter wines, but in Europe, there’s a growing appreciation for well-made, complex wines, and this pushes us to improve quality.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">You mentioned soil earlier. Can you tell us more about the types of soil in your vineyards?</div>
+      <div class="txt-a">
+        <p>Our vineyards are located on two primary types of soil. The first is alluvial soil, carried by the Alazani River over centuries. This rich, fertile land is ideal for growing our grapes. The second is a mix of limestone and black soil, which also provides excellent conditions for high-quality wine production.</p>
+      </div>
+    </div>
+
+    <div class="pics-qa">
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic13-interview-4.jpg" alt="Shakriani Estate"></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic14-interview-4.jpg" alt="Shakriani Estate"></figure>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">What are your future plans for expansion?</div>
+      <div class="txt-a">
+        <p>For us, the challenge will always be maintaining quality. We can’t compete with large-scale producers in terms of quantity or marketing budgets, but we aim to produce premium wines in smaller quantities, around 40,000 to 50,000 bottles. The goal is to remain focused on quality and make wines that stand out.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Do you have plans for tourism at your winery?</div>
+      <div class="txt-a">
+        <p>Yes, we’re already welcoming tourists to our winery. Most of our visitors are foreigners, especially from Europe, and they’re very knowledgeable about Georgian wine. They often arrive knowing what to expect, and they leave satisfied with our wines.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Do you think having two different wine styles—Qvevri and barrel-aged—helps attract more customers?</div>
+      <div class="txt-a">
+        <p>Definitely. There’s a market for both styles. Some prefer the traditional Qvevri wines, while others enjoy the more familiar, barrel-aged wines. I believe there’s a place for both, and having this variety allows us to reach a broader audience.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">What advice would you give to someone new to winemaking, especially someone who might not have inherited vineyards?</div>
+      <div class="txt-a">
+        <p>If possible, the best route is to purchase or plant your own vineyard, though this requires patience, as it takes around 8 to 10 years for a vineyard to mature fully. If buying or planting isn’t feasible, then start small—perhaps buy grapes and make wine in limited quantities. Focus on a few varieties but make sure they’re well-made. The key is not just investing in production but also in marketing, as selling the wine can be as challenging as making it.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">You’ve emphasized the importance of marketing. What are your thoughts on the current state of wine marketing in Georgia?</div>
+      <div class="txt-a">
+        <p>Marketing is crucial. The wine industry here faces two realities—on the one hand, the local market is saturated with producers, so it’s difficult to stand out. On the other hand, the international market has low awareness of Georgian wines. That’s why it’s so important to invest in marketing to raise awareness abroad while continuing to educate the local market about quality wines.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">How has the local Georgian wine market changed?</div>
+      <div class="txt-a">
+        <p>The local market has shifted significantly in the last 5-7 years. People have become accustomed to drinking better wines. There’s more awareness about quality, and new generations of wine lovers are more discerning than previous ones. We’ve moved past the Soviet mentality of mass-produced, sweet wines like Kindzmarauli, though that still exists in some export markets.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">What role has Saperavi played in the rise of Georgian wines?</div>
+      <div class="txt-a">
+        <p>Saperavi is a unique variety that has allowed Georgia to stand out on the global stage. It’s a red grape with incredible aging potential, and when grown in the right terroir, it can compete with some of the best red wines in the world. I often compare it to Syrah in terms of its complexity, but Saperavi has a character all its own. Its ability to produce world-class wines at an affordable price point has been key to Georgia’s growing reputation.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Aging wine is crucial, but it’s rare to find aged wines in Georgia. Why is that?</div>
+      <div class="txt-a">
+        <p>It comes down to economics. Many small producers don’t have the financial resources to hold onto wine for 5-6 years of aging before selling it. In places like France, you won’t find young wines in stores—they're aged for years before release. In Georgia, the process is often rushed because producers need to generate cash flow. However, I believe that as the market matures, we’ll see more aged wines, especially with varieties like Saperavi that benefit from longer aging periods.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Do you think Georgian winemaking is on the right track?</div>
+      <div class="txt-a">
+        <p>Yes, but it’s still developing. The modern Georgian wine industry really only started about 20-30 years ago, after the Soviet period, when mass production dominated and quality wasn’t a priority. Now, we’re focusing more on quality, and small wineries are playing a big part in this transformation. There’s still a lot of room for growth, especially in premium, aged wines, but we’re moving in the right direction.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">What advice would you give to someone new to winemaking, especially someone who might not have inherited vineyards?</div>
+      <div class="txt-a">
+        <p>If possible, the best route is to purchase or plant your own vineyard, though this requires patience, as it takes around 8 to 10 years for a vineyard to mature fully. If buying or planting isn’t feasible, then start small—perhaps buy grapes and make wine in limited quantities. Focus on a few varieties but make sure they’re well-made. The key is not just investing in production but also in marketing, as selling the wine can be as challenging as making it.</p>
+      </div>
+    </div>
+
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">You’ve emphasized the importance of marketing. What are your thoughts on the current state of wine marketing in Georgia?</div>
+      <div class="txt-a">
+        <p>Marketing is crucial. The wine industry here faces two realities—on the one hand, the local market is saturated with producers, so it’s difficult to stand out. On the other hand, the international market has low awareness of Georgian wines. That’s why it’s so important to invest in marketing to raise awareness abroad while continuing to educate the local market about quality wines.</p>
+      </div>
+    </div>
+
+    <figure class="hdr-img"><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpicftr-interview-4.jpg" alt="Shakriani Estate Wines">
+      <figcaption>Shakriani Estate Wines</figcaption>
+    </figure>
+
+      <p>&nbsp;</p>
+      <h4 class="h4-gr h--centered">Explore more photos from this interview:</h4>
+      <div class="alt-gallery">
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic2-interview-4.jpg" data-fancybox="interview-gallery" data-caption="">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb2-interview-4.jpg">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic3-interview-4.jpg" data-fancybox="interview-gallery" data-caption="">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb3-interview-4.jpg">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic4-interview-4.jpg" data-fancybox="interview-gallery" data-caption="">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb4-interview-4.jpg">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic5-interview-4.jpg" data-fancybox="interview-gallery" data-caption="">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb5-interview-4.jpg">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic6-interview-4.jpg" data-fancybox="interview-gallery" data-caption="">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb6-interview-4.jpg">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic7-interview-4.jpg" data-fancybox="interview-gallery" data-caption="">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb7-interview-4.jpg">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic8-interview-4.jpg" data-fancybox="interview-gallery" data-caption="">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb8-interview-4.jpg">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic9-interview-4.jpg" data-fancybox="interview-gallery" data-caption="">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb9-interview-4.jpg">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic10-interview-4.jpg" data-fancybox="interview-gallery" data-caption="">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb10-interview-4.jpg">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic11-interview-4.jpg" data-fancybox="interview-gallery" data-caption="">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb11-interview-4.jpg">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic12-interview-4.jpg" data-fancybox="interview-gallery" data-caption="">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb12-interview-4.jpg">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic13-interview-4.jpg" data-fancybox="interview-gallery" data-caption="">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb13-interview-4.jpg">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic15-interview-4.jpg" data-fancybox="interview-gallery" data-caption="">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb15-interview-4.jpg">
+        </a>
+      </div>
+
+      <script>
+        $(document).ready(function() {
+          Fancybox.bind('[data-fancybox="interview-gallery"]', {});
+        });
+      </script>
+
+  </section>
+
+  <!-- END INSERTED CONTENT -->
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body>
+</html>
