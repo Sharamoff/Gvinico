@@ -771,17 +771,3 @@ details[open] summary ~ * {
   }
 
 }
-
-.alt-table-simple {
-  border-collapse: collapse;
-  border-top: solid 1px #fff;
-}
-
-.alt-table-simple td  {
-  padding: 10px;
-  border-bottom: solid 1px #fff;
-}
-
-.has-pagetitle-numbers {
-  font-size: 50px;
-}

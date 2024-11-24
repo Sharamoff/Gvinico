@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--**************************************************** from template.liquid **************************************************-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="">
+  <title>GVINICO_PAGE-TEMPLATE</title>
+  <link href="https://cdn.shopify.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.shopifycdn.com" rel="preconnect" crossorigin>
+  <link href="_assets/component-price.css" rel="stylesheet" media="print">
+  <script src="_assets/product-form.js" defer="defer"></script>
+  <script src="_assets/global.js" defer="defer"></script>
+  <script src="_assets/owl.carousel.min.js" defer="defer"></script>
+  <script src="_assets/wishlist.js" defer="defer"></script>
+  <script src="_assets/compare.js" defer="defer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css">
+  <link href="_assets/quickview.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <style>
+    /*** from settings_data.json ***/
+    :root {
+      --font-body-family: "Inter"; /*{{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};*/
+      --font-body-style: normal; /*{{ settings.type_body_font.style }};*/
+      --font-body-weight: 400; /*{{ settings.type_body_font.weight }};*/
+      --font-heading-family: "Cormorant Garamond"; /*{{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};*/
+      --font-heading-style: normal; /*{{ settings.type_header_font.style }};*/
+      --font-heading-weight: 400; /*{{ settings.type_header_font.weight }};*/
+      --color-base-text: #000000; /*{{ settings.colors_text }};*/
+      --color-base-text-rgb: rgb(0, 0, 0); /*{{ settings.colors_text | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-background-1: #ffffff; /*{{ settings.colors_background_1 }};*/
+      --color-base-background-1-rgb: rgb(255, 255, 255); /*{{ settings.colors_background_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-1: #ae194a; /*{{ settings.colors_accent_1 }};*/
+      --color-base-accent-1-rgb: rgb(174, 25, 74); /*{{ settings.colors_accent_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-2: #777777; /*{{ settings.colors_accent_2 }};*/
+      --color-base-accent-2-rgb: rgb(119, 119, 119); /*{{ settings.colors_accent_2 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-border: #dddddd; /*{{ settings.colors_border }};*/
+      --color-base-button-text: #ffffff; /*{{ settings.button_text }};*/
+      --color-base-button-text-hover: #000000; /*{{ settings.button_text_hover }};*/
+      --color-base-button-background: #ae194a; /*{{ settings.button_background }};*/
+      --color-base-button-background-hover: #ffcc1d; /*{{ settings.button_background_hover }};*/
+      --color-base-text-opacity-10-percent: rgba(0, 0, 0, 0.1); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-text-opacity-20-percent: rgba(0, 0, 0, 0.2);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 20 }};*/
+      --color-base-text-opacity-55-percent: rgba(0, 0, 0, 0.55);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 55 }};*/
+      --color-base-text-opacity-85-percent: rgba(0, 0, 0, 0.85); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 85 }};*/
+      --color-base-accent-1-opacity-10-percent: rgba(174, 25, 74, 0.1); /*{{ settings.colors_accent_1 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-accent-2-opacity-10-percent: rgba(119, 119, 119, 0.1); /*{{ settings.colors_accent_2 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-rating-empty: #dddddd; /*{{ settings.rating_empty }};*/
+      --color-rating-filled: #000000; /*{{ settings.rating_filled }};*/
+      --color-secondary-hover: #ffcc1d; /*{{ settings.secondary_hover_color }};*/
+    }
+    :root {
+      --color-base-background-2: #f0f0f0;
+      --color-base-background-2-rgb: rgb(240, 240, 240);
+      --color-base-solid-button-labels: #000000;
+      --color-base-solid-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-outline-button-labels: #000000;
+      --color-base-outline-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-color-base-accent-1: var(--color-base-accent-1); ;
+    }
+    /*** end from settings_data.json ***/
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+    html {
+      box-sizing: border-box;
+      font-size: 62.5%;
+      height: 100%;
+    }
+    body {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: normal !important;
+      line-height: 1.4;
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
+      color: var(--color-base-text);
+    }
+  </style>
+  <link href="_assets/base.css" rel="stylesheet">
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+  <style>
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 600;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-600.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-600.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-600.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 700;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-700.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-700.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-700.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    .slideshow__subheading, .slideshow__subtitle,
+    .title, .title-wrapper-with-link,
+    .cms-banner-title-three,
+    .parallex-title,
+    .two-banner .cms-banner-subtitle-three,
+    .newsletter.center .h1,
+    .breadcrumb_title{
+      font-family: 'Cormorant Garamond', serif !important;
+    }
+  </style>
+  <!--*** from page.liquid ***-->
+  <link href="_assets/component-rte.css" rel="stylesheet">
+  <link href="_assets/section-main-page.css" rel="stylesheet">
+  <!--*** end from page.liquid ***-->
+  <!--*** style of inserted content in template.liquid ***-->
+
+
+  <link href="_assets/section-blog-post.css" rel="stylesheet">
+
+
+  <link href="assets/alt-pages.css" rel="stylesheet">
+  <!--*** end style of inserted content in template.liquid ***-->
+
+
+
+
+
+</head>
+<body class="template-page">
+<main class="main-content" id="MainContent" role="main" tabindex="-1">
+<!--**************************************************** end from template.liquid **************************************************-->
+<div class="page-width contents">
+<div class="main-container">
+<section class="shopify-section spaced-section">
+<div class="page-width page-width--narrow">
+<div class="rte" style="padding-top: 100px; padding-bottom: 100px">
+
+
+
+
+
+
+
+
+
+
+  <!-- INSERTED CONTENT -->
+
+  <section class="alt-pages">
+
+    <p class="alt-text18">The 2024 harvest in Georgia has proven to be unexpectedly excellent and somewhat unique, offering a stark contrast to the disastrous 2023 vintage, which is likely to go down as one of the worst in recent memory. The success of the 2024 season has been a much-needed relief for winemakers across the country.</p>
+
+
+    <figure class="hdr-img">
+      <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic5-15112024.jpg" alt="The 2024 harvest">
+    </figure>
+
+
+    <div class="alt-text-width66 text--centered">
+      <p>However, while the overall outcome of the harvest has been favorable, the growing season did come with its quirks and challenges. One of the most notable features of this vintage was the unusually early budbreak, which occurred 1-2 weeks ahead of the usual timeline. This early start to the growing season meant that vineyard operations had to be expedited, as vine growers found themselves adjusting to a significantly earlier schedule. From spraying and green operations to harvesting, every stage of the vegetative period had to shift forward by several weeks.</p>
+      <p>As a result, harvests in certain regions took place 1-2 weeks earlier than typical. Beyond this shift in timing, if there were one word to describe the 2024 season, it would be balanced. This balance in weather is especially notable given the extremes of previous years: the extremely dry 2022 with its prolonged drought and 2023’s record rainfall throughout the whole season. In contrast, 2024 saw a near-perfect balance of sun and rain, which helped prevent disease pressure across the country's vineyards—even in the most humid regions and naturally, with the early start to the season, grapes faced minimal issues with ripening, even in the colder areas.</p>
+    </div>
+
+    <div class="pics-qa">
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic6-15112024.jpg" alt="The 2024 harvest"></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic7-15112024.jpg" alt="The 2024 harvest"></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic8-15112024.jpg" alt="The 2024 harvest"></figure>
+    </div>
+
+    <div class="alt-text-width66 text--centered">
+
+      <a href="https://gvinico.com/collections/kakheti" class="h3-gr h-color-accent-1">Kakheti</a>
+      <p>In 2024, Kakheti enjoyed a reprieve from the usual catastrophic hailstorms. While hail did hit small parcels around Telavi, Akhmeta and Kvareli, it was nothing significant compared to past seasons. The biggest challenge for this year's vintage was finding enough hands for harvesting. Due to the early start of the season, it was nearly impossible to secure enough labor for the harvest in time.</p>
+
+      <a href="https://gvinico.com/collections/imereti" class="h3-gr h-color-accent-1">Imereti</a>
+      <p>In contrast to Kakheti, hail is a rare occurrence in Imereti, yet in 2024 it caused significant damage to the right bank of Qvirila river, particularly in the eastern parts of Bagdati district. Despite this setback, the rest of Imereti experienced a stellar year. There were no issues with powdery or downy mildew, and ripening came early, resulting in grapes in perfect condition.</p>
+
+      <a href="https://gvinico.com/collections/kartli" class="h3-gr h-color-accent-1">Kartli</a>
+      <p>Is known as Georgia's driest vine-growing region, where droughts can be so severe that they not only ruin the harvest but sometimes even destroy the vines themselves. Thankfully, 2024 saw almost no prolonged dry spells. Rainfall was well-distributed throughout the season, and the earlier start ensured that grapes reached perfect phenolic ripeness by the time of the early harvest.</p>
+
+      <a href="https://gvinico.com/collections/racha" class="h3-gr h-color-accent-1">Racha</a>
+      <p>Experienced perhaps the most distinctive harvest of 2024, facing significant challenges that set it apart from other regions. It all began with almost freezing temperatures during flowering, which led to reduced yields. Minor hail events scattered throughout the season further compounded these issues, resulting in an overall yield reduction of around 40%. Despite these setbacks, the grapes that survived were of exceptional quality, with notably high sugar levels—an essential factor for producing naturally semi-sweet wines like Khvanchkara.</p>
+
+      <a href="https://gvinico.com/collections/lechkhumi" class="h3-gr h-color-accent-1">Lechkhumi</a>
+      <p>Like most mountainous wine regions in Georgia, Lechkhumi regularly faces the challenge of hail, and 2024 was no exception. Major hailstorms in July reduced yields by about 40%, similar to neighboring Racha. Despite these setbacks, there was zero pressure from powdery or downy mildew, which allowed the remaining grapes to reach exceptional quality, achieving perfect phenolic ripeness and extremely high sugar levels.</p>
+
+      <a href="https://gvinico.com/collections/guria" class="h3-gr h-color-accent-1">Guria</a>
+      <p>Even in Georgia's only coastal vine-growing region, which is also one of the most humid and challenging areas for viticulture, the 2024 harvest was excellent. Notably, Chkhaveri, typically one of the latest varieties to be harvested in Georgia, had an outstanding season. This year, it reached full ripeness by mid-November—an unusual occurrence, as Chkhaveri is sometimes harvested during December.</p>
+
+      <a href="https://gvinico.com/collections/samegrelo" class="h3-gr h-color-accent-1">Samegrelo</a>
+      <p>In the homeland of Ojaleshi, 2024 turned out to be an outstanding year. The grapes reached perfect phenolic ripeness throughout whole region. However, due to the exceptionally high yields this season, many farmers struggled to find buyers for their grapes, resulting in challenges with selling the harvest.</p>
+    </div>
+
+    <div class="alt-text-width66 text--centered">
+
+      <h3 class="h3-gr h-color-accent-1">Stats</h3>
+      <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/pie-2024harvest.svg" alt="The 2024 harvest">
+      <p><strong>320,000 tons</strong>, which is approximately 45% more than last year's comparable figure.</p>
+      <table class="alt-table-simple">
+        <tr style="background:rgba(141,130,0,0.1);color:#8D8200">
+          <td>Rkatsiteli</td>
+          <td style="width:10%">&nbsp;&mdash;&nbsp;136,000&nbsp;tons</td>
+        </tr>
+        <tr style="background:rgba(111,0,35,0.1);color:#6F0023">
+          <td>Saperavi</td>
+          <td style="width:10%">&nbsp;&mdash;&nbsp;130,000&nbsp;tons</td>
+        </tr>
+        <tr style="background:rgba(236,125,0,0.1);color:#c56900">
+          <td>Kakhuri Mtsvane</td>
+          <td>&nbsp;&mdash;&nbsp;5,900&nbsp;tons</td>
+        </tr>
+        <tr style="background:rgba(58,44,87,0.1);color:#3A2C57">
+          <td>Alexandrouli/Mujuretuli, Racha</td>
+          <td>&nbsp;&mdash;&nbsp;1,618&nbsp;tons</td>
+        </tr>
+        <tr style="background:rgba(152,116,0,0.1);color:#987400">
+          <td>Tsolikouri, Tsageri</td>
+          <td>&nbsp;&mdash;&nbsp;753&nbsp;tons</td>
+        </tr>
+        <tr style="background:rgba(138,85,137,0.1);color:#8A5589">
+          <td>Other varieties</td>
+          <td>&nbsp;&mdash;&nbsp;45,729&nbsp;tons</td>
+        </tr>
+      </table>
+
+    </div>
+
+    <div class="alt-text-width66 text--centered">
+
+      <h3 class="h3-gr h-color-accent-1">Conclusion</h3>
+      <p>While it’s still too early to predict the exact quality and style of the 2024 wines, both the overall fruit condition and abundance have been exceptional. Those who managed to control yields should be rewarded with wines that display both concentration and finesse.</p>
+    </div>
+
+    <div class="alt-text-width66 text--centered">
+
+      <p>Special Thanks to <i>Zaza Gogua</i> of <a href="https://gvinico.com/collections/martvilis-marani">"Martvilis Marani"</a> and
+        <i>Giorgi Goglidze</i> of
+        <a href="https://www.instagram.com/lechkhumiseafloorvineyards/" target="_blank">"Lechkhumi Seafloor Vineyards"</a>.</p>
+
+    </div>
+
+  </section>
+
+  <!-- END INSERTED CONTENT -->
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body>
+</html>
