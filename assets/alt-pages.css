@@ -315,12 +315,22 @@
 }
 
 .alt-pages .block-article__innerpic {
-  margin-top: 37px;
+  margin: 30px auto;
+  text-align: center;
 }
 
-.innerpic--bordered img {
-  border-radius: 5px;
-  line-height: 1;
+@media screen and (max-width: 475px) {
+
+  .alt-pages .block-article__innerpic {
+    margin: 15px auto;
+  }
+
+}
+
+.innerpic--1068 {
+  max-width: 1068px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .alt-pages .block-article__innerpic img {
