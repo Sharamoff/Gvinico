@@ -314,6 +314,21 @@
   max-width: 600px;
 }
 
+.alt-pages .block-article__innerpic {
+  margin-top: 37px;
+}
+
+.innerpic--bordered img {
+  border-radius: 5px;
+  line-height: 1;
+}
+
+.alt-pages .block-article__innerpic img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
 .alt-pages .block-article__50 {
   flex: 0 1 50%;
 }
