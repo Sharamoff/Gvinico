@@ -1,0 +1,67 @@
+{% layout none %}
+
+  
+{% comment %}
+{
+  "product-list": [
+
+    {% assign totalVendors = shop.vendors | size %}
+    {% assign vendorsFound = 1 %}
+    {% assign orderNumber = 1 %}
+    {% for vendor in shop.vendors %}
+      {% assign vendor_collection_handle = vendor | handleize | strip | escape %}
+      {% for product in collections[vendor_collection_handle].products %}
+        {% for vintage in product.variants %}
+          {
+            {{ orderNumber }}
+            "name": "{{ product.title | escape }} {{ vintage.title }}",
+            {% assign orderNumber = orderNumber | plus: 1 %}
+          }
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}{% unless forloop.last %},{% endunless %}
+    {{ vendorsFound }}
+  
+  ]
+}
+{% endcomment %}
+
+{
+  "product-list": [
+    {% assign orderNumber = 1 %}
+    {% for vendor in shop.vendors %}
+      {% assign vendor_collection_handle = vendor | handleize | strip | escape %}
+      {% for product in collections[vendor_collection_handle].products %}
+        {% for vintage in product.variants %}
+          {% for variant in product.variants %} 
+            {% if variant.inventory_quantity != 0 %} 
+              <div>
+              {
+                  <div>
+                    "orderNumber": {{ orderNumber }},<br>
+                    "name": "{{ product.title | escape }}",<br>
+                    "description": "{{ variant.metafields.custom.viticulture | escape }} {{ variant.metafields.custom.winemaking | escape }} {{ variant.metafields.custom.bouquet | escape }} {{ variant.metafields.custom.taste | escape }}",<br>
+                    "vintage": "{{ vintage.title }}",<br>
+                    "unit-size": "{{ product.metafields.custom.volume }}",<br>
+                    {% comment  %}Winesearcher ties prices to GEL, no way to specify EUR, so we multiply the EUR prices to 3.00 (GEL/EUR rate){% endcomment %}
+                    "price": "{{ product.price  | times: 3 | money }}",<br>
+                    "stock-level": "{{ product.selected_or_first_available_variant.inventory_quantity }}",<br>
+                    "url": "https://{{ shop.domain }}{{ product.url }}",<br>
+                    "min-order": "48",<br>
+                    "tax": "ex. duty and sales tax",<br>
+                    "offer-type": "W",<br>
+                    "delivery-time": "2-4 weeks",<br>
+                    "LWIN": {%- if variant.metafields.custom.lot != blank -%} "LWIN{{ variant.metafields.custom.lot }}" {% else %} "" {% endif %},<br>
+                    "imageurl": "https://{{ shop.domain }}/cdn/shop/{{ product.featured_image.src | remove: '/cdn/shop/t/50/assets' }}" 
+                  </div>
+              }{% unless forloop.last and forloop.parentloop.last and forloop.parentloop.parentloop.last %},{% endunless %}
+              {% assign orderNumber = orderNumber | plus: 1 %}
+              </div>
+            {% endif %}  
+          {% endfor %}  
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}
+  ]
+}
+

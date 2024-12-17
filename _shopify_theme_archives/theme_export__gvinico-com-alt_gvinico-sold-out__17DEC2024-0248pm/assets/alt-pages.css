@@ -811,21 +811,20 @@ details[open] summary ~ * {
   font-size: 50px;
 }
 
-
 .alt-link {
   display: block;
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 600;
-  color: var(--color-base-accent-1);
+  color: var(--color-base-accent-1) !important;
   margin-top: 30px;
   text-overflow: ellipsis;
 }
 .alt-link:hover {
-  color: #000000;
+  color: #000000 !important;
 }
 
 .alt-link--outher,
-.alt-link--inner {
+.alt-link--inner,{
   display: inline-block !important;
 }
 .alt-link--outher:after {

@@ -102,11 +102,9 @@
   display: inline-block;
   width: 25px;
   height: 19px;
-  background: url("i-outerlink.svg") right center no-repeat;
+  background: url("https://cdn.shopify.com/s/files/1/0654/1056/4327/t/17/assets/i-outerlink.svg") right center no-repeat;
   vertical-align: middle;
 }
-
-
 
 .c-descript-panel {
   flex: 1 0 250px;
