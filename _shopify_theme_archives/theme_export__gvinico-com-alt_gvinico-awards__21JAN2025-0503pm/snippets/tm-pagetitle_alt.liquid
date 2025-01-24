@@ -1,0 +1,19 @@
+<style>
+  .page_title {
+    font-family: var(--font-heading-family);
+    font-size:32px;
+    text-transform: uppercase;
+    color:#000000;
+    text-align:left;
+    //margin-bottom: 40px;
+  }
+</style>
+  
+
+
+{% if template != 'article' and template != 'product' %}
+  <h1 class="page_title">{%- if template contains "page" -%}{{ page.title }}
+                           {%- elsif template contains "collection" -%}{{ collection.title }}
+                           {%- else -%}{{ page_title }}
+                         {%- endif -%}</h1>
+{% endif %}

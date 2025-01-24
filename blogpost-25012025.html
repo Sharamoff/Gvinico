@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--**************************************************** from template.liquid **************************************************-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="">
+  <title>GVINICO_PAGE-TEMPLATE</title>
+  <link href="https://cdn.shopify.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.shopifycdn.com" rel="preconnect" crossorigin>
+  <link href="_assets/component-price.css" rel="stylesheet" media="print">
+  <script src="_assets/product-form.js" defer="defer"></script>
+  <script src="_assets/global.js" defer="defer"></script>
+  <script src="_assets/owl.carousel.min.js" defer="defer"></script>
+  <script src="_assets/wishlist.js" defer="defer"></script>
+  <script src="_assets/compare.js" defer="defer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css">
+  <link href="_assets/quickview.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <style>
+    /*** from settings_data.json ***/
+    :root {
+      --font-body-family: "Inter"; /*{{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};*/
+      --font-body-style: normal; /*{{ settings.type_body_font.style }};*/
+      --font-body-weight: 400; /*{{ settings.type_body_font.weight }};*/
+      --font-heading-family: "Cormorant Garamond"; /*{{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};*/
+      --font-heading-style: normal; /*{{ settings.type_header_font.style }};*/
+      --font-heading-weight: 400; /*{{ settings.type_header_font.weight }};*/
+      --color-base-text: #000000; /*{{ settings.colors_text }};*/
+      --color-base-text-rgb: rgb(0, 0, 0); /*{{ settings.colors_text | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-background-1: #ffffff; /*{{ settings.colors_background_1 }};*/
+      --color-base-background-1-rgb: rgb(255, 255, 255); /*{{ settings.colors_background_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-1: #ae194a; /*{{ settings.colors_accent_1 }};*/
+      --color-base-accent-1-rgb: rgb(174, 25, 74); /*{{ settings.colors_accent_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-2: #777777; /*{{ settings.colors_accent_2 }};*/
+      --color-base-accent-2-rgb: rgb(119, 119, 119); /*{{ settings.colors_accent_2 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-border: #dddddd; /*{{ settings.colors_border }};*/
+      --color-base-button-text: #ffffff; /*{{ settings.button_text }};*/
+      --color-base-button-text-hover: #000000; /*{{ settings.button_text_hover }};*/
+      --color-base-button-background: #ae194a; /*{{ settings.button_background }};*/
+      --color-base-button-background-hover: #ffcc1d; /*{{ settings.button_background_hover }};*/
+      --color-base-text-opacity-10-percent: rgba(0, 0, 0, 0.1); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-text-opacity-20-percent: rgba(0, 0, 0, 0.2);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 20 }};*/
+      --color-base-text-opacity-55-percent: rgba(0, 0, 0, 0.55);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 55 }};*/
+      --color-base-text-opacity-85-percent: rgba(0, 0, 0, 0.85); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 85 }};*/
+      --color-base-accent-1-opacity-10-percent: rgba(174, 25, 74, 0.1); /*{{ settings.colors_accent_1 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-accent-2-opacity-10-percent: rgba(119, 119, 119, 0.1); /*{{ settings.colors_accent_2 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-rating-empty: #dddddd; /*{{ settings.rating_empty }};*/
+      --color-rating-filled: #000000; /*{{ settings.rating_filled }};*/
+      --color-secondary-hover: #ffcc1d; /*{{ settings.secondary_hover_color }};*/
+    }
+    :root {
+      --color-base-background-2: #f0f0f0;
+      --color-base-background-2-rgb: rgb(240, 240, 240);
+      --color-base-solid-button-labels: #000000;
+      --color-base-solid-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-outline-button-labels: #000000;
+      --color-base-outline-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-color-base-accent-1: var(--color-base-accent-1); ;
+    }
+    /*** end from settings_data.json ***/
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+    html {
+      box-sizing: border-box;
+      font-size: 62.5%;
+      height: 100%;
+    }
+    body {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: normal !important;
+      line-height: 1.4;
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
+      color: var(--color-base-text);
+    }
+  </style>
+  <link href="_assets/base.css" rel="stylesheet">
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+  <style>
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 600;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-600.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-600.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-600.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 700;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-700.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-700.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-700.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    .slideshow__subheading, .slideshow__subtitle,
+    .title, .title-wrapper-with-link,
+    .cms-banner-title-three,
+    .parallex-title,
+    .two-banner .cms-banner-subtitle-three,
+    .newsletter.center .h1,
+    .breadcrumb_title{
+      font-family: 'Cormorant Garamond', serif !important;
+    }
+  </style>
+  <!--*** from page.liquid ***-->
+  <link href="_assets/component-rte.css" rel="stylesheet">
+  <link href="_assets/section-main-page.css" rel="stylesheet">
+  <!--*** end from page.liquid ***-->
+  <!--*** style of inserted content in template.liquid ***-->
+
+
+  <link href="_assets/section-blog-post.css" rel="stylesheet">
+
+
+  <link href="assets/alt-pages.css" rel="stylesheet">
+  <!--*** end style of inserted content in template.liquid ***-->
+
+
+
+
+
+</head>
+<body class="template-page">
+<main class="main-content" id="MainContent" role="main" tabindex="-1">
+<!--**************************************************** end from template.liquid **************************************************-->
+<div class="page-width contents">
+<div class="main-container">
+<section class="shopify-section spaced-section">
+<div class="page-width page-width--narrow">
+<div class="rte" style="padding-top: 100px; padding-bottom: 100px">
+
+
+
+
+
+
+
+
+
+
+  <!-- INSERTED CONTENT -->
+
+  <section class="alt-pages">
+
+    <p class="alt-text18">Despite Georgia having 39 official PDOs, with over half of them, 20, located in Kakheti, we are just scratching the surface in uncovering the rich diversity and depth of terroirs this region offers.</p>
+
+    <figure class="hdr-img">
+      <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic1-25012025.jpg" alt="5 Kakheti Terroirs to Pay Attention To">
+    </figure>
+
+    <div class="alt-text-width66 text--centered">
+      <p>When discussing the intricacies and specialties of vineyards, there is no better example than Burgundy. Which other region has divided their PDOs into small parcels of actual vineyards and made them renowned? Perhaps Piedmont's Barolo and Barbaresco could be mentioned as following Burgundy's lead. The point is, studying terroirs in minute detail is not only beneficial for wine production but also for marketing. Would the wines from the Echezeaux vineyard in Côte de Nuits of Burgundy command the prices they do now if these vineyards hadn't been meticulously studied by nearly every wine-related institution or academy worldwide? Even though the quality of the wine might remain incredible, it is highly unlikely. This Burgundian attention to detail should be the goal for most wine regions that are transitioning from prioritizing quantity to focusing on quality. As global trends unfold, every wine region is likely to shift its focus to quality over quantity.</p>
+      <p>The existing PDOs themselves are often subjects of discussion and, at times, debate. The scale and, more critically, the practicality of these official designations are frequently debated among wine experts within the Georgian wine scene—and rightfully so. Small, family-run, boutique-style wineries often choose to bypass PDO regulations for labeling, as the rewards from compliance can be minimal or even diminishing. This is because the largest PDOs are predominantly utilized by major factories to produce entry-level wines. The deeper one delves into the specifics of these appellations, the more complex they become to understand.</p>
+
+      <div class="pics-qa">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic2-25012025.jpg" alt="5 Kakheti Terroirs to Pay Attention To"></figure>
+        <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic3-25012025.jpg" alt="5 Kakheti Terroirs to Pay Attention To"></figure>
+        <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic4-25012025.jpg" alt="5 Kakheti Terroirs to Pay Attention To"></figure>
+      </div>
+
+      <p>Let’s turn our attention to Kakheti. While we reference Burgundy as a future aspiration for a detailed study of terroir, it’s important to start with what we currently know and can explore within Kakheti. To zoom in and focus on the intricate details, we must first grasp the full scale of the terroir available to us. As we explore, we recognize that the uniqueness of terroir is never defined by a single element, whether it be Kimmeridgian limestone, a specific seashell, magical wind conditions, or a particular river—despite many narratives suggesting otherwise. It is always the specific combination of all these diverse and unique elements, coupled with human effort and cultural traditions developed over centuries. This includes choosing and selecting varieties that suit the conditions, finding winemaking techniques that make the wines more suitable for pairing with local foods, and unraveling the rest of the intricacies that humans have discovered within these regions. All these elements contribute to the uniqueness of these areas and perhaps distinguish traditional wine regions of the world from emerging ones.</p>
+      <p>It's important to remember that the vineyard areas we're talking about are actually quite small. While we often refer to them by village names, each one is a compact plot with its own distinct qualities. Over time, we may be able to subdivide these plots even further, gaining a deeper appreciation for their individual traits. For now, let’s take a look at a few of the many unique terroirs in Kakheti that truly deserve our attention.</p>
+
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic9-25012025.png" alt="5 Kakheti Terroirs to Pay Attention To">
+      </figure>
+
+      <h3 class="h3-gr h-color-accent-1">Alaverdi</h3>
+      <p>Our exploration of Kakhetian terroirs begins in the west and follows a path eastward. Our first landmark, the historic Alaverdi, which, although part of the wider Akhmeta Protected Designation of Origin (PDO), stands out as a noteworthy portion that warrants detailed exploration. This area is not only distinguished by its namesake village but also by its close proximity to one of Georgia’s most iconic cathedrals, Alaverdi. As we categorize the vineyards along the right bank of the Alazani River, based on their placement on the Tsiv-Gombori slope, we identify three distinct elevation groups. At the highest level, ranging from 600-850 meters, the vineyards lie within the mountain foothills, where the wines, although often exceptional, can vary greatly due to challenging conditions. The mid-level zone, at 400-600 meters, is home to the most stable and uniformly excellent vineyards, known for producing some of the region's finest wines. Near the Alazani River at 250-350 meters, the lower elevation typically yields wines aimed at the mass market, though this is a broad generalization with many exceptions.</p>
+      <p>Alaverdi’s terroir falls into this exception. Despite its proximity to the Alazani River, it is uniquely situated at a higher elevation of 450 meters. This elevation, uncommon for areas so close to the river, creates a unique microclimate. Despite being located in the Akhmeta region, which is the westernmost and coldest part of Kakheti, Alaverdi's position at the end of the slope, combined with its fertile soils, produces wines that are robust in structure and character. Yet, they still retain the elegance and poise characteristic of a moderate climate. Notably, examples of amber and Saperavi wines from this terroir have aged gracefully for 10-20 years. These wines are among the country's most prized amber and red wines, highlighting the exceptional quality produced in this area.</p>
+      <p><a class="alt-link--inner" href="https://www.gvinico.com/collections/all?filter.p.m.custom.village=Alaverdi&filter.v.price.gte=&filter.v.price.lte=&sort_by=created-descending"><strong>Check wines from Alaverdi</strong></a><br><br></p>
+
+      <h3 class="h3-gr h-color-accent-1">Janaani</h3>
+      <p>As we continue our journey east from Alaverdi, we next explore Janaani, which stands out as the only one among our four terroirs not named after a village. Although it is part of the expansive and well-known Tsinandali (PDO), Janaani is more famously considered the possible birthplace of the distinguished Kakhetian white grape variety, Khikhvi, which locals call Janaanura, meaning 'from Janaani'. Although the origin of Khikhvi in this area is subject to debate, this theory adds an intriguing layer to our understanding of Janaani’s viticultural significance.</p>
+      <p>Vineyards are located at elevations of 450-550m, along the course of the river Chumakhevi, which flows from the Tsiv-Gombori mountain complex. This means the soils are extremely alluvial, very well-drained, and moderately carbonic with lime content ranging from 15-25%. The climate of inner Kakheti generally transitions from the coldest in the west to the hottest in the west, with many factors contributing to this, primarily elevation differences—the west being higher and the east being lower. This makes Janaani the coldest out of all four aforementioned locations. Although Alaverdi is further west, its lower elevation makes it much warmer than Janaani.</p>
+      <p>These cooler conditions in Janaani lead to wines that are more restrained and elegant. Wines from Janaani, particularly those made with skin contact, exhibit less structure and tannin, and retain a lighter color, but their most distinguished feature is the high acidity, which renders them refreshing and highly drinkable. Additionally, there is notable potential for crafting non-skin contact, European-style white wines in this terroir. The existing bottled examples from Janaani burst with fruity complexity and possess enough structure and body to suggest they could age well, although this potential remains to be seen.</p>
+      <p><a class="alt-link--inner" href="https://gvinico.com/collections/all?filter.p.m.custom.subregion=Telavi&filter.v.price.gte=&filter.v.price.lte=&sort_by=created-descending"><strong>Check wines from Janaani</strong></a><br><br></p>
+
+      <h3 class="h3-gr h-color-accent-1">Kondoli</h3>
+      <p>Moving even further east, on the northeast slopes of the Tsiv-Gombori mountain range and bordering the east of the historic Tsinandali, is the village of Kondoli. Just like Janaani, Kondoli is also part of the large PDO Tsinandali. Positioned along the path of the Kisiskhevi River and, just like Janaani, the soils here are extremely alluvial and relatively high in limestone content. To simplify, inner Kakheti can be divided into two major soil regions: the right bank of the Alazani River, which primarily features highly carbonic, limestone-rich soils deposited by the rivers flowing from Tsiv-Gombori to Alazani, and the left bank at the foothills of the Caucasus, dominated by volcanic soils. Kondoli falls into the limestone-rich category.</p>
+      <p>However, what truly sets Kondoli apart as a special terroir is not just its soil but its location and climate. As mentioned earlier, Kakheti experiences a climate gradient from hot in the east to cold in the west, and Kondoli is situated right on the cusp of this climatic divide, offering a unique interplay of temperature extremes.</p>
+      <p>Due to its distinct location, Kondoli produces wines that are high in alcohol yet retain a refreshing acidity, retaining expressive aromatics but resonating more with the cooler style of Kakhetian wines on the palate. Focusing specifically on Saperavi, Kondoli has emerged as an unofficial, hidden gem for major wineries seeking to create "reserve" wines with significant aging potential. There is already a portfolio of well-aged Saperavis from Kondoli that are truly exceptional. These wines showcase a palette of blue fruits and boast a soft, silky structure, complemented by excellent savory and herbal complexities. These are memorable wines that distinctly reflect their unique terroir.</p>
+      <p><a class="alt-link--inner" href="https://gvinico.com/collections/all?filter.p.m.custom.village=Kondoli&filter.v.price.gte=&filter.v.price.lte=&sort_by=created-descending"><strong>Check wines from Kondoli</strong></a><br><br></p>
+
+      <h3 class="h3-gr h-color-accent-1">Khornabuji</h3>
+      <p>As we approach the eastern boundary of Kakheti, we find ourselves in Khornabuji, our lowest elevation terroir, renowned for the medieval ruins of Khornabuji Castle, also known as Queen Tamar’s Castle.</p>
+      <p>Khornabuji presents a fascinating paradox among the terroirs we are discussing today. Located at an elevation of 200-300m, it is the warmest of the regions explored in this series. The soil here is rich and dark, highly fertile, compressed, and hard to drain. Managing water in such conditions is critical for viticulture, making organic vine growing an ideal practice. By naturally limiting yields, this method ensures the cultivation of high-quality fruit.</p>
+      <p>Contrary to what one might expect from such a warm, fertile region, the wines from Khornabuji defy the odds. The amber wines are surprisingly agile, marked by vibrant acidity and fresh fruit flavors. The reds are equally impressive, lighter in color yet beautifully balanced, maintaining a delicate structure with relatively low alcohol content. It is difficult to pinpoint exactly what contributes to the unique style of Khornabuji’s wines. It could be the corridor small in the Tsiv-Gombori mountain range that generates unique wind patterns, or perhaps there are other factors at play. Only through future research and experimentation will we uncover the precise elements that define this terroir.</p>
+      <p><a class="alt-link--inner" href="https://gvinico.com/collections/all?filter.p.m.custom.village=Khornabuji&filter.v.price.gte=&filter.v.price.lte=&sort_by=created-descending"><strong>Check wines from Khornabuji</strong></a><br><br></p>
+
+      <h3 class="h3-gr h-color-accent-1">Arkhiloskalo</h3>
+      <p>Finishing our journey in the east of Kakheti, close to the border with Azerbaijan, lies the relatively newly discovered terroir of Arkhiloskalo. This area came into prominence after various Georgian ethnic groups settled and established a village in the 19th century. Naturally, viticulture began, gradually gaining popularity, and by the Soviet era, large vineyards were established.</p>
+      <p>As previously noted, the climate across inner Kakheti exhibits a gradient from warmer to cooler temperatures moving from east to west. This variation is largely attributed to differences in elevation, with the eastern regions positioned at lower altitudes and the western areas situated higher up. This geographical configuration significantly influences the climatic conditions, contributing to a cooler climate in the west compared to the east. Although Arkhiloskalo is positioned in the traditionally hotter eastern part, it stands at an elevation of 700-750 meters above sea level, which is 300-400 meters higher than neighboring villages. This elevation creates unique conditions: it combines the intense heat of the east with one of the highest elevations in Kakheti.</p>
+      <p>Like most soils on the right bank of the Alazani River, the soils here are carbonic and relatively high in lime. However, they are dark and heavy with minimal drainage and are prone to compression. Adding to this, the terroir is comparatively dry, and with no option for irrigation, it is exclusively dry farmed, ensuring the yields remain low and the berries are small and concentrated.</p>
+      <p>This brings us to the wines of Arkhiloskalo. While both amber and white wines are produced here, each with their own distinctive style and substance, our primary focus is on the Saperavi variety, which exhibits a unique character. These wines offer a compelling mix of fruity notes, fresh blue and red berries, alongside hints of wild forest berries. They are concentrated yet soft and silky in texture with small grained tannins. Achieving an excellent balance of high acidity and alcohol. This results in a Saperavi that is both substantial and pedigreed, yet remains playful and refreshing.</p>
+      <p><a class="alt-link--inner" href="https://gvinico.com/collections/all?filter.p.m.custom.village=Dedoplistskaro&filter.v.price.gte=&filter.v.price.lte=&sort_by=created-descending"><strong>Check wines from Arkhiloskalo</strong></a><br><br></p>
+
+      <div class="pics-qa">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic5-25012025.jpg" alt="5 Kakheti Terroirs to Pay Attention To"></figure>
+        <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic6-25012025.jpg" alt="5 Kakheti Terroirs to Pay Attention To"></figure>
+        <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic7-25012025.jpg" alt="5 Kakheti Terroirs to Pay Attention To"></figure>
+      </div>
+
+      <p>In conclusion, we have a country and a culture with probably the oldest wine tradition on the planet, yet it feels like we are at the beginning. Everything is being rediscovered: old techniques are being combined with new, unexplored terroirs are being mapped, and ancient varieties are being revived. Many aspects still require experimentation and refinement. This ongoing process of discovery and innovation is what makes the region so exciting and intriguing.</p>
+    </div>
+
+  </section>
+
+  <!-- END INSERTED CONTENT -->
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body>
+</html>
