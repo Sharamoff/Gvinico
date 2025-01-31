@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--**************************************************** from template.liquid **************************************************-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="">
+  <title>GVINICO_PAGE-TEMPLATE</title>
+  <link href="https://cdn.shopify.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.shopifycdn.com" rel="preconnect" crossorigin>
+  <link href="_assets/component-price.css" rel="stylesheet" media="print">
+  <script src="_assets/product-form.js" defer="defer"></script>
+  <script src="_assets/global.js" defer="defer"></script>
+  <script src="_assets/owl.carousel.min.js" defer="defer"></script>
+  <script src="_assets/wishlist.js" defer="defer"></script>
+  <script src="_assets/compare.js" defer="defer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css">
+  <link href="_assets/quickview.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <style>
+    /*** from settings_data.json ***/
+    :root {
+      --font-body-family: "Inter"; /*{{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};*/
+      --font-body-style: normal; /*{{ settings.type_body_font.style }};*/
+      --font-body-weight: 400; /*{{ settings.type_body_font.weight }};*/
+      --font-heading-family: "Cormorant Garamond"; /*{{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};*/
+      --font-heading-style: normal; /*{{ settings.type_header_font.style }};*/
+      --font-heading-weight: 400; /*{{ settings.type_header_font.weight }};*/
+      --color-base-text: #000000; /*{{ settings.colors_text }};*/
+      --color-base-text-rgb: rgb(0, 0, 0); /*{{ settings.colors_text | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-background-1: #ffffff; /*{{ settings.colors_background_1 }};*/
+      --color-base-background-1-rgb: rgb(255, 255, 255); /*{{ settings.colors_background_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-1: #ae194a; /*{{ settings.colors_accent_1 }};*/
+      --color-base-accent-1-rgb: rgb(174, 25, 74); /*{{ settings.colors_accent_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-2: #777777; /*{{ settings.colors_accent_2 }};*/
+      --color-base-accent-2-rgb: rgb(119, 119, 119); /*{{ settings.colors_accent_2 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-border: #dddddd; /*{{ settings.colors_border }};*/
+      --color-base-button-text: #ffffff; /*{{ settings.button_text }};*/
+      --color-base-button-text-hover: #000000; /*{{ settings.button_text_hover }};*/
+      --color-base-button-background: #ae194a; /*{{ settings.button_background }};*/
+      --color-base-button-background-hover: #ffcc1d; /*{{ settings.button_background_hover }};*/
+      --color-base-text-opacity-10-percent: rgba(0, 0, 0, 0.1); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-text-opacity-20-percent: rgba(0, 0, 0, 0.2);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 20 }};*/
+      --color-base-text-opacity-55-percent: rgba(0, 0, 0, 0.55);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 55 }};*/
+      --color-base-text-opacity-85-percent: rgba(0, 0, 0, 0.85); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 85 }};*/
+      --color-base-accent-1-opacity-10-percent: rgba(174, 25, 74, 0.1); /*{{ settings.colors_accent_1 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-accent-2-opacity-10-percent: rgba(119, 119, 119, 0.1); /*{{ settings.colors_accent_2 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-rating-empty: #dddddd; /*{{ settings.rating_empty }};*/
+      --color-rating-filled: #000000; /*{{ settings.rating_filled }};*/
+      --color-secondary-hover: #ffcc1d; /*{{ settings.secondary_hover_color }};*/
+    }
+    :root {
+      --color-base-background-2: #f0f0f0;
+      --color-base-background-2-rgb: rgb(240, 240, 240);
+      --color-base-solid-button-labels: #000000;
+      --color-base-solid-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-outline-button-labels: #000000;
+      --color-base-outline-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-color-base-accent-1: var(--color-base-accent-1); ;
+    }
+    /*** end from settings_data.json ***/
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+    html {
+      box-sizing: border-box;
+      font-size: 62.5%;
+      height: 100%;
+    }
+    body {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: normal !important;
+      line-height: 1.4;
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
+      color: var(--color-base-text);
+    }
+  </style>
+  <link href="_assets/base.css" rel="stylesheet">
+  <link href="_assets/component-predictive-search.css" rel="stylesheet">
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+  <style>
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 600;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-600.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-600.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-600.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 700;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-700.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-700.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-700.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    .slideshow__subheading, .slideshow__subtitle,
+    .title, .title-wrapper-with-link,
+    .cms-banner-title-three,
+    .parallex-title,
+    .two-banner .cms-banner-subtitle-three,
+    .newsletter.center .h1,
+    .breadcrumb_title{
+      font-family: 'Cormorant Garamond', serif !important;
+    }
+  </style>
+  <!--*** from page.liquid ***-->
+  <link href="_assets/component-rte.css" rel="stylesheet">
+  <link href="_assets/section-main-page.css" rel="stylesheet">
+  <!--*** end from page.liquid ***-->
+  <!--*** style of inserted content in template.liquid ***-->
+
+
+  <link href="_assets/section-blog-post.css" rel="stylesheet">
+
+
+  <!--*** fancybox ***-->
+  <script src="assets/fancybox.umd.js"></script>
+  <link  href="assets/fancybox.css" rel="stylesheet">
+
+
+
+
+  <link href="assets/alt-pages.css" rel="stylesheet">
+  <!--*** end style of inserted content in template.liquid ***-->
+
+
+
+
+
+</head>
+<body class="template-page">
+<main class="main-content" id="MainContent" role="main" tabindex="-1">
+<!--**************************************************** end from template.liquid **************************************************-->
+<div class="page-width contents">
+<div class="main-container">
+<section class="shopify-section spaced-section">
+<div class="page-width page-width--narrow">
+<div class="rte" style="padding-top: 100px; padding-bottom: 100px">
+
+
+  <script src="assets/fancybox.umd.js"></script>
+  <link  href="assets/fancybox.css" rel="stylesheet">
+
+
+
+
+
+
+
+  <!-- INSERTED CONTENT -->
+
+  <section class="alt-pages">
+    <p class="alt-text18">In this interview, <em>Tamar Bochoridze</em>, co-founder of <a href="https://gvinico.com/collections/rotchos-vineyards"><strong>Rotcho's Vineyards</strong></a>, discusses her vineyard in Kvareli, focusing on organic farming, soil management, and sustainable practices. She shares her approach to selecting rootstocks and maintaining a healthy, thriving vineyard.</p>
+    <img height="220" width="300" alt="Rotcho's Vineyards" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/logo-rotcho.png" class="logo-qa">
+    <figure class="hdr-img"><img alt="Tamar Bochoridze, co-founder of Rotcho's Vineyards" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpichdr-interview-6.jpg">
+      <figcaption>Rotcho's Vineyards view</figcaption>
+    </figure>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">So, let’s get started, shall we? How did you first get into winemaking? Was it the wine itself that drew you in, or was it the location? Some people are passionate about wine first, and then they decide to start making it. How was it for you?</div>
+      <div class="txt-a">
+        <p>That’s a good question. Honestly, I can’t pinpoint the exact moment I became interested in wine. It just felt natural. Wine was always there—something to drink, taste, enjoy. Over time, though, it evolves. When you’re young, you don’t fully grasp it.</p>
+        <p>In Georgia, wine is everywhere. It’s so normal that you don’t think about it much. But at some point, the idea came to me: one day, I’ll make my own wine. What kind would it be? Where would I make it? These thoughts stayed with me and grew over the years. After about 7-8 years, I started taking it seriously.</p>
+        <p>At one point, after a lot of traveling—mostly around Georgia, but also abroad—I noticed something. Every time we visited a new region, we always tried the local wine. It became a habit. We even planned a wine tour in Italy, just exploring on our own terms. That trip left a big impression on me.</p>
+        <p>When we came back to Georgia, we found land—not just any land, but vineyard land that seemed full of potential. Before we knew it, we’d bought it. Honestly, it felt like it just happened. The land was in Kvareli, a place I didn’t have any prior connection to.</p>
+        <p>The land was empty, untouched for years. But we felt it had a history—it was in Kindzmarauli territory. At first, it was overwhelming. We had the land, but now what?</p>
+        <p>After buying it, I spent a year figuring out what kind of wine the region and soil could support. I had to decide on grape varieties and, more importantly, which rootstocks to use.</p>
+      </div>
+    </div>
+    <div class="pics-qa">
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic32-interview-6.jpg" alt="Rotcho's Vineyards"></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic2-interview-6.jpg" alt="Rotcho's Vineyards"></figure>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">What was your approach to choosing the rootstocks—soil analysis?</div>
+      <div class="txt-a">
+        <p>Yes, soil analysis was the main factor.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Did you also think about drought resistance?</div>
+      <div class="txt-a">
+        <p>Of course. Plus, since we planned to grow organically, we had to consider how much nourishment the vines would need and whether the soil could provide that naturally. We thought about everything—how to plant the vines, spacing, and even how rainfall and climate over the past 30 years would affect them. We looked at all of it beforehand.</p>
+        <p>We reached out to Vivai Rauscedo in Italy and sent them the data. When we visited, we discussed everything in detail. I explained my ideas for rootstocks. They suggested options, but we ultimately chose based on what suited our needs and the local varieties, like Saperavi and Rkatsiteli.</p>
+        <p>These are pure varieties, but they have natural clones and variations. Understanding those subtle differences is important. Matching rootstocks to soil and grape variety takes a lot of research and effort. They’ve even developed models showing how different clones perform under specific conditions, like acidity, sugar levels, pruning styles, and more.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Which rootstocks did you end up choosing?</div>
+      <div class="txt-a">
+        <p>We chose ones like 420A and similar types suited for Kakheti. These are strong rootstocks that need a lot of care and nourishment. They’re not very drought-resistant, but they’re a good fit for our vineyard.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Did you also focus on clone selection?</div>
+      <div class="txt-a">
+        <p>Yes, though in Georgia, we don’t have the same level of clone research as countries like France. The French went through a big clone-selection phase but now regret it because it’s reduced diversity. In Georgia, we still have natural diversity in our clones, but we haven’t fully explored it yet.</p>
+        <p>For example, Rkatsiteli has three main variations. Picking the right one was key for us. Each clone impacts the vineyard differently, affecting vine density, growth, and the final wine.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Did you plan the vineyard spacing and density carefully?</div>
+      <div class="txt-a">
+        <p>Definitely. We thought a lot about row and vine spacing to balance traditional Kakhetian principles with modern techniques. At first, we considered single-side cordons, but with our spacing—1.5 meters between rows and 1 meter between vines—a different approach worked better.</p>
+      </div>
+    </div>
+    <div class="pics-qa">
+      <figure><img alt="Rotcho's Vineyards" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic33-interview-6.jpg"></figure>
+      <figure><img alt="Rotcho's Vineyards" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic34-interview-6.jpg"></figure>
+      <figure><img alt="Rotcho's Vineyards" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic3-interview-6.jpg"></figure>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Why did you settle on cordon formation?</div>
+      <div class="txt-a">
+        <p>Cordon formation lets me control the yield better. For example, on one hectare, I aim for about five tons—no more. With this method, I can predict how many grape clusters each vine will have based on the number of buds left during pruning. This ensures concentrated, high-quality fruit.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Is this consistent across all your varieties?</div>
+      <div class="txt-a">
+        <p>Yes, it’s the same for all. The vineyard layout is uniform, with rows running north to south and consistent pruning.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Let’s talk about organic winemaking. From the start, was your approach organic?</div>
+      <div class="txt-a">
+        <p>Honestly, at first, I didn’t fully understand what organic farming involved. I thought it was just about getting certified and following rules. But it’s much more complex. You have to build everything from the ground up, then inspectors come to check.</p>
+        <p>The first step was soil analysis. Even though the land had been abandoned for years, it still needed adjustments. Modern farming focuses a lot on high nitrogen levels, but I think that’s a mistake. Our first big move was enriching the soil naturally.</p>
+        <p>We planted cover crops—a mix of legumes and grasses—about a year and a half before planting the vineyard. This was crucial for revitalizing the soil. These crops provided nitrogen and worked well with tractors. For example, clover alone might not survive under tractor use over time.</p>
+        <p>The cover crops are planted in alternating strips, mowed twice a year, and provide primary nourishment for the vineyard. Every four years, we rotate them to keep the soil healthy. This way, we avoid heavy cultivation and rely on natural cycles.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">So, no fertilizers at all?</div>
+      <div class="txt-a">
+        <p>None, except for sulfur and copper, which are allowed in organic farming. We also use plant-based treatments, like nettle infusions, chamomile decoctions, and horsetail tea for pest control. These natural treatments work really well and help prevent major issues.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Do you adjust these treatments based on yearly challenges?</div>
+      <div class="txt-a">
+        <p>Absolutely. Over the years, we’ve developed a routine. For instance, I always spray nettle infusion before flowering—that’s non-negotiable. Two weeks after flowering, I switch to horsetail tea. This cycle works reliably.</p>
+      </div>
+    </div>
+    <div class="pics-qa">
+      <figure><img alt="Rotcho's Vineyards" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic16-interview-6.jpg"></figure>
+      <figure><img alt="Rotcho's Vineyards" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic23-interview-6.jpg"></figure>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">It sounds like you’ve created your own system.</div>
+      <div class="txt-a">
+        <p>Yes, it’s a mix of practical methods and some inspiration from biodynamic principles. I’ve studied biodynamics and Steiner’s ideas but take a practical approach. I don’t follow the mystical parts, like moon phases, but I use scientifically proven methods that work.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Do you believe biodynamic practices have a role in Georgia’s wine culture?</div>
+      <div class="txt-a">
+        <p>Absolutely. Biodynamics offers valuable insights. Even in places like France, some of the biggest estates are using biodynamic methods. It’s not just a passing trend—it’s based on real, practical results.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Going back to certification, when did you officially become organic?</div>
+      <div class="txt-a">
+        <p>We got our certification in the fall of 2019. The vineyard was in its third year, which is usually the transitional period needed for organic certification.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">What was the process like?</div>
+      <div class="txt-a">
+        <p>Inspectors took samples of everything—soil, leaves, even stems. They analyzed it all thoroughly, and once the results came back, the vineyard was certified. They do this every year to make sure we’re still compliant.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">So, from the very start, your vineyard was organic?</div>
+      <div class="txt-a">
+        <p>Yes, right from the beginning. We’ve always relied on cover crops for nourishment and kept things natural. The only exception is minimal sulfur and copper treatments when absolutely necessary.</p>
+      </div>
+    </div>
+    <div class="pics-qa">
+      <figure><img alt="Rotcho's Vineyards" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic35-interview-6.jpg"></figure>
+      <figure><img alt="Rotcho's Vineyards" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic8-interview-6.jpg"></figure>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Let’s shift to your winemaking. You’ve established an organic vineyard, got certified, and started making wine. What were the biggest challenges?</div>
+      <div class="txt-a">
+        <p>At first, the hardest part was figuring out what kind of wine we wanted to make. From the start, we knew we wanted to use Qvevri for fermentation. The infrastructure was basic, so we had to make the most of what we had.</p>
+        <p>Our first harvest in 2020 was a learning curve. The Qvevri were already installed, but beyond that, the facilities were minimal. During fermentation, we didn’t live on-site yet. I stayed at a nearby hotel and came back every few hours to monitor the process, taking turns with Gocha. It was a hands-on, round-the-clock effort.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Did you have a clear vision of the wine style you wanted to achieve?</div>
+      <div class="txt-a">
+        <p>Yes, we had a plan. We aimed to make wines that reflected the vineyard and grape characteristics. For example, the Saperavi was fermented in Qvevri, following traditional Kakhetian methods. The approach was minimalistic—no additives, no intervention, just letting the grapes express themselves.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">How was your first winemaking experience overall?</div>
+      <div class="txt-a">
+        <p>It was both exciting and overwhelming. You realize just how much knowledge winemaking demands. Growing grapes is challenging, but making wine is an entirely different skill. Around this time, I found a university program specializing in winemaking and enrolled. It helped me understand the process better and approach it more methodically.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">What about the first wine? How was it received?</div>
+      <div class="txt-a">
+        <p>The first wine was a Saperavi, and we were very careful with the process. After fermentation, it stayed in Qvevri for months to stabilize naturally. When we finally tasted it, it exceeded our expectations. We shared it with friends, family, and experts, and the feedback was very encouraging. It motivated us to keep going.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Did you start presenting your wine at festivals or events?</div>
+      <div class="txt-a">
+        <p>Yes, but not immediately. Initially, we focused on refining the process and ensuring the wine met our standards. Once we felt confident, we started participating in festivals to showcase our work and learn from</p>
+      </div>
+    </div>
+    <div class="pics-qa">
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic36-interview-6.jpg" alt="Rotcho's Vineyards"></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic9-interview-6.jpg" alt="Rotcho's Vineyards"></figure>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">How did these experiences shape your winemaking philosophy?</div>
+      <div class="txt-a">
+        <p>They reinforced the importance of patience and attention to detail. With Qvevri wines, there’s no rushing the process. The wine needs time to evolve naturally. It’s about respecting tradition while staying open to experimentation and continuous learning.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Let’s delve deeper into the challenges. Were there any unexpected obstacles during winemaking that didn’t go as planned?</div>
+      <div class="txt-a">
+        <p>Yes, plenty. One major issue was managing a specific grape variety, Khikhvi. It needs much more care and monitoring than others. For example, it’s very susceptible to diseases like mildew or powdery mildew, so you have to stay vigilant.</p>
+        <p>In traditional vineyards, roses are planted as early warning signs for diseases. Khikhvi, however, is even more demanding. It’s not yet fully optimized in Georgia for how best to cultivate or structure the vine canopy.</p>
+        <p>Khikhvi grows vigorously with lots of vegetative growth, but its yield is small. It’s tricky to manage. Additionally, in Kvareli, the high humidity increases the risk of fungal diseases, requiring a proactive approach.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Does the grape’s thin skin contribute to the challenges?</div>
+      <div class="txt-a">
+        <p>Not exactly. The challenge lies more in its growth pattern. Khikhvi vines produce large leaves that cover the clusters, shielding them from sunlight. This makes it harder to manage airflow and prevent disease. Unlike Rkatsiteli, where clusters are exposed, Khikhvi hides its fruit, which makes monitoring harder.</p>
+        <p>Its yield is low, but the quality is exceptional, making it worth the effort. Managing it requires careful planning due to its natural vigor. For instance, we often have to harvest in stages—Khikhvi first, then Saperavi, and finally Rkatsiteli. This means three separate harvests, which takes precision and timing.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">How do you manage the timing of these multiple harvests?</div>
+      <div class="txt-a">
+        <p>Over time, we learned that Khikhvi ripens earlier than the other varieties, typically three to four days before Saperavi. We adjusted our schedule to accommodate this, which helps us manage the process more efficiently. It’s a lot of work, but we’ve found a rhythm that works for us.</p>
+      </div>
+    </div>
+    <div class="pics-qa">
+      <figure><img alt="Rotcho's Vineyards" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic37-interview-6.jpg"></figure>
+      <figure><img alt="Rotcho's Vineyards" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic17-interview-6.jpg"></figure>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">What was it like stepping into the vineyard after planting?</div>
+      <div class="txt-a">
+        <p>It’s hard to describe. Watching the young vines grow and seeing the first leaves unfurl felt like raising a child. You pour so much into the process, and when it comes alive, there’s this overwhelming sense of pride and gratitude. I still remember walking through the rows for the first time, touching the soil, and feeling connected to something much bigger.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">And your first harvest—was it what you hoped for?</div>
+      <div class="txt-a">
+        <p>The first harvest was special. We didn’t keep the first-year yield; it’s a principle we follow to let the vines mature. But seeing those clusters, knowing they came from years of effort, was emotional. I felt humbled and inspired to honor the fruit.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Were there moments when you doubted yourself?</div>
+      <div class="txt-a">
+        <p>Absolutely. There were times I wondered if I’d made the right decisions, especially during tough seasons when the weather didn’t cooperate or diseases threatened the vines. But those moments taught me resilience. Winemaking isn’t about control—it’s about adapting and working with nature, not against it.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Once the wine is made, how do you decide when it’s ready to share with the public or enter festivals?</div>
+      <div class="txt-a">
+        <p>It’s a careful process. After fermentation, the wine needs time to settle and develop. For example, our Saperavi stays in Qvevri for months before moving to stainless steel tanks for further stabilization. We taste it regularly to track its progress and decide when it’s ready to bottle.</p>
+        <p>For festivals, we only present wines we’re confident about. It’s not just about showcasing the wine but also learning from the feedback we get. Every event is an opportunity to grow and refine our approach.</p>
+      </div>
+    </div>
+    <div class="pics-qa">
+      <figure><img alt="Rotcho's Vineyards" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic22-interview-6.jpg"></figure>
+      <figure><img alt="Rotcho's Vineyards" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic14-interview-6.jpg"></figure>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Your approach seems deeply rooted in tradition but incorporates modern techniques where necessary. How has this balance influenced your winemaking?</div>
+      <div class="txt-a">
+        <p>That’s true. Tradition is at the heart of what we do, especially with Qvevri winemaking. It’s a centuries-old method in Georgia, and we honor that. At the same time, modern practices like soil analysis, vine management, and fermentation monitoring are essential for consistency and quality.</p>
+        <p>For example, while Qvevri is traditional, we ensure cleanliness and temperature control during fermentation. We also monitor the wine’s chemical and sensory development throughout its life. This blend of tradition and modernity keeps us authentic while meeting today’s standards.</p>
+        <p>Another example is vineyard data analysis. Beyond traditional methods, we use tools like soil and climate modeling to make informed decisions. These techniques may not be traditionally Georgian, but they enhance our practices without compromising authenticity.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">What are some specific adjustments you’ve made based on modern practices?</div>
+      <div class="txt-a">
+        <p>One key adjustment has been in vineyard management. Traditionally, Georgian vineyards were planted with wider spacing to accommodate animal labor. With modern equipment and precision farming techniques, we’ve adjusted the spacing to optimize sunlight exposure and airflow, which improves the health of the vines and the quality of the fruit.</p>
+        <p>In the cellar, we’ve added stainless steel tanks for certain stages of winemaking. While Qvevri remains our primary fermentation and aging vessel, the tanks provide additional options for stabilization and fine-tuning. This combination has been crucial in achieving the balance we’re aiming for.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Do you feel this approach has helped differentiate your wines in the market?</div>
+      <div class="txt-a">
+        <p>Definitely. There’s a growing interest in authentic, natural wines, and our use of Qvevri resonates with that trend. At the same time, we focus on creating wines that are approachable and enjoyable, not just unique for the sake of being different. It’s about finding that balance between innovation and tradition.</p>
+      </div>
+    </div>
+    <div class="pics-qa">
+      <figure><img alt="Rotcho's Vineyards" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic7-interview-6.jpg"></figure>
+      <figure><img alt="Rotcho's Vineyards" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic10-interview-6.jpg"></figure>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Let’s talk about scaling up. As your production grows, how do you plan to maintain this balance between tradition and modernity?</div>
+      <div class="txt-a">
+        <p>Scaling up is always a challenge, especially when you’re committed to traditional methods like Qvevri winemaking. The biggest limitation is the capacity of the Qvevri itself. Unlike stainless steel tanks, you can’t just order a larger Qvevri—it’s a handcrafted process, and the size has its limits.</p>
+        <p>As we grow, we’ve decided to keep production relatively small and focused. This ensures that we can maintain the quality and attention to detail. We’re not aiming to produce massive quantities; instead, we want to create wines that reflect the unique characteristics of our vineyards.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Do you see a growing appreciation for natural wines worldwide?</div>
+      <div class="txt-a">
+        <p>Absolutely. There’s a significant movement toward organic and natural wines globally. People are more conscious of what they consume and are looking for wines with authenticity and minimal intervention. Qvevri wines fit perfectly into this trend, as they embody both tradition and natural winemaking principles.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">What’s next for you? Do you plan to expand your portfolio or try new grape varieties?</div>
+      <div class="txt-a">
+        <p>We’re always experimenting. While our focus remains on traditional Georgian varieties like Saperavi, Rkatsiteli, and Khikhvi, we’re also exploring lesser-known indigenous grapes. These rare varieties have a lot of potential and deserve to be brought back into the spotlight.</p>
+        <p>At the same time, we’re continuously learning and improving. Winemaking is an ongoing journey, and each vintage teaches us something new. We’re excited to see where this journey takes us and how we can contribute to the growing global appreciation for Georgian wine.</p>
+      </div>
+    </div>
+    <div class="alt-text-width66 text-qa">
+      <div class="txt-q">Any advice for those starting their journey into winemaking?</div>
+      <div class="txt-a">
+        <p>Be patient and stay curious. Winemaking isn’t just a technical process; it’s deeply connected to the land, the culture, and the people. Respect the traditions but don’t be afraid to innovate and find your own path. Most importantly, enjoy the process—it’s incredibly rewarding.</p>
+      </div>
+    </div>
+    <figure class="hdr-img"><img alt="Rotcho's Vineyards" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpicftr-interview-6.jpg">
+      <figcaption>Rotcho's Vineyards</figcaption>
+    </figure>
+    <p>&nbsp;</p>
+    <h4 class="h4-gr h--centered">Explore more photos from this interview:</h4>
+    <div class="alt-gallery">
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic1-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb1-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic2-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb2-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic3-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb3-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic4-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb4-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic5-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb5-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic6-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb6-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic7-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb7-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic8-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb8-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic9-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb9-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic10-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb10-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic11-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb11-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic12-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb12-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic13-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb13-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic14-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb14-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic15-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb15-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic16-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb16-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic17-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb17-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic18-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb18-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic19-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb19-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic20-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb20-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic21-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb21-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic22-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb22-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic23-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb23-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic24-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb24-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic25-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb25-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic26-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb26-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic27-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb27-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic28-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb28-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic29-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb29-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic30-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb30-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic31-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb31-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic32-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb32-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic35-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb35-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic36-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb36-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+      <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic37-interview-6.jpg"
+         data-fancybox="interview-gallery" data-caption=""> <img
+        src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/btumb37-interview-6.jpg" alt="Rotcho's Vineyards">
+      </a>
+    </div>
+    <script>
+      $(document).ready(function () {
+        Fancybox.bind('[data-fancybox="interview-gallery"]', {});
+      });
+    </script>
+  </section>
+
+  <!-- END INSERTED CONTENT -->
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body>
+</html>
