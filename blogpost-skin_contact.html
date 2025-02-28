@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--**************************************************** from template.liquid **************************************************-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="">
+  <title>GVINICO_PAGE-TEMPLATE</title>
+  <link href="https://cdn.shopify.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.shopifycdn.com" rel="preconnect" crossorigin>
+  <link href="_assets/component-price.css" rel="stylesheet" media="print">
+  <script src="_assets/product-form.js" defer="defer"></script>
+  <script src="_assets/global.js" defer="defer"></script>
+  <script src="_assets/owl.carousel.min.js" defer="defer"></script>
+  <script src="_assets/wishlist.js" defer="defer"></script>
+  <script src="_assets/compare.js" defer="defer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css">
+  <link href="_assets/quickview.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <style>
+    /*** from settings_data.json ***/
+    :root {
+      --font-body-family: "Inter"; /*{{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};*/
+      --font-body-style: normal; /*{{ settings.type_body_font.style }};*/
+      --font-body-weight: 400; /*{{ settings.type_body_font.weight }};*/
+      --font-heading-family: "Cormorant Garamond"; /*{{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};*/
+      --font-heading-style: normal; /*{{ settings.type_header_font.style }};*/
+      --font-heading-weight: 400; /*{{ settings.type_header_font.weight }};*/
+      --color-base-text: #000000; /*{{ settings.colors_text }};*/
+      --color-base-text-rgb: rgb(0, 0, 0); /*{{ settings.colors_text | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-background-1: #ffffff; /*{{ settings.colors_background_1 }};*/
+      --color-base-background-1-rgb: rgb(255, 255, 255); /*{{ settings.colors_background_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-1: #ae194a; /*{{ settings.colors_accent_1 }};*/
+      --color-base-accent-1-rgb: rgb(174, 25, 74); /*{{ settings.colors_accent_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-2: #777777; /*{{ settings.colors_accent_2 }};*/
+      --color-base-accent-2-rgb: rgb(119, 119, 119); /*{{ settings.colors_accent_2 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-border: #dddddd; /*{{ settings.colors_border }};*/
+      --color-base-button-text: #ffffff; /*{{ settings.button_text }};*/
+      --color-base-button-text-hover: #000000; /*{{ settings.button_text_hover }};*/
+      --color-base-button-background: #ae194a; /*{{ settings.button_background }};*/
+      --color-base-button-background-hover: #ffcc1d; /*{{ settings.button_background_hover }};*/
+      --color-base-text-opacity-10-percent: rgba(0, 0, 0, 0.1); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-text-opacity-20-percent: rgba(0, 0, 0, 0.2);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 20 }};*/
+      --color-base-text-opacity-55-percent: rgba(0, 0, 0, 0.55);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 55 }};*/
+      --color-base-text-opacity-85-percent: rgba(0, 0, 0, 0.85); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 85 }};*/
+      --color-base-accent-1-opacity-10-percent: rgba(174, 25, 74, 0.1); /*{{ settings.colors_accent_1 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-accent-2-opacity-10-percent: rgba(119, 119, 119, 0.1); /*{{ settings.colors_accent_2 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-rating-empty: #dddddd; /*{{ settings.rating_empty }};*/
+      --color-rating-filled: #000000; /*{{ settings.rating_filled }};*/
+      --color-secondary-hover: #ffcc1d; /*{{ settings.secondary_hover_color }};*/
+    }
+    :root {
+      --color-base-background-2: #f0f0f0;
+      --color-base-background-2-rgb: rgb(240, 240, 240);
+      --color-base-solid-button-labels: #000000;
+      --color-base-solid-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-outline-button-labels: #000000;
+      --color-base-outline-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-color-base-accent-1: var(--color-base-accent-1); ;
+    }
+    /*** end from settings_data.json ***/
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+    html {
+      box-sizing: border-box;
+      font-size: 62.5%;
+      height: 100%;
+    }
+    body {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: normal !important;
+      line-height: 1.4;
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
+      color: var(--color-base-text);
+    }
+  </style>
+  <link href="_assets/base.css" rel="stylesheet">
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+  <style>
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 600;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-600.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-600.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-600.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 700;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-700.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-700.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-700.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    .slideshow__subheading, .slideshow__subtitle,
+    .title, .title-wrapper-with-link,
+    .cms-banner-title-three,
+    .parallex-title,
+    .two-banner .cms-banner-subtitle-three,
+    .newsletter.center .h1,
+    .breadcrumb_title{
+      font-family: 'Cormorant Garamond', serif !important;
+    }
+  </style>
+  <!--*** from page.liquid ***-->
+  <link href="_assets/component-rte.css" rel="stylesheet">
+  <link href="_assets/section-main-page.css" rel="stylesheet">
+  <!--*** end from page.liquid ***-->
+  <!--*** style of inserted content in template.liquid ***-->
+
+
+  <link href="_assets/section-blog-post.css" rel="stylesheet">
+
+
+  <link href="assets/alt-pages.css" rel="stylesheet">
+  <!--*** end style of inserted content in template.liquid ***-->
+
+
+
+
+
+</head>
+<body class="template-page">
+<main class="main-content" id="MainContent" role="main" tabindex="-1">
+<!--**************************************************** end from template.liquid **************************************************-->
+<div class="page-width contents">
+<div class="main-container">
+<section class="shopify-section spaced-section">
+<div class="page-width page-width--narrow">
+<div class="rte" style="padding-top: 100px; padding-bottom: 100px">
+
+
+
+
+
+
+
+
+
+
+  <!-- INSERTED CONTENT -->
+
+  <section class="alt-pages">
+
+
+    <p class="alt-text18">When we talk about skin contact wines—whether we call it amber or orange—it’s important to note that these wines, much like red wines or even Rosés, cannot be confined into a single category or style. Just as red wines can range from light and delicate Burgundian Pinot Noirs to bold and tannic Napa Cabernets, or as Rosé wines can vary dramatically from the pale, delicate shades of Provence to the bold, sweet Zinfandels of California, skin contact wines exhibit a broad spectrum of diversity. This diversity stems from the combination of techniques, grape varieties, and most importantly terroir. The idea that skin contact wines can be pigeonholed into one "style" is a misconception we must address. Let’s take a deeper look at how these wines are crafted, the factors that shape them, and why they are so unique.</p>
+
+    <figure class="hdr-img">
+      <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic1-skin_contact.jpg" alt="Demystifying Skin Contact Wines: Understanding the Diversity and Complexity">
+    </figure>
+
+    <div class="alt-text-width66 text--centered">
+
+      <p>It’s also essential to shift the perspective that skin contact wines are merely white wines made with red winemaking techniques. This view limits the full appreciation of the style. Skin contact wines are made from white grapes, but the winemaking process involves techniques similar to those used in red winemaking, using skins and sometimes might even include stems during fermentation and aging, depending on the variety and condition of the fruit. This approach created a distinctive style of wine, utilizing a specific winemaking process that extracts tannins, phenolics, and pigments from the skins of the white grapes, giving the wines their characteristic color and texture. In fact, it can be argued that some amber wines are closer in style to red wines than white wines.</p>
+
+      <h3 class="h3-gr h-color-accent-1">The Role of Vessels in Skin Contact Wines</h3>
+      <p>A common belief among wine enthusiasts is that skin contact wines must be made in specific vessels, such as the traditional Qvevri. While it is true that Qvevri wines are deeply tied to the traditions of Georgian winemaking, skin contact wines can be made in a variety of vessels, and the vessel does not define the style. You can make amber wines in wooden cask, cement tanks, plastic, or even an improvised bathab, and the skin contact will still yield the characteristic color, texture, and tannin profile associated with this winemaking style. Thus, while Qvevri plays an important role in Georgia’s winemaking history and certainly contributes to the style of wine produced, equating skin contact wines exclusively with Qvevri is a mistake.</p>
+      <p>The vessel in which the wine ferments or matures can influence the texture, aroma, and overall character of the wine, but it is not a determinant of whether a wine is amber or not. For instance, you could make a classic white wine without skin maceration in a Qvevri and you could also produce an amber wine in a stainless steel tank. The defining factor of an amber wine is the skin contact, not the vessel itself.</p>
+
+      <h3 class="h3-gr h-color-accent-1">How Grape Variety, Ripeness, and Microclimate Shape the Wine</h3>
+      <p>Now that we’ve established the foundations, let's explore what actually gives skin contact wines their range of characteristics—color, tannins, body, and acidity. While grape variety is one factor in determining the wine’s overall style, the more critical influences lie in the other parameters—terroir, including the microclimate, soil, and the timing of the harvest.</p>
+      <p>The first thing to understand is that the length of skin contact alone does not determine whether a wine is tannic or soft. While skin maceration extracts phenolic compounds during fermentation, including tannins and color, it’s the grape variety and ripeness that have the most significant influence on the final texture and structure of the wine. Consider this: just as leaving a Burgundian Pinot Noir on skins for an extended period will not turn it into a tannic Cabernet Sauvignon, the same logic applies to skin contact amber wines. You cannot make a tannic and structured wine just by just simply leaving it on the skins longer.</p>
+      <p>Sun exposure directly affects grape skin thickness. Grapes exposed to more sunlight develop thicker skins for protection, which leads to higher concentrations. This, combined with ripeness of the fruit, results in fuller-bodied amber wines with greater tannic structure. Using stems during fermentation and aging can also influence the structure and aromatic profile of the wine. Depending on the condition of the stems, they can add a different texture to the tannins and contribute an extra herbal, green component to the wine’s aromatics. So, ripeness and harvest timing are key factors in determining the mouthfeel and structure of amber wines. The alcohol percentage might also be an indicator of the style of skin contact wine. Higher alcohol levels typically point to later harvesting or vineyards with hotter conditions, both of which contribute to a more intense and fuller-bodied wine.</p>
+      <p>Moreover, microclimates, soil drainage, vineyard exposition and precipitation influence how these grapes ripen. Well-drained soils and the amount of rain during the growing season play a critical role in vine stress and fruit development. The same grape variety, grown just a few kilometers apart in two different microclimates, could result in vastly different wines due to variations in temperature, humidity, exposure, wind and rainfall. These microclimates and soil variations explain why two wines made from the same grape and using the same winemaking techniques could taste so different.</p>
+
+      <a href="https://gvinico.com/products/napheri-mtsvane" title="Napheri Mtsvane">
+        <figure class="block-wineregion">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic2-skin_contact.jpg" alt="Napheri Mtsvane">
+        </figure>
+      </a>
+      <a href="https://gvinico.com/products/badriashvilis-cellar-chokhoniauri" title="Badriashvili's Cellar Chokhoniauri">
+        <figure class="block-wineregion">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic3-skin_contact.jpg" alt="Badriashvili's Cellar Chokhoniauri">
+        </figure>
+      </a>
+      <a href="https://gvinico.com/products/nukriani-rkatsiteli" title="Nukriani Rkatsiteli">
+        <figure class="block-wineregion">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/bpic4-skin_contact.jpg" alt="Nukriani Rkatsiteli">
+        </figure>
+      </a>
+
+      <p>&nbsp;</p>
+
+      <h3 class="h3-gr h-color-accent-1">Terroir winemaking and the Global Phenomenon of Georgian Skin Contact Wines</h3>
+      <p>When discussing terroir in the context of skin contact wines, it’s essential to broaden the definition beyond just soil. Terroir includes not only the physical attributes of the land (soil, altitude, climate) but also the human factor—the culture, traditions, and historical winemaking practices that have shaped the style of wine produced in a given area.</p>
+      <p>In Georgia, and especially in Kakheti, winemaking traditions are an integral part of the terroir. The grapes used in Kakhetian skin contact wines are selected for their ability to thrive in the local conditions, and the specific winemaking technologies—from the crushing and fermentation processes to the duration of skin contact—are all have evolved through generations of experimentation. This combination of factors—location, grape selection, winemaking practices, and fermentation techniques—makes Kakhetian skin contact wines a true expression of their terroir.</p>
+      <p>This deep-rooted, terroir-driven approach has gained recognition worldwide. While Kakheti's winemaking traditions have remained largely preserved in their region, their influence has spread across the globe, with many winemakers from both Europe and the New World attempting to replicate the techniques and styles of Georgian wines. Particularly, the use of skin contact and clay vessels, often referred to as "amphorae," has become a trend. However, the term 'amphora' originally described small clay transportation vessels, which were never used for fermentation or aging. This imitation reflects the growing acknowledgment of Kakhetian skin contact wines as one of the true expressions of terroir-driven winemaking.</p>
+      <p>In a way, Kakhetian skin contact wines are among the few true expressions of terroir-driven wines, unique from start to finish. They are shaped not only by the grape variety and soil but by the entire vine growing and winemaking process. This holistic approach ensures that Kakhetian skin contact wines are an authentic expression of place, distinguished by their distinctive character from vineyard to vineyard.</p>
+
+      <h3 class="h3-gr h-color-accent-1">Far More Than a Trend</h3>
+      <p>In conclusion, skin contact wines—whether they are called amber or orange—are an intricate, evolving style of winemaking that cannot be boiled down to a simple formula. From grape variety to terroir and winemaking methods, there are many factors at play that influence the final character of these wines. While skin contact plays a key role in the color, texture, and tannins of the wine, it is the interplay of factors like climate, grape variety, harvest timing, and winemaking details that truly shape the final wine. Just like red wines, amber wines can be light or tannic, delicate or full-bodied, acidic or smooth. Understanding this complexity and embracing the diversity of styles is key to appreciating these wines for what they truly are—an expression of both nature and human culture, inextricably linked to the place they come from.</p>
+
+    </div>
+
+
+
+  </section>
+
+  <!-- END INSERTED CONTENT -->
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body>
+</html>
