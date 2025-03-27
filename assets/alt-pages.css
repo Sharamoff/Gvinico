@@ -846,3 +846,73 @@ details[open] summary ~ * {
   background: url("i-innerlink.svg") right center no-repeat;
   vertical-align: middle;
 }
+
+
+
+.block-article-main {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
+}
+.block-article-main:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.article-main__figure {
+  display: inline-block;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+@media screen and (max-width: 990px) {
+  .article-main__figure {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .article-main__figure {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+.article-main__figure img {
+  width: 100%;
+  height: auto;
+}
+
+.article-main__figure.img--left {
+  float: left;
+  margin: 5px 60px 15px 0;
+}
+.article-main__figure.img--right {
+  float: right;
+  margin: 5px 0 15px 60px;
+}
+
+@media screen and (max-width: 990px) {
+  .article-main__figure.img--left {
+    margin: 5px 30px 15px 0;
+  }
+  .article-main__figure.img--right {
+    margin: 5px 0 15px 30px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .article-main__figure.img--left,
+  .article-main__figure.img--right{
+    float: none;
+    margin: 5px auto;
+  }
+}
+
+.img--rounded {
+  border-radius: 10px
+}
