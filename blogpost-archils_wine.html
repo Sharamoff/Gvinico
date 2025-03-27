@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--**************************************************** from template.liquid **************************************************-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="">
+  <title>GVINICO_PAGE-TEMPLATE</title>
+  <link href="https://cdn.shopify.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.shopifycdn.com" rel="preconnect" crossorigin>
+  <link href="_assets/component-price.css" rel="stylesheet" media="print">
+  <script src="_assets/product-form.js" defer="defer"></script>
+  <script src="_assets/global.js" defer="defer"></script>
+  <script src="_assets/owl.carousel.min.js" defer="defer"></script>
+  <script src="_assets/wishlist.js" defer="defer"></script>
+  <script src="_assets/compare.js" defer="defer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" type="text/css">
+  <link href="_assets/quickview.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <style>
+    /*** from settings_data.json ***/
+    :root {
+      --font-body-family: "Inter"; /*{{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};*/
+      --font-body-style: normal; /*{{ settings.type_body_font.style }};*/
+      --font-body-weight: 400; /*{{ settings.type_body_font.weight }};*/
+      --font-heading-family: "Cormorant Garamond"; /*{{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};*/
+      --font-heading-style: normal; /*{{ settings.type_header_font.style }};*/
+      --font-heading-weight: 400; /*{{ settings.type_header_font.weight }};*/
+      --color-base-text: #000000; /*{{ settings.colors_text }};*/
+      --color-base-text-rgb: rgb(0, 0, 0); /*{{ settings.colors_text | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-background-1: #ffffff; /*{{ settings.colors_background_1 }};*/
+      --color-base-background-1-rgb: rgb(255, 255, 255); /*{{ settings.colors_background_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-1: #ae194a; /*{{ settings.colors_accent_1 }};*/
+      --color-base-accent-1-rgb: rgb(174, 25, 74); /*{{ settings.colors_accent_1 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-accent-2: #777777; /*{{ settings.colors_accent_2 }};*/
+      --color-base-accent-2-rgb: rgb(119, 119, 119); /*{{ settings.colors_accent_2 | color_to_rgb | remove: 'rgb(' | remove: ')' }};*/
+      --color-base-border: #dddddd; /*{{ settings.colors_border }};*/
+      --color-base-button-text: #ffffff; /*{{ settings.button_text }};*/
+      --color-base-button-text-hover: #000000; /*{{ settings.button_text_hover }};*/
+      --color-base-button-background: #ae194a; /*{{ settings.button_background }};*/
+      --color-base-button-background-hover: #ffcc1d; /*{{ settings.button_background_hover }};*/
+      --color-base-text-opacity-10-percent: rgba(0, 0, 0, 0.1); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-text-opacity-20-percent: rgba(0, 0, 0, 0.2);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 20 }};*/
+      --color-base-text-opacity-55-percent: rgba(0, 0, 0, 0.55);; /*{{ settings.colors_text | color_mix: settings.colors_background_1, 55 }};*/
+      --color-base-text-opacity-85-percent: rgba(0, 0, 0, 0.85); /*{{ settings.colors_text | color_mix: settings.colors_background_1, 85 }};*/
+      --color-base-accent-1-opacity-10-percent: rgba(174, 25, 74, 0.1); /*{{ settings.colors_accent_1 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-base-accent-2-opacity-10-percent: rgba(119, 119, 119, 0.1); /*{{ settings.colors_accent_2 | color_mix: settings.colors_background_1, 10 }};*/
+      --color-rating-empty: #dddddd; /*{{ settings.rating_empty }};*/
+      --color-rating-filled: #000000; /*{{ settings.rating_filled }};*/
+      --color-secondary-hover: #ffcc1d; /*{{ settings.secondary_hover_color }};*/
+    }
+    :root {
+      --color-base-background-2: #f0f0f0;
+      --color-base-background-2-rgb: rgb(240, 240, 240);
+      --color-base-solid-button-labels: #000000;
+      --color-base-solid-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-outline-button-labels: #000000;
+      --color-base-outline-button-labels-rgb: rgb(0, 0, 0);
+      --color-base-color-base-accent-1: var(--color-base-accent-1); ;
+    }
+    /*** end from settings_data.json ***/
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+    html {
+      box-sizing: border-box;
+      font-size: 62.5%;
+      height: 100%;
+    }
+    body {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: normal !important;
+      line-height: 1.4;
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
+      color: var(--color-base-text);
+    }
+  </style>
+  <link href="_assets/base.css" rel="stylesheet">
+  <link href="_assets/component-predictive-search.css" rel="stylesheet">
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+  <style>
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 600;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-600.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-600.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-600.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-600.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 700;
+      src: url("_assets/cormorant-garamond-v15-latin-600.eot"); /* IE9 Compat Modes */
+      src:
+        url("_assets/cormorant-garamond-v15-latin-700.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+        url("_assets/cormorant-garamond-v15-latin-700.woff2") format('woff2'), /* Super Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.woff") format('woff'), /* Modern Browsers */
+        url("_assets/cormorant-garamond-v15-latin-700.ttf") format('truetype'), /* Safari, Android, iOS */
+        url("_assets/cormorant-garamond-v15-latin-700.svg#Inter'") format('svg'); /* Legacy iOS */
+    }
+    .slideshow__subheading, .slideshow__subtitle,
+    .title, .title-wrapper-with-link,
+    .cms-banner-title-three,
+    .parallex-title,
+    .two-banner .cms-banner-subtitle-three,
+    .newsletter.center .h1,
+    .breadcrumb_title{
+      font-family: 'Cormorant Garamond', serif !important;
+    }
+  </style>
+  <!--*** from page.liquid ***-->
+  <link href="_assets/component-rte.css" rel="stylesheet">
+  <link href="_assets/section-main-page.css" rel="stylesheet">
+  <!--*** end from page.liquid ***-->
+  <!--*** style of inserted content in template.liquid ***-->
+
+
+  <link href="_assets/section-blog-post.css" rel="stylesheet">
+
+
+  <!--*** fancybox ***-->
+  <script src="assets/fancybox.umd.js"></script>
+  <link  href="assets/fancybox.css" rel="stylesheet">
+
+
+
+
+  <link href="assets/alt-pages.css" rel="stylesheet">
+  <!--*** end style of inserted content in template.liquid ***-->
+
+
+
+
+
+</head>
+<body class="template-page">
+<main class="main-content" id="MainContent" role="main" tabindex="-1">
+<!--**************************************************** end from template.liquid **************************************************-->
+<div class="page-width contents">
+<div class="main-container">
+<section class="shopify-section spaced-section">
+<div class="page-width page-width--narrow">
+<div class="rte" style="padding-top: 100px; padding-bottom: 100px">
+
+
+  <script src="assets/fancybox.umd.js"></script>
+  <link  href="assets/fancybox.css" rel="stylesheet">
+
+
+
+
+
+
+
+  <!-- INSERTED CONTENT -->
+
+  <section class="alt-pages">
+    <p class="alt-text18">In this discussion with winemaker <strong>Archil Utiashvili</strong>, we explore how his connection to winemaking isn’t just a profession—it’s a deeply woven part of his family legacy and personal story. Archil recounts how influences from esteemed winemakers and viticulture experts within his family shaped his profound respect for the craft.</p>
+    <a href="https://gvinico.com/collections/archils-wine"><img class="logo-qa" src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/logo-archils-wine.png" alt="Archil’s Wine" width="250" height="244"></a>
+    <figure class="hdr-img">
+      <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-02.jpg" alt="Archil’s Wine">
+    </figure>
+      <div class="alt-text-width66 text-qa">
+        <div class="txt-q">Let’s start at the beginning, tell us about yourself and your wine journey</div>
+        <div class="txt-a">
+          <p>I don't think my wine journey had a specific start, to be honest; it feels like I've been part of the wine culture my entire life. Our family has deep roots in winemaking. My grandfather, Archil Utiashvili, was quite well-known in his time. From 1955 to 1970, he ran the Tsinandali Wine Enterprise Union, and then, from 1970 to 1975, he led the Ikalto Wine Factory. Under his leadership, many remarkable wines were crafted, gaining fame not just across the Soviet Union but internationally as well. To put this into perspective, the wines from the Tsinandali Wine Factory alone were exported to around 80 countries during those years.</p>
+          <p>My family history also includes my grandmother's uncle, Vasil Natsvlishvili, a respected scientist and viticulture expert at the Viticulture Institute. Back then, Telavi was home to the very first scientific research center dedicated to viticulture and winemaking, founded by Solomon Cholokashvili. Remarkably, this center coordinated research across the entire Soviet Union, turning our small town into a hub for some of the finest scientists in the field. Our large family had the incredible privilege of being closely connected to these prominent figures. One notable example is Andro Lashkhi, my grandmother's aunt’s husband, who played a key role in developing Georgian brandy (cognac) production. Despite facing persecution from Soviet authorities, he continued his important work, significantly influencing the global reputation of Georgian wines and brandies. Growing up surrounded by such inspiring individuals profoundly impacted both my personal and my family's paths.</p>
+        </div>
+      </div>
+      <div class="alt-text-width66 text-qa">
+        <div class="txt-q">And how about winery itself?</div>
+        <div class="txt-a">
+          <p>As for the winery, in 2010, I came across an old vineyard—just 0.84 hectares—with vines planted back in 1970. At first glance, it didn't look promising. The vines were old, rather neglected, and sparse. Many experienced growers advised me to uproot them and start fresh. But based on my own experience, I saw something different—I saw potential.</p>
+          <p>With patience, careful attention, and respect for nature, we brought the vineyard back to life. It soon rewarded us with incredible wines, bursting with amazing aromas. It felt as though the vines were thanking us for believing in them. That old vine even became the symbol on our label.</p>
+          <p>After revitalizing that first vineyard, I bought nearby plots and planted more vines—another 0.6 hectares of <a href="https://gvinico.com/collections/saperavi">Saperavi</a> and 0.8 hectares of <a href="https://gvinico.com/collections/kisi">Kisi</a>.</p>
+        </div>
+      </div>
+      <div class="alt-text-width66 text-qa">
+        <div class="txt-q">How challenging was to bring back vineyard into new life?</div>
+        <div class="txt-a">
+          <p>Reviving an old vineyard definitely isn't easy. It takes a ton of effort, patience, and a good amount of know-how. We had to carefully replace twisted or poorly shaped vine trunks with fresh shoots, fix previous pruning mistakes, and patiently guide the vines back into shape. It's slow work, often taking many years, and it requires constant attention and solid viticultural skills.</p>
+          <p>Since we were determined to stick to ecological and organic methods, vineyard management became even more demanding and complex. But seeing how much people appreciate the unique character and taste of the wines produced from these sustainably grown grapes made every bit of that hard work feel worthwhile.</p>
+        </div>
+      </div>
+      <div class="pics-qa">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-08.jpg" alt="Archil’s Wine"></figure>
+        <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-09.jpg" alt="Archil’s Wine"></figure>
+        <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-07.jpg" alt="Archil’s Wine"></figure>
+      </div>
+      <div class="alt-text-width66 text-qa">
+        <div class="txt-q">So, does this mean you control every step of the process, from the vineyard to the bottling?</div>
+        <div class="txt-a">
+          <p>Yes, from the very beginning, we wanted to have complete control over the entire process. For us, winemaking starts in the vineyard, and it was crucial to ensure that we were able to guide the entire process—from planting the vines to bottling the wine. The ability to work closely with our vineyards and make decisions based on the unique conditions of each vintage gives us a deeper connection to the land.</p>
+        </div>
+      </div>
+      <div class="alt-text-width66 text-qa">
+        <div class="txt-q">So, tell us about your vineyard practices besides sustainability</div>
+        <div class="txt-a">
+          <p>Over the years, I've noticed wines from smaller harvests are usually way more exciting and complex than those from large crops. So, my main focus has always been about crafting better wines rather than just getting more bottles. In good years with a big crop, I do what's called a "green harvest," basically removing some grapes early to boost the flavors in the ones left. The result? Wines with amazing character. Honestly, the real secret to great wine comes down to how you manage the vineyard. I've gone with organic and eco-friendly practices, which make a huge difference in taste.</p>
+        </div>
+      </div>
+      <div class="alt-text-width66 text-qa">
+        <div class="txt-q">Who helps you out during growing season? Who else gets involved?</div>
+        <div class="txt-a">
+          <p>In the vineyard, my neighbors from the village usually lend me a hand, and when it comes to making the wine itself, it's a family affair—my wife and kids actively help out in the winery.</p>
+        </div>
+      </div>
+      <figure class="hdr-img">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-04.jpg" alt="Archil’s Vineyard with the Caucasus in the Background">
+        <figcaption>Archil’s Vineyard with the Caucasus in the Background</figcaption>
+      </figure>
+      <div class="alt-text-width66 text-qa">
+        <div class="txt-q">You mentioned the winemaking is done in Qvevri. Could you elaborate on that?</div>
+        <div class="txt-a">
+          <p>Yes, we make all our wines in Qvevri, the traditional Georgian clay vessels. This method is integral to how we make wine. The Qvevri allows for natural fermentation, and the clay interacts with the wine in a way that promotes slow, steady development. Using wild yeast, the fermentation process becomes more of a natural expression of the vineyard. It’s an ancient technique that’s stood the test of time because it allows the wine to develop its full potential, expressing the true nature of the grapes. The Qvevri provides a unique microclimate that helps preserve the wine’s natural characteristics and imparts a subtle complexity that can’t be replicated in stainless steel or oak barrels.</p>
+        </div>
+      </div>
+      <div class="alt-text-width66 text-qa">
+        <div class="txt-q">Let’s talk about your past and current vintages</div>
+        <div class="txt-a">
+          <p>I keep a small collection of wines from every vintage I've made, kind of like a personal library. Over the years, I've definitely noticed some pretty big differences in weather patterns between vintages, especially recently. My vineyard always manages to delivers good results, but the styles vary quite a bit. Drier years typically give me more concentrated wines with higher alcohol, while wetter seasons produce more elegant, refined wines. But honestly, the most crucial factor for me is always the harvest date. Choosing the right time to pick grapes pretty much sets the style for that year's wines.</p>
+        </div>
+      </div>
+      <div class="alt-text-width66 text-qa">
+        <div class="txt-q">Since your wines usually age for a long time, does that influence when you decide to harvest?</div>
+        <div class="txt-a">
+          <p>Absolutely! Not just the harvest date, though. Every step—from pruning to green operations and fruit thinning is planned carefully with our long-aging wine style in mind.</p>
+        </div>
+      </div>
+      <div class="alt-text-width66 text-qa">
+        <div class="txt-q">Looking back, are there any particular vintages that stand out?</div>
+        <div class="txt-a">
+          <p>For ambers, definitely 2015. it’s still one of the best wines I've ever made. I've created similar styles since then, like in 2018 and 2021, but 2015 will always have a special spot for me.</p>
+        </div>
+      </div>
+      <div class="alt-text-width66 text-qa">
+        <div class="txt-q">What about Saperavi?</div>
+        <div class="txt-a">
+          <p>Both 2017 and 2018 were really fantastic for <a href="https://gvinico.com/products/archils-wine-saperavi-reserve">Saperavi</a>. But honestly, every vintage feels like one of my kids, so it’s pretty tough to pick a favorite.</p>
+        </div>
+      </div>
+      <div class="alt-text-width66 text-qa">
+        <div class="txt-q">How's 2024 shaping up?</div>
+        <div class="txt-a">
+          <p>2024 has been an exceptional year in Kakheti. During flowering period we had issues with weather which lower our yields more than usual, but that actually intensified the flavors in the grapes. We're feeling really optimistic and expecting truly amazing wines from this vintage.</p>
+        </div>
+      </div>
+      <div class="pics-qa">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-06.jpg" alt="Archil’s Wine"></figure>
+        <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-05.jpg" alt="Archil’s Wine"></figure>
+      </div>
+      <div class="alt-text-width66 text-qa">
+        <div class="txt-q">How would you describe your winemaking philosophy?</div>
+        <div class="txt-a">
+          <p>Honestly, I'd rather let wine lovers and experts decide what's special about my wines. For me, what's interesting is that even though we use grapes from the same vineyard each year, every vintage turns out differently. Each bottle is handmade, capturing all those little moments—from vineyard work to fermentation and careful aging. Aging is especially important to us; we give our wines about 1.5 to 2 years in oak barrels to fully mature before release. Opening a new bottle is like starting a new conversation—each has its own unique story to tell.</p>
+        </div>
+      </div>
+      <div class="alt-text-width66 text-qa">
+        <div class="txt-q">What kind of reactions did you get when your wine was first introduced to the public?</div>
+        <div class="txt-a">
+          <p>At first, my family and close friends were the main ones giving feedback. But as the wine made its way into specialty wine shops, more and more wine lovers started discovering it, helping it gain wider recognition. I've had some really special moments—customers have actually called me directly, excited about the wine's taste, just to say thanks. Georgian expats have also shared stories about how my wine has caught the attention of wine lovers and experts abroad, making Georgian wine shine internationally.</p>
+          <p>Hearing these reactions genuinely makes me happy and keeps me inspired to continue doing what I love.</p>
+        </div>
+      </div>
+      <div class="pics-qa">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-10.jpg?v=1743060918" alt="Archil’s Wine"></figure>
+        <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-14.jpg?v=1743061646" alt="Archil’s Wine"></figure>
+        <figure><img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-11.jpg?v=1743067194" alt="Archil’s Wine"></figure>
+      </div>
+      <div class="alt-text-width66 text-qa">
+        <div class="txt-q">I remember reading something about your Saperavi and a Japanese research project—can you tell us a bit more about that?</div>
+        <div class="txt-a">
+          <p>Sure! A Japanese company called Mottox teamed up with the Faculty of Pharmaceutical Sciences at Doshisha Women's University to look into how wine might help people stay younger and maintain their beauty. They even started an "Aging Care Wine Research Institute" specifically to study this. Interestingly, their research showed that Archil’s Saperavi has anti-glycation properties, meaning it could potentially help keep your skin looking youthful and healthy.</p>
+          <p>In fact, the results were so impressive that Archil’s Saperavi received a special certificate acknowledging its health benefits. Now, although wine isn't medicine, studies like this resonate really well in Japan, especially since around 60% of Japanese women in their 30s to 50s are particularly focused on youth and beauty. Given that the average Japanese person drinks only about 3.2 liters of wine per year, having scientific proof that good wine can contribute to health and beauty has been great for wine industry in the Japanese market.</p>
+        </div>
+      </div>
+      <div class="alt-text-width66 text-qa">
+        <div class="txt-q">What’s next for your winery</div>
+        <div class="txt-a">
+          <p>Right now, finishing up our winery and setting up the facilities around it is our main focus. Once that's ready, we’ll be able to welcome wine lovers and tourists properly. We're excited to share our story and wines with visitors.</p>
+          <p>Additionally, we're planning to expand our lineup of reserve wines, which will undergo even further extended aging in oak and further maturation in bottles. We already have a couple of special bottlings nearing release. We're also excited to experiment with different styles of wines, such as classic whites without skin contact, and discover how our terroir expresses itself through these new styles. We can't wait for wine lovers to experience these unique wines.</p>
+        </div>
+      </div>
+      <figure class="hdr-img">
+        <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-13.jpg" alt="Archil’s Wine">
+      </figure>
+      <p> </p>
+      <h4 class="h4-gr h--centered">Explore more photos from this interview:</h4>
+      <div class="alt-gallery">
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-05.jpg" data-caption="" data-fancybox="interview-gallery">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-05-thumb.jpg" alt="Archil’s Wine">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-06.jpg" data-caption="" data-fancybox="interview-gallery">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-06-thumb.jpg" alt="Archil’s Wine">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-07.jpg" data-caption="" data-fancybox="interview-gallery">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-07-thumb.jpg" alt="Archil’s Wine">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-08.jpg" data-caption="" data-fancybox="interview-gallery">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-08-thumb.jpg" alt="Archil’s Wine">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-09.jpg" data-caption="" data-fancybox="interview-gallery">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-09-thumb.jpg" alt="Archil’s Wine">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-10.jpg" data-caption="" data-fancybox="interview-gallery">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-10-thumb.jpg" alt="Archil’s Wine">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-11.jpg" data-caption="" data-fancybox="interview-gallery">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-11-thumb.jpg" alt="Archil’s Wine">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-12.jpg" data-caption="" data-fancybox="interview-gallery">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-12-thumb.jpg" alt="Archil’s Wine">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-14.jpg" data-caption="" data-fancybox="interview-gallery">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-14-thumb.jpg" alt="Archil’s Wine">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-15.jpg" data-caption="" data-fancybox="interview-gallery">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-15-thumb.jpg" alt="Archil’s Wine">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-16.jpg" data-caption="" data-fancybox="interview-gallery">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-16-thumb.jpg" alt="Archil’s Wine">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-17.jpg" data-caption="" data-fancybox="interview-gallery">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-17-thumb.jpg" alt="Archil’s Wine">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-18.jpg" data-caption="" data-fancybox="interview-gallery">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-18-thumb.jpg" alt="Archil’s Wine">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-19.jpg" data-caption="" data-fancybox="interview-gallery">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-19-thumb.jpg" alt="Archil’s Wine">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-20.jpg" data-caption="" data-fancybox="interview-gallery">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-20-thumb.jpg" alt="Archil’s Wine">
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-21.jpg" data-caption="" data-fancybox="interview-gallery">
+          <img src="https://cdn.shopify.com/s/files/1/0654/1056/4327/files/archil-interview-21-thumb.jpg" alt="Archil’s Wine">
+        </a>
+      </div>
+      <script>
+        $(document).ready(function() {
+          Fancybox.bind('[data-fancybox="interview-gallery"]', {});
+        });
+      </script></figure>
+  </section>
+
+  <!-- END INSERTED CONTENT -->
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body>
+</html>
